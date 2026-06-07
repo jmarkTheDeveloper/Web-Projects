@@ -127,7 +127,6 @@ html, body {
 }
 
 .brand-title {
-  font-family: 'Syne', sans-serif;
   font-size: 24px;
   font-weight: 800;
   letter-spacing: -0.5px;
@@ -296,7 +295,6 @@ html, body {
 }
 
 .content-title {
-  font-family: 'Syne', sans-serif;
   font-size: 22px;
   font-weight: 800;
 }
@@ -392,7 +390,6 @@ html, body {
 }
 
 .love-card-footer {
-  font-family: 'Syne', sans-serif;
   font-weight: 800;
   font-size: 15px;
   color: var(--accent-color);
@@ -532,7 +529,6 @@ html, body {
 }
 
 .quest-board-title {
-  font-family: 'Syne', sans-serif;
   font-size: 18px;
   font-weight: 800;
 }
@@ -613,7 +609,6 @@ html, body {
 }
 
 .test-card-title {
-  font-family: 'Syne', sans-serif;
   font-size: 18px;
   font-weight: 800;
 }
@@ -1066,17 +1061,29 @@ html, body {
   }
 
   /* Practice Tab Quest board layout on Mobile (controlled by JS toggle) */
+  #practice-tab, #reviewer-tab {
+    display: none;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden !important;
+  }
+  #practice-tab.active, #reviewer-tab.active {
+    display: flex;
+  }
+
   .mobile-practice-toggle {
     display: flex !important;
     width: 90% !important;
     max-width: 320px;
-    margin: 12px auto 0 auto !important;
+    margin: 16px auto 8px auto !important;
+    flex-shrink: 0;
   }
 
   .practice-main-layout {
     flex-direction: column;
     overflow-y: auto;
-    height: calc(100vh - 180px);
+    flex: 1;
+    height: auto;
   }
 
   .practice-content-area {
