@@ -321,6 +321,9 @@ function switchTab(tabId) {
     SoundEffect.playHeartUp();
   } else if (tabId !== "practice") {
     resetPracticeViews();
+  } else {
+    resetPracticeViews();
+    toggleMobilePractice('games');
   }
 }
 
@@ -435,12 +438,46 @@ function renderReviewerFileList() {
 function loadPDF(path, title) {
   const readerPane = document.getElementById("pdf-reader-pane");
   readerPane.innerHTML = `
-    <div class="reader-header">
-      <div class="reader-title">${title}</div>
-      <button class="sub-tab-btn" onclick="openFullscreenPDF('${path}')" style="padding: 4px 10px; font-size: 11px;">Fullscreen ↗</button>
+    <div class="reader-header" style="gap: 8px;">
+      <button class="sub-tab-btn back-btn-pdf" onclick="closePDF()" style="padding: 4px 10px; font-size: 11px;">← Back</button>
+      <div class="reader-title" style="flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${title}</div>
+      <button class="sub-tab-btn" onclick="openFullscreenPDF('${path}')" style="padding: 4px 10px; font-size: 11px; white-space: nowrap;">Fullscreen ↗</button>
     </div>
     <iframe class="pdf-iframe" src="${path}"></iframe>
   `;
+  const container = document.querySelector(".reviewer-container");
+  if (container) {
+    container.classList.add("pdf-open");
+  }
+}
+
+function closePDF() {
+  const container = document.querySelector(".reviewer-container");
+  if (container) {
+    container.classList.remove("pdf-open");
+  }
+  document.querySelectorAll(".file-item").forEach(el => el.classList.remove("active"));
+}
+
+function toggleMobilePractice(mode) {
+  const gamesBtn = document.getElementById("practice-games-btn");
+  const questsBtn = document.getElementById("practice-quests-btn");
+  const arena = document.querySelector(".practice-content-area");
+  const questsPane = document.querySelector(".quest-board-pane");
+  
+  if (!gamesBtn || !questsBtn || !arena || !questsPane) return;
+  
+  if (mode === 'games') {
+    gamesBtn.classList.add("active");
+    questsBtn.classList.remove("active");
+    arena.style.setProperty("display", "flex", "important");
+    questsPane.style.setProperty("display", "none", "important");
+  } else {
+    gamesBtn.classList.remove("active");
+    questsBtn.classList.add("active");
+    arena.style.setProperty("display", "none", "important");
+    questsPane.style.setProperty("display", "flex", "important");
+  }
 }
 
 function openFullscreenPDF(path) {

@@ -331,6 +331,10 @@ html, body {
   box-shadow: var(--shadow-sm);
 }
 
+.back-btn-pdf {
+  display: none;
+}
+
 /* --- Welcome / Sweet Note Tab --- */
 .welcome-container {
   flex: 1;
@@ -1013,23 +1017,37 @@ html, body {
     height: 100vh;
   }
 
-  /* Document Reviewer Split pane on Mobile */
+  /* Document Reviewer Mobile Navigation System */
+  .back-btn-pdf {
+    display: inline-block !important;
+  }
+
   .reviewer-container {
     flex-direction: column;
     height: calc(100vh - 120px);
+    position: relative;
+  }
+
+  /* Toggle displays when PDF reader is open or closed on mobile */
+  .reviewer-container.pdf-open .reviewer-list-pane {
+    display: none !important;
+  }
+  .reviewer-container.pdf-open .reviewer-reader-pane {
+    display: flex !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  .reviewer-container:not(.pdf-open) .reviewer-reader-pane {
+    display: none !important;
+  }
+  .reviewer-container:not(.pdf-open) .reviewer-list-pane {
+    display: flex !important;
+    width: 100% !important;
+    height: 100% !important;
   }
 
   .reviewer-list-pane {
-    width: 100%;
-    height: 45%;
-    border-right: none;
-    border-bottom: var(--border-style);
     padding: 12px;
-  }
-
-  .reviewer-reader-pane {
-    width: 100%;
-    height: 55%;
   }
 
   .file-item {
@@ -1047,10 +1065,18 @@ html, body {
     font-size: 18px;
   }
 
-  /* Practice Tab Quest board layout on Mobile (Stack below) */
+  /* Practice Tab Quest board layout on Mobile (controlled by JS toggle) */
+  .mobile-practice-toggle {
+    display: flex !important;
+    width: 90% !important;
+    max-width: 320px;
+    margin: 12px auto 0 auto !important;
+  }
+
   .practice-main-layout {
     flex-direction: column;
     overflow-y: auto;
+    height: calc(100vh - 180px);
   }
 
   .practice-content-area {
@@ -1061,7 +1087,7 @@ html, body {
   .quest-board-pane {
     width: 100%;
     border-left: none;
-    border-top: var(--border-style);
+    border-top: none;
     height: auto;
     padding: 16px;
     background-color: rgba(0,0,0,0.25);

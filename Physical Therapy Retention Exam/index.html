@@ -132,6 +132,13 @@
     
     <!-- Tab 2: Practice & Quests (Split into Game Selection and Quests Sidebar) -->
     <div class="tab-pane" id="practice-tab">
+      
+      <!-- Mobile Sub-Toggle for Practice/Quests -->
+      <div class="sub-tabs-bar mobile-practice-toggle" style="display: none; margin: 12px auto 0 auto;">
+        <button class="sub-tab-btn active" id="practice-games-btn" onclick="toggleMobilePractice('games')">🎮 Arena</button>
+        <button class="sub-tab-btn" id="practice-quests-btn" onclick="toggleMobilePractice('quests')">🎯 Quests</button>
+      </div>
+
       <div class="practice-main-layout">
         
         <!-- Game Content -->
