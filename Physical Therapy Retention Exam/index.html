@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Physical Therapy Retention Exam Reviewer</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <!-- Local Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="theme-modern">
+<div id="app-container">
+  
+  <!-- Sidebar Navigation & Player Profile -->
+  <aside id="sidebar">
+    <div class="brand-section">
+      <div class="brand-title">
+        🩺 PT <span>Retention</span>
+      </div>
+      <div class="brand-subtitle">Physical Therapy Board Reviewer</div>
+    </div>
+    
+    <!-- Player Game Widget -->
+    <div class="user-game-widget">
+      <div class="level-badge-container">
+        <div class="level-badge level-val">1</div>
+        <div class="xp-details">
+          <div class="xp-header">
+            <span style="text-transform: uppercase; color: var(--accent-color);">PT Student</span>
+            <span class="xp-text">0 / 100 XP</span>
+          </div>
+          <div class="xp-bar-bg">
+            <div class="xp-fill"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <nav class="nav-menu">
+      <button class="nav-item active" data-tab="welcome" onclick="switchTab('welcome')">
+        ❤️ Sweet Note
+      </button>
+      <button class="nav-item" data-tab="reviewer" onclick="switchTab('reviewer')">
+        📚 Document Reviewer
+      </button>
+      <button class="nav-item" data-tab="practice" onclick="switchTab('practice')">
+        🎮 Practice & Quests
+      </button>
+      <button class="nav-item" data-tab="settings" onclick="switchTab('settings')">
+        🎨 Theme Customizer
+      </button>
+    </nav>
+    
+    <div class="sidebar-footer">
+      <div class="trophy-mini-status">
+        <span style="font-size: 22px;">🏆</span>
+        <div style="flex: 1;">
+          <div style="font-size: 11px; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">Cabinet Trophies</div>
+          <div class="trophy-count" id="mini-trophies-count">0</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  
+  <!-- Main Viewport Area -->
+  <main id="main-viewport">
+    
+    <!-- Tab 0: Welcome Note (Default Landing) -->
+    <div class="tab-pane active" id="welcome-tab">
+      <div class="welcome-container">
+        
+        <!-- Sealed Envelope View -->
+        <div class="welcome-love-card" id="sealed-envelope" onclick="openEnvelope()" style="cursor: pointer; max-width: 480px; padding: 50px 30px; animation: float 3s infinite ease-in-out;">
+          <div style="font-size: 84px; animation: pulse 1.5s infinite;">✉️</div>
+          <h3 style="font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; margin-top: 15px;">You have a new message!</h3>
+          <p style="font-size: 13px; color: var(--text-muted); margin-top: 6px;">Click the envelope to read</p>
+        </div>
+
+        <!-- Opened Love Card (hidden initially) -->
+        <div class="welcome-love-card" id="opened-love-card" style="display: none;">
+          <div class="beating-heart">💖</div>
+          <div style="font-size: 11px; font-weight: 800; color: var(--accent-color); background: rgba(244, 63, 94, 0.1); padding: 4px 14px; border-radius: 99px; text-transform: uppercase; letter-spacing: 1px;">
+            💖 Level 99 Support Buffer Active 💖
+          </div>
+          <div class="welcome-rpg-message" id="welcome-message-text">
+            <!-- Typed dynamically via JS -->
+          </div>
+          <div class="love-card-footer">
+            I love you! - your comsci boy
+          </div>
+        </div>
+
+      </div>
+    </div>
+    
+    <!-- Tab 1: Document Reviewer -->
+    <div class="tab-pane" id="reviewer-tab">
+      <div class="content-header">
+        <div class="content-title">Study Resources</div>
+        <div style="font-size: 12px; color: var(--text-muted); font-weight: 600;">Click any PDF file to load reader</div>
+      </div>
+      
+      <!-- Semester Tabs -->
+      <div class="sub-tabs-bar">
+        <button class="sub-tab-btn active" data-sem="sem1" onclick="setSemester('sem1')">1st Semester</button>
+        <button class="sub-tab-btn" data-sem="sem2" onclick="setSemester('sem2')">2nd Semester</button>
+      </div>
+      
+      <!-- Reviewer Split Pane -->
+      <div class="reviewer-container">
+        <!-- File Lists Left Pane -->
+        <div class="reviewer-list-pane" id="file-list-container">
+          <!-- Populated dynamically via JS -->
+        </div>
+        
+        <!-- Reader Viewer Right Pane -->
+        <div class="reviewer-reader-pane" id="pdf-reader-pane">
+          <div class="no-file-selected">
+            <div class="no-file-icon">📖</div>
+            <h3 style="font-family: 'Syne', sans-serif; font-size: 18px; margin-top: 12px;">Review Session Pending</h3>
+            <p style="font-size: 13px; margin-top: 8px;">Select a lecture sheet to open the embedded PDF reader.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Tab 2: Practice & Quests (Split into Game Selection and Quests Sidebar) -->
+    <div class="tab-pane" id="practice-tab">
+      <div class="practice-main-layout">
+        
+        <!-- Game Content -->
+        <div class="practice-content-area">
+          <div class="content-header" style="padding: 0 0 20px 0; background: transparent; margin-bottom: 20px;">
+            <div class="content-title">Game Arena</div>
+            <button class="sub-tab-btn" onclick="resetPracticeViews()" style="font-size: 12px; padding: 6px 12px;">Reset Arena</button>
+          </div>
+          
+          <!-- Practice Selection Grid -->
+          <div class="test-selection-grid" id="practice-selection">
+            <div class="test-card">
+              <div class="test-card-icon">💡</div>
+              <div class="test-card-title">Daily Quizzes</div>
+              <div class="test-card-desc">Take a focused 25-item quiz on specific topics. Gained knowledge helps you earn level XP points.</div>
+              <button class="test-card-btn" onclick="showQuizConfig()">Choose Topic</button>
+            </div>
+            
+            <div class="test-card">
+              <div class="test-card-icon">⚡</div>
+              <div class="test-card-title">Mock Exams</div>
+              <div class="test-card-desc">50-item mock board review. Simulates actual timing and scoring weights for extreme preparation.</div>
+              <button class="test-card-btn" onclick="showExamConfig()">Choose Topic</button>
+            </div>
+            
+            <div class="test-card">
+              <div class="test-card-icon">🏆</div>
+              <div class="test-card-title">Survival Challenges</div>
+              <div class="test-card-desc">Play highly interactive, gamified mini-games (Hangman Scrambles, Matchers, and survival MCQs) to earn trophies.</div>
+              <button class="test-card-btn" onclick="showChallengeIntro()">Enter Challenges</button>
+            </div>
+          </div>
+          
+          <!-- Configuration Screen for Quiz -->
+          <div class="config-screen" id="quiz-config-screen" style="display: none;">
+            <h3 style="font-family: 'Syne', sans-serif;">Select Quiz Topic</h3>
+            <div class="form-group">
+              <label for="quiz-topic">Target Subject</label>
+              <select class="form-select" id="quiz-topic">
+                <option value="ITPT">Introduction to Physical Therapy (ITPT)</option>
+                <option value="OSA">Organ System Anatomy (OSA)</option>
+                <option value="PHYSIO">Integrative Physiology (PHYSIO)</option>
+                <option value="KINES">Kinesiology & Biomechanics (KINES)</option>
+                <option value="NEUROSCI">Neuroscience (NEUROSCI)</option>
+              </select>
+            </div>
+            <button class="test-card-btn" onclick="startPractice('quiz')">Launch Quiz (25 Qs)</button>
+            <button class="test-card-btn" onclick="resetPracticeViews()" style="background: transparent; border: 1px solid var(--border-color); color: var(--text-muted); margin-top: 8px;">← Back to Arena</button>
+          </div>
+          
+          <!-- Configuration Screen for Exam -->
+          <div class="config-screen" id="exam-config-screen" style="display: none;">
+            <h3 style="font-family: 'Syne', sans-serif;">Select Mock Exam Domain</h3>
+            <div class="form-group">
+              <label for="exam-topic">Board Exam Category</label>
+              <select class="form-select" id="exam-topic">
+                <option value="ITPT">Introduction to Physical Therapy (ITPT)</option>
+                <option value="OSA">Organ System Anatomy (OSA)</option>
+                <option value="PHYSIO">Integrative Physiology (PHYSIO)</option>
+                <option value="KINES">Kinesiology & Biomechanics (KINES)</option>
+                <option value="NEUROSCI">Neuroscience (NEUROSCI)</option>
+              </select>
+            </div>
+            <button class="test-card-btn" onclick="startPractice('exam')">Launch Mock Exam (50 Qs)</button>
+            <button class="test-card-btn" onclick="resetPracticeViews()" style="background: transparent; border: 1px solid var(--border-color); color: var(--text-muted); margin-top: 8px;">← Back to Arena</button>
+          </div>
+          
+          <!-- Challenge Intro & Cabinet -->
+          <div class="config-screen" id="challenge-intro-screen" style="display: none; align-items: center; text-align: center; max-width: 600px;">
+            <h3 style="font-family: 'Syne', sans-serif; font-size: 24px;">🏆 Trophy Cabinet 🏆</h3>
+            
+            <div class="trophy-cabinet" id="trophies-container" style="margin-top: 15px;">
+              <!-- Rendered dynamically -->
+            </div>
+            
+            <h4 style="font-family: 'Syne', sans-serif; margin-top: 20px; font-size: 16px;">Choose Your Challenge</h4>
+            <div class="test-selection-grid" style="margin-top: 15px; display: flex; flex-direction: column; gap: 12px; width: 100%;">
+              <div class="test-card" style="padding: 16px; flex-direction: row; align-items: center; justify-content: space-between; text-align: left;">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <div style="font-size: 24px;">🔥</div>
+                  <div>
+                    <div style="font-weight: 800; font-size: 14px;">MCQ Survival</div>
+                    <p style="font-size: 11px; color: var(--text-muted);">Get 10 board questions in a row correct.</p>
+                  </div>
+                </div>
+                <button class="test-card-btn" onclick="startPractice('challenge')" style="width: 80px; padding: 6px;">Start</button>
+              </div>
+              <div class="test-card" style="padding: 16px; flex-direction: row; align-items: center; justify-content: space-between; text-align: left;">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <div style="font-size: 24px;">🧩</div>
+                  <div>
+                    <div style="font-weight: 800; font-size: 14px;">Term Scramble</div>
+                    <p style="font-size: 11px; color: var(--text-muted);">Unscramble 5 key PT terms from clues.</p>
+                  </div>
+                </div>
+                <button class="test-card-btn" onclick="startScrambleGame()" style="width: 80px; padding: 6px;">Start</button>
+              </div>
+              <div class="test-card" style="padding: 16px; flex-direction: row; align-items: center; justify-content: space-between; text-align: left;">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <div style="font-size: 24px;">⚡</div>
+                  <div>
+                    <div style="font-weight: 800; font-size: 14px;">Anatomical Matcher</div>
+                    <p style="font-size: 11px; color: var(--text-muted);">Tap-to-match 4 terms to their definitions.</p>
+                  </div>
+                </div>
+                <button class="test-card-btn" onclick="startMatcherGame()" style="width: 80px; padding: 6px;">Start</button>
+              </div>
+            </div>
+            
+            <button class="test-card-btn" onclick="resetPracticeViews()" style="background: transparent; border: 1px solid var(--border-color); color: var(--text-muted); margin-top: 20px;">← Back to Arena</button>
+          </div>
+          
+          <!-- Active Test Session View -->
+          <div class="test-session-container" id="test-session" style="display: none;">
+            <div class="session-header">
+              <div>
+                <div id="session-mode-label" style="font-size: 12px; font-weight: 800; color: var(--accent-color); text-transform: uppercase;">QUIZ</div>
+                <div id="question-number-indicator" style="font-size: 20px; font-weight: 800; margin-top: 4px;">Question 1 of 25</div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px; flex: 1; justify-content: flex-end;">
+                <div class="progress-bar-bg" style="max-width: 150px;">
+                  <div class="progress-bar-fill" id="session-progress-fill"></div>
+                </div>
+                <button class="sub-tab-btn" onclick="if(confirm('Quit session? Progress will be lost.')) resetPracticeViews()" style="font-size: 11px; padding: 6px 12px;">← Quit</button>
+              </div>
+            </div>
+            
+            <!-- Dynamic Question Box -->
+            <div id="question-card-container"></div>
+          </div>
+
+          <!-- Word Scramble Game Session -->
+          <div class="test-session-container" id="scramble-session" style="display: none; max-width: 600px;">
+            <div class="session-header">
+              <div>
+                <div style="font-size: 12px; font-weight: 800; color: var(--accent-color); text-transform: uppercase;">TERM SCRAMBLE</div>
+                <div id="scramble-round-indicator" style="font-size: 18px; font-weight: 800; margin-top: 4px;">Round 1 of 5</div>
+              </div>
+              <button class="sub-tab-btn" onclick="resetPracticeViews()" style="font-size: 11px; padding: 6px 12px;">← Quit</button>
+            </div>
+            
+            <div class="question-card" style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px;">
+              <div id="scramble-clue" style="font-size: 15px; font-weight: 500; color: var(--text-muted); line-height: 1.6;">Clue goes here...</div>
+              <div id="scramble-word-display" style="font-family: 'Syne', sans-serif; font-size: 32px; font-weight: 800; letter-spacing: 6px; color: var(--primary-color); text-transform: uppercase; margin: 10px 0;">A B C D E</div>
+              <div class="form-group" style="width: 100%;">
+                <input type="text" id="scramble-input" placeholder="Type your answer..." autocomplete="off" class="form-select" style="text-align: center; text-transform: uppercase; max-width: 300px; margin: 0 auto; border: 2px solid var(--border-color); font-weight: bold; background: rgba(0,0,0,0.1);">
+              </div>
+              <button class="test-card-btn" id="scramble-submit-btn" onclick="submitScrambleWord()">Submit Word</button>
+              <div id="scramble-feedback" style="min-height: 24px; font-weight: bold; font-size: 14px;"></div>
+            </div>
+          </div>
+
+          <!-- Anatomical Matcher Game Session -->
+          <div class="test-session-container" id="matcher-session" style="display: none; max-width: 700px;">
+            <div class="session-header">
+              <div>
+                <div style="font-size: 12px; font-weight: 800; color: var(--accent-color); text-transform: uppercase;">ANATOMICAL MATCHER</div>
+                <div style="font-size: 16px; font-weight: 800; margin-top: 4px;">Tap a card on the left, then its match on the right!</div>
+              </div>
+              <button class="sub-tab-btn" onclick="resetPracticeViews()" style="font-size: 11px; padding: 6px 12px;">← Quit</button>
+            </div>
+            
+            <div class="question-card" style="padding: 24px; display: flex; flex-direction: column; gap: 20px;">
+              <div style="display: flex; gap: 20px;">
+                <!-- Left Column (Keys) -->
+                <div id="matcher-left-col" style="flex: 1; display: flex; flex-direction: column; gap: 12px;"></div>
+                <!-- Right Column (Values) -->
+                <div id="matcher-right-col" style="flex: 1; display: flex; flex-direction: column; gap: 12px;"></div>
+              </div>
+              <div id="matcher-feedback" style="text-align: center; min-height: 24px; font-weight: 700; font-size: 14px;"></div>
+            </div>
+          </div>
+          
+          <!-- Results Panel -->
+          <div class="results-container" id="results-panel" style="display: none;">
+            <h3 style="font-family: 'Syne', sans-serif; font-size: 28px;">Session Cleared</h3>
+            
+            <div class="score-circle">
+              <div style="font-size: 10px; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Final Score</div>
+              <div class="score-num" id="result-score-text">0 / 0</div>
+              <div id="result-percentage" style="font-size: 14px; font-weight: 800; color: var(--primary-color);">0%</div>
+            </div>
+            
+            <p id="result-evaluation" style="line-height: 1.6; font-size: 15px; font-weight: 500;"></p>
+            
+            <button class="test-card-btn" onclick="resetPracticeViews()" style="width: 100%;">Return to Selection</button>
+          </div>
+        </div>
+        
+        <!-- Quests Sidebar Board -->
+        <aside class="quest-board-pane">
+          <div class="quest-board-title">
+            <span>🎯</span> Active Quests
+          </div>
+          <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 12px;">Complete objectives to gain extra XP rewards.</div>
+          
+          <div id="quest-board-list" style="display: flex; flex-direction: column; gap: 12px;">
+            <!-- Populated via JS -->
+          </div>
+        </aside>
+        
+      </div>
+    </div>
+    
+    <!-- Tab 3: Themes Settings -->
+    <div class="tab-pane" id="settings-tab">
+      <div class="content-header">
+        <div class="content-title">Theme Customizer</div>
+        <div style="font-size: 13px; color: var(--text-muted);">Switch between Modern, Classic, and Clinical interfaces</div>
+      </div>
+      
+      <div class="theme-selector-container">
+        <h3 style="font-family: 'Syne', sans-serif;">Select Interface Theme</h3>
+        <p style="font-size: 14px; color: var(--text-muted); margin-top: 6px;">Choose a visual appearance that matches your study preferences.</p>
+        
+        <div class="theme-options-grid">
+          <!-- Modern Theme Card -->
+          <div class="theme-card active" data-theme="theme-modern" onclick="setTheme('theme-modern')">
+            <div style="font-size: 18px; font-weight: 700;">Modern Glass</div>
+            <p style="font-size: 12px; color: var(--text-muted); line-height: 1.4;">Default dark theme with glassmorphic cards, rich neon pink/blue highlights, and floating UI animations.</p>
+            <div class="theme-preview-colors">
+              <div class="color-dot" style="background-color: #3b82f6;"></div>
+              <div class="color-dot" style="background-color: #090d16;"></div>
+              <div class="color-dot" style="background-color: #f43f5e;"></div>
+            </div>
+          </div>
+          
+          <!-- Classic Theme Card -->
+          <div class="theme-card" data-theme="theme-classic" onclick="setTheme('theme-classic')">
+            <div style="font-size: 18px; font-weight: 700;">Classic Ledger</div>
+            <p style="font-size: 12px; color: var(--text-muted); line-height: 1.4;">Warm parchment style, traditional borders, serif typography, and leather brown RPG guild styling.</p>
+            <div class="theme-preview-colors">
+              <div class="color-dot" style="background-color: #5c4033;"></div>
+              <div class="color-dot" style="background-color: #f4edd8;"></div>
+              <div class="color-dot" style="background-color: #d4af37;"></div>
+            </div>
+          </div>
+          
+          <!-- Medical Theme Card -->
+          <div class="theme-card" data-theme="theme-medical" onclick="setTheme('theme-medical')">
+            <div style="font-size: 18px; font-weight: 700;">Clinical Holo</div>
+            <p style="font-size: 12px; color: var(--text-muted); line-height: 1.4;">Sterile clinical teal aesthetics, monospace typography, scanlines, and digital diagnostics viewports.</p>
+            <div class="theme-preview-colors">
+              <div class="color-dot" style="background-color: #00f5d4;"></div>
+              <div class="color-dot" style="background-color: #041216;"></div>
+              <div class="color-dot" style="background-color: #ff007f;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </main>
+</div>
+
+<!-- Core Scripting -->
+<script src="js/questions.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
