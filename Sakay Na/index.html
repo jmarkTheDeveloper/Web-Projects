@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sakay — Philippine Transit Directions</title>
+  <!-- Leaflet Map CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Local Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <div id="sidebar">
+    <div class="logo-bar">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      </div>
+      <div>
+        <div class="logo-text">saka<span>y</span></div>
+        <div class="tagline">Philippine Transit Directions</div>
+      </div>
+    </div>
+    <div class="search-panel">
+      <div class="inputs-with-dots">
+        <div class="connector-line"></div>
+        <div class="input-group" style="position:relative">
+          <div class="dot-from"></div>
+          <label>From</label>
+          <input type="text" id="from-input" placeholder="Starting point (e.g. Quezon City)" autocomplete="off">
+          <span class="input-icon" onclick="locateMe()">◎</span>
+          <div id="autocomplete-from"></div>
+        </div>
+        <div class="input-group" style="position:relative">
+          <div class="dot-to"></div>
+          <label>To</label>
+          <input type="text" id="to-input" placeholder="Destination (e.g. BGC, Taguig)" autocomplete="off">
+          <span class="input-icon" onclick="swapInputs()">⇅</span>
+          <div id="autocomplete-to"></div>
+        </div>
+      </div>
+      <div class="mode-tabs">
+        <div class="mode-tab active" onclick="setMode('transit',this)">🚌 Transit</div>
+        <div class="mode-tab" onclick="setMode('walk',this)">🚶 Walk</div>
+        <div class="mode-tab" onclick="setMode('drive',this)">🚗 Drive</div>
+        <div class="mode-tab" onclick="setMode('bike',this)">🚴 Bike</div>
+      </div>
+      <div class="quick-locations">
+        <div class="quick-loc" onclick="setFromMyLocation()">📍 My Location</div>
+        <div class="quick-loc" onclick="setQuick('to','SM Mall of Asia, Pasay')">SM MoA</div>
+        <div class="quick-loc" onclick="setQuick('to','BGC, Taguig')">BGC</div>
+        <div class="quick-loc" onclick="setQuick('to','Makati CBD')">Makati</div>
+        <div class="quick-loc" onclick="setQuick('to','Ortigas Center')">Ortigas</div>
+      </div>
+      <button class="route-btn" id="route-btn" onclick="getRoute()" style="margin-top:12px">Get Directions</button>
+    </div>
+    <div id="results">
+      <div class="empty-state">
+        <div class="empty-icon">🗺️</div>
+        <h3>Where are you headed?</h3>
+        <p style="font-size:13px;line-height:1.6">Enter your starting point and destination to get transit directions around Metro Manila and nearby areas.</p>
+      </div>
+    </div>
+  </div>
+  <div id="map">
+    <div class="map-controls">
+      <button class="map-ctrl-btn" onclick="map.zoomIn()" title="Zoom In">+</button>
+      <button class="map-ctrl-btn" onclick="map.zoomOut()" title="Zoom Out">−</button>
+      <button class="map-ctrl-btn" onclick="centerOnPH()" title="Center on Philippines">🇵🇭</button>
+      <button class="map-ctrl-btn" onclick="toggleLayer()" title="Toggle Layer">🗺</button>
+    </div>
+  </div>
+</div>
+
+<!-- Leaflet Map JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<!-- Application JS -->
+<script src="js/app.js"></script>
+</body>
+</html>
