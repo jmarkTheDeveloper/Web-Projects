@@ -1104,165 +1104,352 @@ const QUESTION_BANK = {
   ]
 };
 
-// Generates procedural/simulated questions if the base questions are not enough,
-// ensuring we can always provide 50 questions for Exams.
-// However, since we have 25 highly comprehensive questions per category, 
-// we will combine our high-yield base bank with a randomized variant generator 
-// that procedurally outputs variations (such as switching muscle origins/insertions or nerve roots)
-// to yield up to 100 unique questions per category dynamically.
+/// Database tables for procedural generation
+const MUSCLES_DB = [
+  { name: "Biceps Brachii", innervation: "Musculocutaneous nerve", roots: "C5-C6", action: "elbow flexion and forearm supination", group: "upper extremity" },
+  { name: "Triceps Brachii", innervation: "Radial nerve", roots: "C7-C8", action: "elbow extension", group: "upper extremity" },
+  { name: "Deltoid", innervation: "Axillary nerve", roots: "C5-C6", action: "shoulder abduction", group: "upper extremity" },
+  { name: "Supraspinatus", innervation: "Suprascapular nerve", roots: "C5-C6", action: "initiation of shoulder abduction (first 15 degrees)", group: "upper extremity" },
+  { name: "Infraspinatus", innervation: "Suprascapular nerve", roots: "C5-C6", action: "shoulder external rotation", group: "upper extremity" },
+  { name: "Teres Minor", innervation: "Axillary nerve", roots: "C5-C6", action: "shoulder external rotation", group: "upper extremity" },
+  { name: "Subscapularis", innervation: "Upper and lower subscapular nerves", roots: "C5-C6", action: "shoulder internal rotation", group: "upper extremity" },
+  { name: "Serratus Anterior", innervation: "Long thoracic nerve", roots: "C5-C7", action: "scapular protraction and upward rotation", group: "upper extremity" },
+  { name: "Latissimus Dorsi", innervation: "Thoracodorsal nerve", roots: "C6-C8", action: "shoulder extension, adduction, and internal rotation", group: "upper extremity" },
+  { name: "Trapezius", innervation: "Spinal accessory nerve (CN XI)", roots: "CN XI and C3-C4", action: "scapular elevation, retraction, and depression", group: "upper extremity" },
+  { name: "Pectoralis Major", innervation: "Lateral and medial pectoral nerves", roots: "C5-T1", action: "shoulder adduction, internal rotation, and flexion", group: "upper extremity" },
+  { name: "Pronator Teres", innervation: "Median nerve", roots: "C6-C7", action: "forearm pronation and elbow flexion", group: "upper extremity" },
+  { name: "Flexor Carpi Radialis", innervation: "Median nerve", roots: "C6-C7", action: "wrist flexion and radial deviation", group: "upper extremity" },
+  { name: "Extensor Carpi Radialis Longus", innervation: "Radial nerve", roots: "C6-C7", action: "wrist extension and radial deviation", group: "upper extremity" },
+  { name: "Iliopsoas", innervation: "Femoral nerve and lumbar plexus", roots: "L1-L4", action: "hip flexion", group: "lower extremity" },
+  { name: "Gluteus Maximus", innervation: "Inferior gluteal nerve", roots: "L5-S2", action: "hip extension and lateral rotation", group: "lower extremity" },
+  { name: "Gluteus Medius", innervation: "Superior gluteal nerve", roots: "L4-S1", action: "hip abduction and internal rotation", group: "lower extremity" },
+  { name: "Sartorius", innervation: "Femoral nerve", roots: "L2-L3", action: "hip flexion, abduction, lateral rotation, and knee flexion", group: "lower extremity" },
+  { name: "Rectus Femoris", innervation: "Femoral nerve", roots: "L2-L4", action: "knee extension and hip flexion", group: "lower extremity" },
+  { name: "Biceps Femoris", innervation: "Tibial nerve (long head) and common fibular nerve (short head)", roots: "L5-S2", action: "knee flexion and hip extension", group: "lower extremity" },
+  { name: "Semimembranosus", innervation: "Tibial nerve", roots: "L5-S2", action: "knee flexion and hip extension", group: "lower extremity" },
+  { name: "Semitendinosus", innervation: "Tibial nerve", roots: "L5-S2", action: "knee flexion and hip extension", group: "lower extremity" },
+  { name: "Tibialis Anterior", innervation: "Deep fibular nerve", roots: "L4-L5", action: "ankle dorsiflexion and foot inversion", group: "lower extremity" },
+  { name: "Gastrocnemius", innervation: "Tibial nerve", roots: "S1-S2", action: "ankle plantarflexion and knee flexion", group: "lower extremity" },
+  { name: "Soleus", innervation: "Tibial nerve", roots: "S1-S2", action: "ankle plantarflexion", group: "lower extremity" },
+  { name: "Tibialis Posterior", innervation: "Tibial nerve", roots: "L4-L5", action: "ankle plantarflexion and foot inversion", group: "lower extremity" },
+  { name: "Fibularis Longus", innervation: "Superficial fibular nerve", roots: "L5-S1", action: "ankle plantarflexion and foot eversion", group: "lower extremity" }
+];
+
+const CRANIAL_NERVES_DB = [
+  { name: "Olfactory nerve (CN I)", function: "Smell", test: "testing identification of common aromatic odors", lesion: "Anosmia (loss of smell)" },
+  { name: "Optic nerve (CN II)", function: "Vision", test: "visual acuity testing via Snellen chart and visual fields assessment", lesion: "Blindness or visual field deficits" },
+  { name: "Oculomotor nerve (CN III)", function: "Pupil constriction and the majority of extraocular eye movements", test: "pupillary light reflex and tracking finger movements", lesion: "Ptosis, dilated pupil, and outward deviation of the eye" },
+  { name: "Trochlear nerve (CN IV)", function: "Superior oblique muscle motor control (downward and inward eye movement)", test: "tracking objects down and inward towards the nose", lesion: "Diplopia when looking down (e.g. reading, walking down stairs)" },
+  { name: "Trigeminal nerve (CN V)", function: "Facial sensation and motor control of the muscles of mastication", test: "testing facial touch sensation and clenching teeth", lesion: "Trigeminal neuralgia or loss of facial sensation and chewing weakness" },
+  { name: "Abducens nerve (CN VI)", function: "Lateral rectus muscle motor control (lateral eye abduction)", test: "tracking finger movements laterally outward", lesion: "Medial strabismus or inability to abduct the eye" },
+  { name: "Facial nerve (CN VII)", function: "Muscles of facial expression and taste on the anterior two-thirds of the tongue", test: "smiling, puffing cheeks, raising eyebrows, and tasting sweet/salty items", lesion: "Bell's palsy (ipsilateral facial paralysis) and loss of taste" },
+  { name: "Vestibulocochlear nerve (CN VIII)", function: "Hearing and equilibrium/balance", test: "whisper test, Weber/Rinne tuning fork tests, and Romberg balance test", lesion: "Deafness, tinnitus, vertigo, and nystagmus" },
+  { name: "Glossopharyngeal nerve (CN IX)", function: "Sensation/taste on the posterior third of the tongue and swallowing", test: "gag reflex and swallowing evaluations", lesion: "Dysphagia and loss of the gag reflex" },
+  { name: "Vagus nerve (CN X)", function: "Visceral parasympathetics, vocal cords, swallowing, and soft palate elevation", test: "saying 'Ah' to observe symmetrical elevation of the soft palate and uvula", lesion: "Uvula deviating to the opposite side and hoarse voice" },
+  { name: "Spinal Accessory nerve (CN XI)", function: "Motor control of the sternocleidomastoid and trapezius muscles", test: "shrugging shoulders and rotating head against resistance", lesion: "Weakness in shoulder shrugging and head rotation" },
+  { name: "Hypoglossal nerve (CN XII)", function: "Motor control of all intrinsic and extrinsic tongue muscles", test: "protruding the tongue and checking for lateral deviation", lesion: "Tongue deviating toward the side of the lesion when protruded" }
+];
+
+const SPINALTRACTS_DB = [
+  { name: "Lateral Corticospinal tract", function: "Voluntary fine motor control of the limbs", decussation: "Medullary pyramids", lesion: "Spasticity, hyperreflexia, and positive Babinski sign" },
+  { name: "Lateral Spinothalamic tract", function: "Pain and temperature sensation", decussation: "Spinal cord entry level (anterior white commissure)", lesion: "Contralateral loss of pain and temperature sensation" },
+  { name: "Dorsal Columns (DCML)", function: "Proprioception, vibration, and fine touch", decussation: "Medulla oblongata (internal arcuate fibers)", lesion: "Ipsilateral loss of proprioception, vibration, and fine touch" },
+  { name: "Ventral Spinocerebellar tract", function: "Unconscious proprioception from the lower extremities", decussation: "Spinal cord (crosses twice, net ipsilateral)", lesion: "Ataxia and lack of limb coordination" },
+  { name: "Vestibulospinal tract", function: "Postural adjustments, muscle tone, and head balance", decussation: "Does not cross (uncrossed)", lesion: "Impaired postural balance reflexes" }
+];
+
+const KINESIOLOGY_DB = [
+  { joint: "Glenohumeral joint", type: "Ball-and-socket joint", closePacked: "Full abduction and external rotation", openPacked: "55 degrees abduction, 30 degrees horizontal adduction" },
+  { joint: "Hip joint", type: "Ball-and-socket joint", closePacked: "Full extension, internal rotation, and abduction", openPacked: "30 degrees flexion, 30 degrees abduction, slight external rotation" },
+  { joint: "Knee joint (humerotibial)", type: "Modified hinge joint", closePacked: "Full extension and tibial external rotation", openPacked: "25 degrees flexion" },
+  { joint: "Talocrural joint (ankle)", type: "Hinge joint", closePacked: "Maximum ankle dorsiflexion", openPacked: "10 degrees plantarflexion, midway between inversion and eversion" },
+  { joint: "Humeroulnar joint (elbow)", type: "Hinge joint", closePacked: "Full elbow extension", openPacked: "70 degrees flexion, 10 degrees supination" },
+  { joint: "Radiocarpal joint (wrist)", type: "Condyloid joint", closePacked: "Full wrist extension with radial deviation", openPacked: "Neutral, slight ulnar deviation" }
+];
+
+const PHYSIOLOGY_DB = [
+  { parameter: "Tidal Volume (VT)", normalValue: "500 ml", definition: "the volume of air inspired or expired during a single normal, quiet breath" },
+  { parameter: "Inspiratory Reserve Volume (IRV)", normalValue: "3000 ml", definition: "the maximum volume of air that can be inspired after a normal tidal inspiration" },
+  { parameter: "Expiratory Reserve Volume (ERV)", normalValue: "1100 ml", definition: "the maximum volume of air that can be exhaled after a normal tidal expiration" },
+  { parameter: "Residual Volume (RV)", normalValue: "1200 ml", definition: "the volume of air remaining in the lungs after a maximal forced expiration" },
+  { parameter: "Vital Capacity (VC)", normalValue: "4600 ml", definition: "the maximum volume of air that can be expired after a maximal inspiration (VT + IRV + ERV)" },
+  { parameter: "Total Lung Capacity (TLC)", normalValue: "5800 ml", definition: "the total volume of air the lungs can contain after a maximal inspiration (VT + IRV + ERV + RV)" }
+];
+
+const ITPT_LAWS_DB = [
+  { title: "Republic Act 5680", date: "June 1969", description: "The Philippine Physical Therapy and Occupational Therapy Law regulating licensing and board compositions" },
+  { title: "Republic Act 7277", date: "March 1992", description: "The Magna Carta for Disabled Persons, securing rights and welfare for individuals with disabilities" },
+  { title: "Republic Act 9442", date: "April 2007", description: "The amendment expanding privileges and discounts (such as 20% discounts) for persons with disabilities" },
+  { title: "PPTA founding", date: "December 8, 1964", description: "The establishment of the Philippine Physical Therapy Association, the official national organization" }
+];
+
+// Procedurally generates questions based on matrices to reach a target count
+function generateProceduralQuestions(topic, countNeeded) {
+  let generated = [];
+  let idIndex = 0;
+  
+  if (topic === "OSA" || topic === "KINES") {
+    // Generate muscle and joint questions
+    MUSCLES_DB.forEach(muscle => {
+      // Question Type 1: Muscle Innervation
+      let wrongInnervations = MUSCLES_DB
+        .map(m => m.innervation)
+        .filter((v, i, s) => s.indexOf(v) === i && v !== muscle.innervation)
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3);
+      
+      generated.push({
+        id: `${topic.toLowerCase()}_gen_inn_${idIndex++}`,
+        question: `Which nerve innervates the ${muscle.name} muscle?`,
+        options: [muscle.innervation, ...wrongInnervations],
+        answer: 0,
+        explanation: `The ${muscle.name} is innervated by the ${muscle.innervation} (${muscle.roots}).`
+      });
+      
+      // Question Type 2: Muscle Action
+      let wrongActions = MUSCLES_DB
+        .map(m => m.action)
+        .filter((v, i, s) => s.indexOf(v) === i && v !== muscle.action)
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3);
+        
+      generated.push({
+        id: `${topic.toLowerCase()}_gen_act_${idIndex++}`,
+        question: `What is the primary action of the ${muscle.name} muscle?`,
+        options: [muscle.action, ...wrongActions],
+        answer: 0,
+        explanation: `The primary action of the ${muscle.name} muscle is ${muscle.action}.`
+      });
+      
+      // Question Type 3: Nerve root roots
+      let wrongRoots = MUSCLES_DB
+        .map(m => m.roots)
+        .filter((v, i, s) => s.indexOf(v) === i && v !== muscle.roots)
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3);
+        
+      generated.push({
+        id: `${topic.toLowerCase()}_gen_root_${idIndex++}`,
+        question: `Which of the following spinal nerve roots supply the ${muscle.name}?`,
+        options: [muscle.roots, ...wrongRoots],
+        answer: 0,
+        explanation: `The ${muscle.name} receives fibers from spinal roots ${muscle.roots}.`
+      });
+    });
+
+    if (topic === "KINES") {
+      KINESIOLOGY_DB.forEach(k => {
+        // Joint type
+        let wrongTypes = KINESIOLOGY_DB
+          .map(j => j.type)
+          .filter((v, i, s) => s.indexOf(v) === i && v !== k.type)
+          .sort(() => Math.random() - 0.5)
+          .slice(0, 3);
+        generated.push({
+          id: `kines_gen_type_${idIndex++}`,
+          question: `What class of joint is the ${k.joint}?`,
+          options: [k.type, ...wrongTypes],
+          answer: 0,
+          explanation: `The ${k.joint} is structurally classified as a ${k.type}.`
+        });
+        
+        // Close packed position
+        let wrongClose = KINESIOLOGY_DB
+          .map(j => j.closePacked)
+          .filter((v, i, s) => s.indexOf(v) === i && v !== k.closePacked)
+          .sort(() => Math.random() - 0.5)
+          .slice(0, 3);
+        generated.push({
+          id: `kines_gen_close_${idIndex++}`,
+          question: `What is the close-packed position for the ${k.joint}?`,
+          options: [k.closePacked, ...wrongClose],
+          answer: 0,
+          explanation: `The close-packed position of the ${k.joint} is ${k.closePacked}.`
+        });
+      });
+    }
+  } 
+  
+  else if (topic === "NEUROSCI") {
+    // Generate Cranial Nerve and Spinal Tract questions
+    CRANIAL_NERVES_DB.forEach(cn => {
+      // Cranial Nerve Function
+      let wrongFuncs = CRANIAL_NERVES_DB
+        .map(c => c.function)
+        .filter((v, i, s) => s.indexOf(v) === i && v !== cn.function)
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3);
+      generated.push({
+        id: `neuro_gen_func_${idIndex++}`,
+        question: `What is the primary function of the ${cn.name}?`,
+        options: [cn.function, ...wrongFuncs],
+        answer: 0,
+        explanation: `The ${cn.name} is responsible for ${cn.function}.`
+      });
+      
+      // Cranial Nerve Test
+      let wrongTests = CRANIAL_NERVES_DB
+        .map(c => c.test)
+        .filter((v, i, s) => s.indexOf(v) === i && v !== cn.test)
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3);
+      generated.push({
+        id: `neuro_gen_test_${idIndex++}`,
+        question: `Which clinical evaluation test is most appropriate to check the integrity of the ${cn.name}?`,
+        options: [cn.test, ...wrongTests],
+        answer: 0,
+        explanation: `Testing the ${cn.name} involves ${cn.test}.`
+      });
+      
+      // Cranial Nerve Lesion
+      let wrongLesions = CRANIAL_NERVES_DB
+        .map(c => c.lesion)
+        .filter((v, i, s) => s.indexOf(v) === i && v !== cn.lesion)
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3);
+      generated.push({
+        id: `neuro_gen_les_${idIndex++}`,
+        question: `A complete lesion of the ${cn.name} is most likely to result in which deficit?`,
+        options: [cn.lesion, ...wrongLesions],
+        answer: 0,
+        explanation: `Damage to the ${cn.name} results in ${cn.lesion}.`
+      });
+    });
+    
+    // Spinal Tracts
+    SPINALTRACTS_DB.forEach(tract => {
+      let wrongFuncs = SPINALTRACTS_DB
+        .map(t => t.function)
+        .filter((v, i, s) => s.indexOf(v) === i && v !== tract.function)
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3);
+      generated.push({
+        id: `neuro_gen_tract_f_${idIndex++}`,
+        question: `What is the primary function of the ${tract.name}?`,
+        options: [tract.function, ...wrongFuncs],
+        answer: 0,
+        explanation: `The ${tract.name} primarily transmits ${tract.function}.`
+      });
+    });
+  } 
+  
+  else if (topic === "PHYSIO") {
+    // Generate respiratory volume and cardiac output physiology questions
+    PHYSIOLOGY_DB.forEach(p => {
+      let wrongValues = PHYSIOLOGY_DB
+        .map(vol => vol.normalValue)
+        .filter((v, i, s) => s.indexOf(v) === i && v !== p.normalValue)
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3);
+      generated.push({
+        id: `phys_gen_val_${idIndex++}`,
+        question: `What is the average healthy adult resting volume for ${p.parameter}?`,
+        options: [p.normalValue, ...wrongValues],
+        answer: 0,
+        explanation: `The typical normal value for the ${p.parameter} is approximately ${p.normalValue}.`
+      });
+      
+      let wrongDefs = PHYSIOLOGY_DB
+        .map(vol => vol.definition)
+        .filter((v, i, s) => s.indexOf(v) === i && v !== p.definition)
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3);
+      generated.push({
+        id: `phys_gen_def_${idIndex++}`,
+        question: `Physiologically, how is '${p.parameter}' defined?`,
+        options: [p.definition, ...wrongDefs],
+        answer: 0,
+        explanation: `${p.parameter} is defined as ${p.definition}.`
+      });
+    });
+  } 
+  
+  else if (topic === "ITPT") {
+    // Generate laws and history questions
+    ITPT_LAWS_DB.forEach(law => {
+      let wrongDates = ITPT_LAWS_DB
+        .map(l => l.date)
+        .filter((v, i, s) => s.indexOf(v) === i && v !== law.date)
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3);
+      generated.push({
+        id: `itpt_gen_date_${idIndex++}`,
+        question: `In what month and year was the ${law.title} officially enacted or established?`,
+        options: [law.date, ...wrongDates],
+        answer: 0,
+        explanation: `${law.title} took place in ${law.date}.`
+      });
+      
+      let wrongDescs = ITPT_LAWS_DB
+        .map(l => l.description)
+        .filter((v, i, s) => s.indexOf(v) === i && v !== law.description)
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3);
+      generated.push({
+        id: `itpt_gen_desc_${idIndex++}`,
+        question: `Which option matches the purpose of ${law.title}?`,
+        options: [law.description, ...wrongDescs],
+        answer: 0,
+        explanation: `${law.title} is defined as ${law.description}.`
+      });
+    });
+  }
+
+  // Pad out with extra clones if needed, modifying questions slightly to ensure uniqueness
+  let padIndex = 1;
+  while (generated.length < countNeeded) {
+    if (topic === "OSA" || topic === "KINES") {
+      let muscle = MUSCLES_DB[padIndex % MUSCLES_DB.length];
+      generated.push({
+        id: `${topic.toLowerCase()}_pad_${padIndex++}`,
+        question: `A patient exhibits severe weakness during ${muscle.action}. Which spinal roots or nerve is most likely compromised?`,
+        options: [`${muscle.innervation} (${muscle.roots})`, "Radial nerve (C7-C8)", "Ulnar nerve (C8-T1)", "Femoral nerve (L2-L4)"],
+        answer: 0,
+        explanation: `Weakness in ${muscle.action} points to the ${muscle.name}, which is supplied by the ${muscle.innervation} (${muscle.roots}).`
+      });
+    } else if (topic === "NEUROSCI") {
+      let cn = CRANIAL_NERVES_DB[padIndex % CRANIAL_NERVES_DB.length];
+      generated.push({
+        id: `neuro_pad_${padIndex++}`,
+        question: `If a patient presents with ${cn.lesion}, which cranial nerve is suspected to be damaged?`,
+        options: [cn.name, "Trigeminal nerve (CN V)", "Vagus nerve (CN X)", "Facial nerve (CN VII)"],
+        answer: 0,
+        explanation: `${cn.lesion} is a classic sign of damage to the ${cn.name}.`
+      });
+    } else {
+      generated.push({
+        id: `pad_${padIndex++}`,
+        question: `[Board Review] In physical therapy board exams, which of the following is crucial for ${topic}?`,
+        options: ["Reviewing foundational anatomy and clinical physiology", "Memorizing patient names", "Practicing surgery", "Setting up billing programs"],
+        answer: 0,
+        explanation: `Board preparation in ${topic} requires mastering baseline sciences and application criteria.`
+      });
+    }
+  }
+
+  return generated;
+}
+
+// Fetches list of questions, padding and shuffling to return exactly limit items
 function getQuestionsForTopic(topic, limit = 25) {
   let baseQuestions = [...(QUESTION_BANK[topic] || [])];
   
-  // Shuffles array
-  baseQuestions.sort(() => Math.random() - 0.5);
-  
-  if (baseQuestions.length >= limit) {
-    return baseQuestions.slice(0, limit);
+  // Combine base questions with procedurally generated questions
+  let combinedPool = [...baseQuestions];
+  if (combinedPool.length < limit) {
+    let needed = limit - combinedPool.length;
+    let extraQuestions = generateProceduralQuestions(topic, needed);
+    combinedPool = [...combinedPool, ...extraQuestions];
   }
   
-  // If we need more (e.g. 50 items for exams), generate realistic variations
-  // using templates to make the exam 100% full and highly detailed
-  let generated = [...baseQuestions];
-  let idCounter = 1;
+  // Shuffle the combined questions
+  combinedPool.sort(() => Math.random() - 0.5);
   
-  const templates = {
-    ITPT: [
-      {
-        question: "Under RA 5680, a Physical Therapist who practices without a valid registration is subject to which penalty?",
-        options: ["Fine of 2,000 to 5,000 PHP and/or imprisonment", "A verbal warning from PPTA", "Suspension of high school diploma", "No penalty applies"],
-        answer: 0,
-        explanation: "RA 5680 outlines strict penal provisions including fines and imprisonment for unlicensed practice of PT."
-      },
-      {
-        question: "Which ethical principle requires a physical therapist to be truthful and honest with patients?",
-        options: ["Veracity", "Fidelity", "Paternalism", "Autonomy"],
-        answer: 0,
-        explanation: "Veracity refers to the obligation of the healthcare provider to be honest and tell the truth."
-      },
-      {
-        question: "In what year was the first PT school in the Philippines established at the University of the Philippines?",
-        options: ["1962", "1969", "1975", "1950"],
-        answer: 0,
-        explanation: "The School of Allied Medical Professions (SAMP) at UP was established in 1962, pioneering PT education in the Philippines."
-      }
-    ],
-    OSA: [
-      {
-        question: "The posterior cerebral artery originates directly from which blood vessel?",
-        options: ["Internal carotid artery", "Basilar artery", "Middle cerebral artery", "Vertebral artery"],
-        answer: 1,
-        explanation: "The basilar artery bifurcates at its superior end to form the left and right posterior cerebral arteries (PCA)."
-      },
-      {
-        question: "Which muscle is innervated by the musculocutaneous nerve?",
-        options: ["Coracobrachialis", "Triceps brachii", "Pronator teres", "Deltoid"],
-        answer: 0,
-        explanation: "The musculocutaneous nerve (C5-C7) innervates the biceps brachii, brachialis, and coracobrachialis muscles."
-      },
-      {
-        question: "What muscle is primarily responsible for scapular winging when weak or paralyzed?",
-        options: ["Serratus anterior", "Trapezius", "Rhomboid major", "Pectoralis minor"],
-        answer: 0,
-        explanation: "Winging of the scapula is caused by weakness of the serratus anterior muscle, often due to injury of the long thoracic nerve."
-      }
-    ],
-    PHYSIO: [
-      {
-        question: "What is the typical resting membrane potential of a skeletal muscle fiber?",
-        options: ["-90 mV", "-70 mV", "+30 mV", "0 mV"],
-        answer: 0,
-        explanation: "Skeletal muscle fibers have a highly negative resting membrane potential of approximately -90 mV."
-      },
-      {
-        question: "Which hormone increases blood pressure by promoting renal sodium retention and vasoconstriction?",
-        options: ["Angiotensin II", "Progesterone", "ANP (Atrial Natriuretic Peptide)", "Thyroxine"],
-        answer: 0,
-        explanation: "Angiotensin II is a potent vasoconstrictor and triggers aldosterone release, raising systemic blood pressure."
-      },
-      {
-        question: "What is the functional consequence of the absolute refractory period in cardiac muscle cells?",
-        options: [
-          "Prevents tetanic contractions, allowing the heart to pump rhythmically",
-          "Speeds up heart rate to dangerous levels",
-          "Causes fatigue in cardiac muscle",
-          "Allows the ventricles to depolarize without contracting"
-        ],
-        answer: 0,
-        explanation: "The long absolute refractory period in cardiac myocytes prevents summation and tetany, ensuring the ventricles can relax and fill with blood."
-      }
-    ],
-    KINES: [
-      {
-        question: "What type of kinematic chain is present when the hand is free to move during a dumbbell shoulder press?",
-        options: ["Open kinetic chain", "Closed kinetic chain", "Static chain", "Friction chain"],
-        answer: 0,
-        explanation: "Because the hand holding the dumbbell moves freely in space, this is classified as an open kinetic chain (OKC) exercise."
-      },
-      {
-        question: "Which phase of the gait cycle has the maximum demand on the quadriceps for shock absorption?",
-        options: ["Loading response (heel strike to flat foot)", "Terminal stance", "Midswing", "Preswing"],
-        answer: 0,
-        explanation: "During loading response, the quadriceps contract eccentrically to control knee flexion and absorb shock as body weight transfers onto the limb."
-      },
-      {
-        question: "What is the term for the movement of a bone about its own longitudinal axis?",
-        options: ["Rotation", "Circumduction", "Translation", "Lateral flexion"],
-        answer: 0,
-        explanation: "Rotation is the osteokinematic term describing turning of a bone around its longitudinal axis."
-      }
-    ],
-    NEUROSCI: [
-      {
-        question: "Which cranial nerve carries general sensory fibers from the posterior one-third of the tongue?",
-        options: ["CN IX (Glossopharyngeal)", "CN VII (Facial)", "CN V (Trigeminal)", "CN XII (Hypoglossal)"],
-        answer: 0,
-        explanation: "CN IX (Glossopharyngeal) provides both taste and general sensation to the posterior 1/3 of the tongue."
-      },
-      {
-        question: "A patient with a cerebellar lesion is unable to perform rapid alternating movements (like forearm pronation/supination). What is this sign called?",
-        options: ["Dysdiadochokinesia", "Dysmetria", "Ataxia", "Intention tremor"],
-        answer: 0,
-        explanation: "Dysdiadochokinesia is the clinical term for the inability to perform rapid, alternating, rhythmic movements."
-      },
-      {
-        question: "Which neurotransmitter is severely depleted in the brain of patients with Alzheimer's disease?",
-        options: ["Acetylcholine", "Dopamine", "Serotonin", "GABA"],
-        answer: 0,
-        explanation: "Alzheimer's is associated with a profound loss of cholinergic neurons in the basal forebrain, leading to a shortage of acetylcholine."
-      }
-    ]
-  };
+  // Slice to the requested limit
+  let slicedQuestions = combinedPool.slice(0, limit);
 
-  // Pull dynamic templates to pad out to the requested limit
-  let extraPool = templates[topic] || [];
-  extraPool.forEach(q => {
-    if (generated.length < limit) {
-      generated.push({
-        ...q,
-        id: `${topic.toLowerCase()}_dyn_${idCounter++}`
-      });
-    }
-  });
-
-  // If we still need more, generate variations by copying base questions and slightly altering them
-  let i = 0;
-  while (generated.length < limit && baseQuestions.length > 0) {
-    let source = baseQuestions[i % baseQuestions.length];
-    generated.push({
-      id: `${source.id}_var_${idCounter++}`,
-      question: `[RE-REVIEW CHALLENGE] ${source.question}`,
-      options: [...source.options],
-      answer: source.answer,
-      explanation: `Review explanation: ${source.explanation}`
-    });
-    i++;
-  }
-
-  // Shuffle the final list to mix base and generated questions
-  let shuffledQuestions = generated.sort(() => Math.random() - 0.5).slice(0, limit);
-
-  // Scramble the options and update the answer index for each question
-  return shuffledQuestions.map(q => {
+  // Scramble the options and update the correct answer index for every question
+  return slicedQuestions.map(q => {
     const correctOptionText = q.options[q.answer];
     let scrambledOptions = [...q.options];
     scrambledOptions.sort(() => Math.random() - 0.5);

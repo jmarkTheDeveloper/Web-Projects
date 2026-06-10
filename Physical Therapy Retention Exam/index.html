@@ -51,6 +51,10 @@
         <span class="nav-icon">🎮</span>
         <span class="nav-label">Practice</span>
       </button>
+      <button class="nav-item" data-tab="progress" onclick="switchTab('progress')">
+        <span class="nav-icon">📈</span>
+        <span class="nav-label">Progress</span>
+      </button>
       <button class="nav-item" data-tab="settings" onclick="switchTab('settings')">
         <span class="nav-icon">🎨</span>
         <span class="nav-label">Themes</span>
@@ -185,7 +189,7 @@
                 <option value="NEUROSCI">Neuroscience (NEUROSCI)</option>
               </select>
             </div>
-            <button class="test-card-btn" onclick="startPractice('quiz')">Launch Quiz (25 Qs)</button>
+            <button class="test-card-btn" onclick="startPractice('quiz')">Launch Quiz (100 Qs)</button>
             <button class="test-card-btn" onclick="resetPracticeViews()" style="background: transparent; border: 1px solid var(--border-color); color: var(--text-muted); margin-top: 8px;">← Back to Arena</button>
           </div>
           
@@ -202,7 +206,7 @@
                 <option value="NEUROSCI">Neuroscience (NEUROSCI)</option>
               </select>
             </div>
-            <button class="test-card-btn" onclick="startPractice('exam')">Launch Mock Exam (50 Qs)</button>
+            <button class="test-card-btn" onclick="startPractice('exam')">Launch Mock Exam (600 Qs)</button>
             <button class="test-card-btn" onclick="resetPracticeViews()" style="background: transparent; border: 1px solid var(--border-color); color: var(--text-muted); margin-top: 8px;">← Back to Arena</button>
           </div>
           
@@ -245,6 +249,56 @@
                   </div>
                 </div>
                 <button class="test-card-btn" onclick="startMatcherGame()" style="width: 80px; padding: 6px;">Start</button>
+              </div>
+              <div class="test-card" style="padding: 16px; flex-direction: row; align-items: center; justify-content: space-between; text-align: left;">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <div style="font-size: 24px;">🟢</div>
+                  <div>
+                    <div style="font-weight: 800; font-size: 14px;">Connect the Dots</div>
+                    <p style="font-size: 11px; color: var(--text-muted);">Arrange a physiological pathway in the correct sequence.</p>
+                  </div>
+                </div>
+                <button class="test-card-btn" onclick="startDotsGame()" style="width: 80px; padding: 6px;">Start</button>
+              </div>
+              <div class="test-card" style="padding: 16px; flex-direction: row; align-items: center; justify-content: space-between; text-align: left;">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <div style="font-size: 24px;">🔍</div>
+                  <div>
+                    <div style="font-weight: 800; font-size: 14px;">Guess the Answer</div>
+                    <p style="font-size: 11px; color: var(--text-muted);">Solve clinical cases by typing the exact terms.</p>
+                  </div>
+                </div>
+                <button class="test-card-btn" onclick="startGuessGame()" style="width: 80px; padding: 6px;">Start</button>
+              </div>
+              <div class="test-card" style="padding: 16px; flex-direction: row; align-items: center; justify-content: space-between; text-align: left;">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <div style="font-size: 24px;">✏️</div>
+                  <div>
+                    <div style="font-weight: 800; font-size: 14px;">Complete the Word</div>
+                    <p style="font-size: 11px; color: var(--text-muted);">Fill in the missing letters of a hidden PT term.</p>
+                  </div>
+                </div>
+                <button class="test-card-btn" onclick="startCompleteWordGame()" style="width: 80px; padding: 6px;">Start</button>
+              </div>
+              <div class="test-card" style="padding: 16px; flex-direction: row; align-items: center; justify-content: space-between; text-align: left;">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <div style="font-size: 24px;">💡</div>
+                  <div>
+                    <div style="font-weight: 800; font-size: 14px;">4 Words 1 Answer</div>
+                    <p style="font-size: 11px; color: var(--text-muted);">Deduce the PT term from 4 clues and spell it out.</p>
+                  </div>
+                </div>
+                <button class="test-card-btn" onclick="startFourWordsGame()" style="width: 80px; padding: 6px;">Start</button>
+              </div>
+              <div class="test-card" style="padding: 16px; flex-direction: row; align-items: center; justify-content: space-between; text-align: left;">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <div style="font-size: 24px;">📦</div>
+                  <div>
+                    <div style="font-weight: 800; font-size: 14px;">Pandora's Box</div>
+                    <p style="font-size: 11px; color: var(--text-muted);">Answer questions, choose boxes, and battle the clinical CI Bot!</p>
+                  </div>
+                </div>
+                <button class="test-card-btn" onclick="startPandoraGame()" style="width: 80px; padding: 6px;">Start</button>
               </div>
             </div>
             
@@ -312,6 +366,136 @@
             </div>
           </div>
           
+          <!-- Connect the Dots Game Session -->
+          <div class="test-session-container" id="dots-session" style="display: none; max-width: 600px;">
+            <div class="session-header">
+              <div>
+                <div style="font-size: 12px; font-weight: 800; color: var(--accent-color); text-transform: uppercase;">Connect the Dots</div>
+                <div id="dots-pathway-title" style="font-size: 16px; font-weight: 800; margin-top: 4px;">Pathway Title</div>
+              </div>
+              <button class="sub-tab-btn" onclick="resetPracticeViews()" style="font-size: 11px; padding: 6px 12px;">← Quit</button>
+            </div>
+            <div class="question-card" style="padding: 24px; display: flex; flex-direction: column; gap: 20px; text-align: center;">
+              <p style="font-size: 13px; color: var(--text-muted); line-height: 1.5;">Arrange the nodes in the correct sequential order of the physiological pathway!</p>
+              <div id="dots-nodes-container" style="display: flex; flex-direction: column; gap: 10px; margin: 15px 0;"></div>
+              <div id="dots-feedback" style="min-height: 24px; font-weight: 700; font-size: 14px;"></div>
+            </div>
+          </div>
+
+          <!-- Guess the Answer Game Session -->
+          <div class="test-session-container" id="guess-session" style="display: none; max-width: 600px;">
+            <div class="session-header">
+              <div>
+                <div style="font-size: 12px; font-weight: 800; color: var(--accent-color); text-transform: uppercase;">Guess the Answer</div>
+                <div id="guess-round-indicator" style="font-size: 16px; font-weight: 800; margin-top: 4px;">Round 1 of 5</div>
+              </div>
+              <button class="sub-tab-btn" onclick="resetPracticeViews()" style="font-size: 11px; padding: 6px 12px;">← Quit</button>
+            </div>
+            <div class="question-card" style="padding: 24px; display: flex; flex-direction: column; gap: 20px; text-align: center; align-items: center;">
+              <div id="guess-clue" style="font-size: 14px; font-weight: 500; color: var(--text-muted); line-height: 1.6;">Clue...</div>
+              <div id="guess-slots" style="display: flex; gap: 6px; justify-content: center; margin: 15px 0; flex-wrap: wrap;"></div>
+              <div id="guess-keyboard" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; max-width: 400px; width: 100%;"></div>
+              <div id="guess-feedback" style="min-height: 24px; font-weight: 700; font-size: 14px;"></div>
+            </div>
+          </div>
+
+          <!-- Complete the Word Game Session -->
+          <div class="test-session-container" id="complete-session" style="display: none; max-width: 600px;">
+            <div class="session-header">
+              <div>
+                <div style="font-size: 12px; font-weight: 800; color: var(--accent-color); text-transform: uppercase;">Complete the Word</div>
+                <div id="complete-round-indicator" style="font-size: 16px; font-weight: 800; margin-top: 4px;">Round 1 of 5</div>
+              </div>
+              <button class="sub-tab-btn" onclick="resetPracticeViews()" style="font-size: 11px; padding: 6px 12px;">← Quit</button>
+            </div>
+            <div class="question-card" style="padding: 24px; display: flex; flex-direction: column; gap: 20px; text-align: center; align-items: center;">
+              <div id="complete-clue" style="font-size: 14px; font-weight: 500; color: var(--text-muted); line-height: 1.6;">Clue...</div>
+              <div id="complete-word-display" style="font-size: 28px; font-weight: 800; letter-spacing: 4px; color: var(--primary-color); margin: 15px 0;">S _ R R _ T _ S</div>
+              <div id="complete-choices" style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;"></div>
+              <div id="complete-feedback" style="min-height: 24px; font-weight: 700; font-size: 14px;"></div>
+            </div>
+          </div>
+
+          <!-- 4 Words 1 Answer Game Session -->
+          <div class="test-session-container" id="four-words-session" style="display: none; max-width: 600px;">
+            <div class="session-header">
+              <div>
+                <div style="font-size: 12px; font-weight: 800; color: var(--accent-color); text-transform: uppercase;">4 Words 1 Answer</div>
+                <div id="four-words-round-indicator" style="font-size: 16px; font-weight: 800; margin-top: 4px;">Round 1 of 5</div>
+              </div>
+              <button class="sub-tab-btn" onclick="resetPracticeViews()" style="font-size: 11px; padding: 6px 12px;">← Quit</button>
+            </div>
+            <div class="question-card" style="padding: 24px; display: flex; flex-direction: column; gap: 20px; text-align: center; align-items: center;">
+              <!-- Clue Grid -->
+              <div class="four-clues-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 100%;">
+                <div class="clue-box" id="clue1" style="background: rgba(255,255,255,0.02); padding: 12px; border: var(--border-style); border-radius: var(--radius-md); font-weight: bold;">Clue 1</div>
+                <div class="clue-box" id="clue2" style="background: rgba(255,255,255,0.02); padding: 12px; border: var(--border-style); border-radius: var(--radius-md); font-weight: bold;">Clue 2</div>
+                <div class="clue-box" id="clue3" style="background: rgba(255,255,255,0.02); padding: 12px; border: var(--border-style); border-radius: var(--radius-md); font-weight: bold;">Clue 3</div>
+                <div class="clue-box" id="clue4" style="background: rgba(255,255,255,0.02); padding: 12px; border: var(--border-style); border-radius: var(--radius-md); font-weight: bold;">Clue 4</div>
+              </div>
+              
+              <!-- Spell slots -->
+              <div id="four-words-slots" style="display: flex; gap: 6px; justify-content: center; margin: 15px 0; min-height: 40px; flex-wrap: wrap;"></div>
+              
+              <!-- Tap options -->
+              <div id="four-words-options" style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 10px; max-width: 400px;"></div>
+              
+              <div style="display: flex; gap: 10px; width: 100%; justify-content: center;">
+                <button class="test-card-btn" onclick="clearFourWordsSpell()" style="background: transparent; border: 1px solid var(--border-color); color: var(--text-muted); width: 120px;">Clear</button>
+                <button class="test-card-btn" onclick="submitFourWordsSpell()" id="four-words-submit-btn" style="width: 120px;">Submit</button>
+              </div>
+              <div id="four-words-feedback" style="min-height: 24px; font-weight: 700; font-size: 14px;"></div>
+            </div>
+          </div>
+
+          <!-- Pandora's Box Game Session -->
+          <div class="test-session-container" id="pandora-session" style="display: none; max-width: 650px;">
+            <div class="session-header">
+              <div>
+                <div style="font-size: 12px; font-weight: 800; color: var(--accent-color); text-transform: uppercase;">Pandora's Box Challenge</div>
+                <div id="pandora-round-indicator" style="font-size: 16px; font-weight: 800; margin-top: 4px;">Round 1 of 5</div>
+              </div>
+              <button class="sub-tab-btn" onclick="resetPracticeViews()" style="font-size: 11px; padding: 6px 12px;">← Quit</button>
+            </div>
+            
+            <!-- AI Bot Panel -->
+            <div class="bot-challenger-card" style="background: rgba(99, 102, 241, 0.08); border: 2px solid var(--primary-color); padding: 14px; border-radius: var(--radius-lg); display: flex; gap: 12px; align-items: center; margin-bottom: 12px;">
+              <div style="font-size: 36px; animation: float 3s infinite ease-in-out;">🤖</div>
+              <div style="flex: 1; text-align: left;">
+                <div style="font-size: 11px; font-weight: 800; color: var(--primary-color); text-transform: uppercase;">Clinical CI Instructor Bot</div>
+                <div id="bot-message" style="font-size: 13px; color: var(--text-main); font-weight: 500; margin-top: 2px;">Greetings, Student. Let's see if you can answer my question and survive the Pandora's Box!</div>
+              </div>
+            </div>
+
+            <!-- Question View -->
+            <div id="pandora-question-card" class="question-card">
+              <!-- Question options rendered here -->
+            </div>
+            
+            <!-- Box Selection View (initially hidden) -->
+            <div id="pandora-boxes-card" class="question-card" style="display: none; text-align: center;">
+              <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 15px;">Correct Answer! Choose a Box</h3>
+              <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 20px;">Open a box to roll for bonuses, multipliers, or penalties!</p>
+              
+              <div class="boxes-layout" style="display: flex; gap: 16px; justify-content: center; margin: 20px 0;">
+                <div class="pandora-box-item" id="pbox-A" onclick="choosePandoraBox('A')" style="cursor: pointer; flex: 1; background: rgba(0,0,0,0.2); border: 2px solid var(--border-color); padding: 20px; border-radius: var(--radius-lg); transition: all 0.2s ease;">
+                  <div class="box-icon" style="font-size: 40px; margin-bottom: 8px;">📦</div>
+                  <div style="font-weight: 800; font-size: 14px;">Box A</div>
+                </div>
+                <div class="pandora-box-item" id="pbox-B" onclick="choosePandoraBox('B')" style="cursor: pointer; flex: 1; background: rgba(0,0,0,0.2); border: 2px solid var(--border-color); padding: 20px; border-radius: var(--radius-lg); transition: all 0.2s ease;">
+                  <div class="box-icon" style="font-size: 40px; margin-bottom: 8px;">📦</div>
+                  <div style="font-weight: 800; font-size: 14px;">Box B</div>
+                </div>
+                <div class="pandora-box-item" id="pbox-C" onclick="choosePandoraBox('C')" style="cursor: pointer; flex: 1; background: rgba(0,0,0,0.2); border: 2px solid var(--border-color); padding: 20px; border-radius: var(--radius-lg); transition: all 0.2s ease;">
+                  <div class="box-icon" style="font-size: 40px; margin-bottom: 8px;">📦</div>
+                  <div style="font-weight: 800; font-size: 14px;">Box C</div>
+                </div>
+              </div>
+              <div id="pandora-box-feedback" style="min-height: 24px; font-weight: 700; font-size: 14px; margin-top: 15px;"></div>
+              <button class="test-card-btn" id="pandora-next-btn" onclick="nextPandoraRound()" style="margin-top: 20px; width: 100%; display: none;">Next Round</button>
+            </div>
+          </div>
+
           <!-- Results Panel -->
           <div class="results-container" id="results-panel" style="display: none;">
             <h3 style="font-size: 28px;">Session Cleared</h3>
@@ -340,6 +524,49 @@
           </div>
         </aside>
         
+      </div>
+    </div>
+    
+    <!-- Tab 4: Progress Tracker -->
+    <div class="tab-pane" id="progress-tab">
+      <div class="content-header">
+        <div class="content-title">Progress & Analytics</div>
+        <div style="font-size: 13px; color: var(--text-muted); font-weight: 600;">Track your learning journey</div>
+      </div>
+      
+      <div class="progress-tab-container" style="padding: 24px; display: flex; flex-direction: column; gap: 24px; overflow-y: auto; height: 100%;">
+        <!-- Main Stats Card -->
+        <div class="progress-overview-card" style="background: var(--bg-card); border: var(--border-style); border-radius: var(--radius-lg); padding: 24px; display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
+          <div class="progress-radial-container" style="width: 140px; height: 140px; border-radius: 50%; border: 6px solid var(--primary-color); display: flex; flex-direction: column; justify-content: center; align-items: center; background: rgba(0,0,0,0.15);">
+            <div class="progress-percentage-label" id="overall-readiness-pct" style="font-size: 28px; font-weight: 800; color: var(--primary-color);">0.00%</div>
+            <div style="font-size: 9px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; margin-top: 4px; letter-spacing: 0.5px;">Readiness</div>
+          </div>
+          <div class="progress-stats-details" style="flex: 1; min-width: 250px; text-align: left;">
+            <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 8px;">PT Retention Exam Goal</h3>
+            <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6;" id="overall-readiness-message">
+              You are now 0.00% achieving 100% exam score in your PT RETENTION EXAM. Keep completing daily quizzes and mock exams to increase your score!
+            </p>
+            <div class="progress-bar-bg" style="width: 100%; height: 8px; background: rgba(255,255,255,0.06); border-radius: 99px; margin-top: 16px; overflow: hidden;">
+              <div class="progress-bar-fill" id="overall-readiness-bar" style="width: 0%; height: 100%; background: linear-gradient(90deg, var(--primary-color), var(--accent-color)); border-radius: 99px; transition: width 0.4s ease-out;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Subject Performance breakdown -->
+        <div class="subject-performance-section" style="background: var(--bg-card); border: var(--border-style); border-radius: var(--radius-lg); padding: 24px; text-align: left;">
+          <h4 style="font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; color: var(--primary-color); font-weight: 800;">Subject Mastery Breakdown</h4>
+          <div class="subject-grid" id="subject-progress-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+            <!-- Populated dynamically via JS -->
+          </div>
+        </div>
+
+        <!-- Recent Attempts History -->
+        <div class="history-section" style="background: var(--bg-card); border: var(--border-style); border-radius: var(--radius-lg); padding: 24px; text-align: left;">
+          <h4 style="font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; color: var(--primary-color); font-weight: 800;">Recent Attempt History</h4>
+          <div class="history-list" id="attempt-history-list" style="display: flex; flex-direction: column; gap: 10px;">
+            <div class="no-history-text" style="color: var(--text-muted); font-size: 13px; padding: 20px; text-align: center;">No attempts recorded yet. Start a Practice Arena game or Mock Exam!</div>
+          </div>
+        </div>
       </div>
     </div>
     
