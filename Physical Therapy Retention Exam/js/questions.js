@@ -3,1103 +3,1203 @@
 
 const QUESTION_BANK = {
   ITPT: [
+    // 1. Basic MedTerm Hand outs.docx.pdf
     {
-      id: "itpt_1",
-      question: "Which Philippine law is known as the 'Philippine Physical Therapy and Occupational Therapy Law'?",
-      options: ["Republic Act 5680", "Republic Act 7277", "Republic Act 8424", "Republic Act 9262"],
-      answer: 0,
-      explanation: "Republic Act 5680, enacted in June 1969, governs the practice and regulation of Physical Therapy and Occupational Therapy in the Philippines."
+      id: "itpt_f1_1",
+      question: "In medical terminology, what does the prefix 'myo-' refer to?",
+      options: ["Bone", "Muscle", "Nerve", "Joint"],
+      answer: 1,
+      explanation: "The prefix 'myo-' comes from the Greek word for muscle and is used in terms like myology or myocardium.",
+      source: "Basic MedTerm Hand outs.docx.pdf"
     },
     {
-      id: "itpt_2",
-      question: "Who is considered the 'Father of Physical Therapy' in the United States?",
-      options: ["Per Henrik Ling", "Dr. Albert Hoffa", "Mary McMillan", "Dr. Frank Granger"],
+      id: "itpt_f1_2",
+      question: "Which of the following suffixes refers to 'inflammation'?",
+      options: ["-algia", "-ectomy", "-itis", "-plasty"],
       answer: 2,
-      explanation: "Mary McMillan was the first reconstruction aide in the US and the first president of the American Women's Physical Therapeutic Association."
+      explanation: "The suffix '-itis' indicates inflammation, as seen in arthritis, tendinitis, or gastritis.",
+      source: "Basic MedTerm Hand outs.docx.pdf"
     },
     {
-      id: "itpt_3",
-      question: "In the context of RA 5680, what is the composition of the Board of Physical and Occupational Therapy?",
+      id: "itpt_f1_3",
+      question: "In anatomical relationships, what does the prefix 'ipsi-' mean?",
+      options: ["Opposite side", "Same side", "Below", "Between"],
+      answer: 1,
+      explanation: "The prefix 'ipsi-' means same, so ipsilateral refers to situated on or affecting the same side.",
+      source: "Basic MedTerm Hand outs.docx.pdf"
+    },
+    {
+      id: "itpt_f1_4",
+      question: "The suffix '-algia' is used in medical terminology to denote what clinical symptom?",
+      options: ["Surgical repair", "Inflammation", "Pain", "Weakness"],
+      answer: 2,
+      explanation: "The suffix '-algia' refers to pain, as in fibromyalgia, neuralgia, or arthralgia.",
+      source: "Basic MedTerm Hand outs.docx.pdf"
+    },
+    {
+      id: "itpt_f1_5",
+      question: "What does the root prefix 'chondro-' refer to?",
+      options: ["Joint", "Bone", "Cartilage", "Ligament"],
+      answer: 2,
+      explanation: "The prefix 'chondro-' refers to cartilage, as in chondrocyte, chondromalacia, or synchondrosis.",
+      source: "Basic MedTerm Hand outs.docx.pdf"
+    },
+    // 2. INTRO TO PT POST LEC 1.pdf
+    {
+      id: "itpt_f2_1",
+      question: "In what year was Republic Act 5680 (the Philippine PT & OT Regulatory Law) officially enacted?",
+      options: ["1964", "1969", "1972", "1980"],
+      answer: 1,
+      explanation: "Republic Act 5680 was signed into law on June 21, 1969, regulating the licensing and practice of PT and OT in the Philippines.",
+      source: "INTRO TO PT POST LEC 1.pdf"
+    },
+    {
+      id: "itpt_f2_2",
+      question: "Under RA 5680, what is the composition of the Board of Physical and Occupational Therapy?",
       options: [
         "1 PT, 1 OT, and 1 Physiatrist",
-        "2 PTs, 2 OTs, and 1 Physiatrist (Chairman)",
+        "2 PTs, 2 OTs, and 1 Physiatrist (as Chairman)",
         "3 PTs, 1 OT, and 1 Physician",
         "5 PTs and 5 OTs"
       ],
       answer: 1,
-      explanation: "Under RA 5680, the Board consists of a Physiatrist as Chairman, two OTs, and two PTs."
+      explanation: "The regulatory board under RA 5680 consists of a Physiatrist as Chairman, two OTs, and two PTs.",
+      source: "INTRO TO PT POST LEC 1.pdf"
     },
     {
-      id: "itpt_4",
-      question: "What ancient Greek physician is widely considered one of the earliest practitioners of physical therapy, utilizing hydrotherapy and massage?",
-      options: ["Galen", "Hippocrates", "Socrates", "Asclepius"],
-      answer: 1,
-      explanation: "Hippocrates advocated for massage, hydrotherapy, and manual therapy techniques to restore health as early as 460 BC."
-    },
-    {
-      id: "itpt_5",
-      question: "Under the Code of Ethics for Philippine Physical Therapists, what is the primary responsibility of a PT?",
+      id: "itpt_f2_3",
+      question: "Who holds the authority to appoint the members of the Board of Physical and Occupational Therapy in the Philippines?",
       options: [
-        "To maximize financial returns for the clinic",
-        "To provide the highest quality of physical therapy services to all patients regardless of background",
-        "To perform assessments only when ordered by a surgeon",
-        "To diagnose medical conditions independently of a physician"
-      ],
-      answer: 1,
-      explanation: "A PT's primary ethical obligation is to serve the patient's well-being with competence, respect, and non-discrimination."
-    },
-    {
-      id: "itpt_6",
-      question: "Which organization represents the global community of physical therapists?",
-      options: ["APTA", "PPTA", "World Physiotherapy (formerly WCPT)", "IFOMPT"],
-      answer: 2,
-      explanation: "World Physiotherapy is the global body representing over 600,000 physical therapists across member organizations worldwide."
-    },
-    {
-      id: "itpt_7",
-      question: "What historical event in the early 20th century heavily accelerated the development of physical therapy as a profession?",
-      options: ["World War I and the Polio Epidemic", "The Great Depression", "The Industrial Revolution", "The Black Plague"],
-      answer: 0,
-      explanation: "The combination of treating injured soldiers from World War I (reconstruction aides) and managing polio survivors created an urgent need for PT."
-    },
-    {
-      id: "itpt_8",
-      question: "A physical therapist assistant (PTA) performs interventions under the direction of whom?",
-      options: ["A physiatrist only", "A registered nurse", "A physical therapist", "An orthopedic surgeon"],
-      answer: 2,
-      explanation: "PTAs work under the direct supervision and guidance of a licensed Physical Therapist (PT)."
-    },
-    {
-      id: "itpt_9",
-      question: "Which of the following refers to the professional organization for PTs in the Philippines?",
-      options: ["APTA", "PPTA", "OPTA", "PAMET"],
-      answer: 1,
-      explanation: "The Philippine Physical Therapy Association (PPTA) is the accredited professional organization for physical therapists in the country."
-    },
-    {
-      id: "itpt_10",
-      question: "Ethically, if a PT discovers that a patient is not progressing and therapy is no longer beneficial, what should the PT do?",
-      options: [
-        "Continue therapy to maintain billing",
-        "Discharge the patient and/or refer them back to the referring physician",
-        "Change the treatment plan without informing anyone",
-        "Ask the patient to sign a waiver to continue indefinitely"
-      ],
-      answer: 1,
-      explanation: "PTs must terminate services when the patient has reached maximum recovery or is no longer deriving benefits from physical therapy."
-    },
-    {
-      id: "itpt_11",
-      question: "What term describes the system of moral principles governing the conduct of physical therapists?",
-      options: ["Scope of Practice", "Standards of Practice", "Code of Ethics", "By-laws"],
-      answer: 2,
-      explanation: "A Code of Ethics outlines the moral duties, standards, and values that govern professional behavior in PT."
-    },
-    {
-      id: "itpt_12",
-      question: "Who was the founder of the Swedish movement cure, which laid foundations for therapeutic exercises?",
-      options: ["Mary McMillan", "Per Henrik Ling", "Sebastian Kneipp", "D.D. Palmer"],
-      answer: 1,
-      explanation: "Per Henrik Ling is famous for developing Swedish gymnastics, massage, and exercises, often called the 'Swedish Movement Cure'."
-    },
-    {
-      id: "itpt_13",
-      question: "What level of supervision is required for PT students undergoing clinical internship?",
-      options: [
-        "Indirect supervision by any hospital staff",
-        "Direct supervision by a licensed Physical Therapist clinical instructor",
-        "No supervision needed once they reach 4th year",
-        "Supervision by a nurse supervisor"
-      ],
-      answer: 1,
-      explanation: "PT interns must practice under the direct supervision of a registered Physical Therapist clinical instructor (CI)."
-    },
-    {
-      id: "itpt_14",
-      question: "Which concept refers to the right of a patient to make decisions about their own medical treatment?",
-      options: ["Beneficence", "Non-maleficence", "Autonomy", "Justice"],
-      answer: 2,
-      explanation: "Autonomy is the ethical principle recognizing the patient's self-determination and right to refuse or accept treatment."
-    },
-    {
-      id: "itpt_15",
-      question: "Which of the following is NOT part of the PT practice scope under RA 5680?",
-      options: [
-        "Administration of physical agents like heat, light, water, and electricity",
-        "Prescription of oral pharmacological medications for pain relief",
-        "Therapeutic exercises and manual manipulation",
-        "Functional training in self-care and mobility"
-      ],
-      answer: 1,
-      explanation: "Prescribing medications is outside the scope of PT practice and is restricted to licensed physicians."
-    },
-    {
-      id: "itpt_16",
-      question: "What is the primary goal of Reconstruction Aides during WWI?",
-      options: [
-        "To manage hospital budgets",
-        "To rehabilitate wounded soldiers to return to duty or civilian life",
-        "To perform surgical procedures in field clinics",
-        "To draft medical military strategies"
-      ],
-      answer: 1,
-      explanation: "Reconstruction Aides rehabilitated wounded soldiers using physical therapy, massage, and occupational exercises."
-    },
-    {
-      id: "itpt_17",
-      question: "What is the name of the international document that guides PT ethical practice globally?",
-      options: [
-        "World Physiotherapy Ethical Principles",
-        "Declaration of Geneva",
-        "Nuremberg Code",
-        "Hippocratic Oath"
+        "The President of the Philippines",
+        "The Chairman of the PRC",
+        "The President of the PPTA",
+        "The Secretary of Health"
       ],
       answer: 0,
-      explanation: "World Physiotherapy issues set guidelines outlining the ethical principles for physical therapists internationally."
+      explanation: "The Board members are appointed by the President of the Philippines upon recommendation by the PRC.",
+      source: "INTRO TO PT POST LEC 1.pdf"
     },
+    // 3. INTRO TO PT POST LEC 2 .pdf
     {
-      id: "itpt_18",
-      question: "The principle of 'First, do no harm' is represented by which ethical term?",
-      options: ["Beneficence", "Non-maleficence", "Fidelity", "Veracity"],
+      id: "itpt_f3_1",
+      question: "On what date was the Philippine Physical Therapy Association (PPTA) founded?",
+      options: ["June 21, 1969", "December 8, 1964", "March 10, 1972", "August 15, 1960"],
       answer: 1,
-      explanation: "Non-maleficence means avoiding the infliction of harm or injury to patients."
+      explanation: "The PPTA was founded on December 8, 1964, prior to the official regulatory board creation in 1969.",
+      source: "INTRO TO PT POST LEC 2 .pdf"
     },
     {
-      id: "itpt_19",
-      question: "What is the standard qualification required to take the PT board licensure exam in the Philippines?",
+      id: "itpt_f3_2",
+      question: "Who was the first president and one of the primary founders of the PPTA?",
+      options: ["Dr. Albert Hoffa", "Jose I. Inoturan", "Dr. Frank Granger", "Mary McMillan"],
+      answer: 1,
+      explanation: "Jose I. Inoturan served as the first president of the PPTA, leading the association during its foundational years.",
+      source: "INTRO TO PT POST LEC 2 .pdf"
+    },
+    {
+      id: "itpt_f3_3",
+      question: "In what year did the PPTA officially become a member of the World Confederation for Physical Therapy (WCPT/World Physiotherapy)?",
+      options: ["1964", "1967", "1970", "1975"],
+      answer: 1,
+      explanation: "The PPTA achieved international recognition and became a member organization of WCPT in 1967.",
+      source: "INTRO TO PT POST LEC 2 .pdf"
+    },
+    // 4. ITPT Midterms Reviewer.pdf
+    {
+      id: "itpt_f4_1",
+      question: "What was the primary role of the historical 'Reconstruction Aides' during World War I?",
       options: [
-        "Associate Degree in PT",
-        "Bachelor of Science in Physical Therapy",
-        "Doctor of Physical Therapy",
-        "Master of Science in Kinesiology"
-      ],
-      answer: 1,
-      explanation: "A Bachelor of Science in Physical Therapy (BSPT) is the baseline educational requirement in the Philippines to sit for the board exam."
-    },
-    {
-      id: "itpt_20",
-      question: "Which of the following terms describes treating all patients fairly and distributing resources equitably?",
-      options: ["Autonomy", "Justice", "Fidelity", "Paternalism"],
-      answer: 1,
-      explanation: "Justice in medical ethics refers to fairness, equity, and treating similar cases in a similar manner."
-    },
-    {
-      id: "itpt_21",
-      question: "What is the primary role of the PT as an educator?",
-      options: [
-        "To teach patients how to diagnose their own illnesses",
-        "To instruct patients, families, and communities on exercises, posture, and self-management",
-        "To replace academic professors at medical schools",
-        "To write textbooks for commercial sale"
-      ],
-      answer: 1,
-      explanation: "The educator role focuses on teaching patients and caregivers proper movement, safety, and therapeutic guidelines."
-    },
-    {
-      id: "itpt_22",
-      question: "In what year was the PPTA founded?",
-      options: ["1964", "1969", "1972", "1980"],
-      answer: 0,
-      explanation: "The PPTA was founded on December 8, 1964, prior to the passage of RA 5680 in 1969."
-    },
-    {
-      id: "itpt_23",
-      question: "What must a licensed PT do to maintain their license under the current PRC rules?",
-      options: [
-        "Retake the board exam every 5 years",
-        "Pay a fee only",
-        "Acquire Continuing Professional Development (CPD) units",
-        "Publish a research paper every year"
+        "To manage field logistics and supplies",
+        "To perform battlefield surgeries",
+        "To provide physical therapy and reconstruction exercises to wounded soldiers",
+        "To act as nursing supervisors in civilian hospitals"
       ],
       answer: 2,
-      explanation: "The PRC requires licensed professionals to earn Continuing Professional Development (CPD) units for license renewal."
+      explanation: "Reconstruction Aides were pioneering women who utilized physical therapy, massage, and hydrotherapy to rehabilitate wounded soldiers during WWI.",
+      source: "ITPT Midterms Reviewer.pdf"
     },
     {
-      id: "itpt_24",
-      question: "What does 'informed consent' mean in physical therapy practice?",
+      id: "itpt_f4_2",
+      question: "Who was the first president of the American Women's Physical Therapeutic Association, widely recognized as the first PT in the United States?",
+      options: ["Mary McMillan", "Per Henrik Ling", "Florence Nightingale", "Clara Barton"],
+      answer: 0,
+      explanation: "Mary McMillan was the first reconstruction aide in the US and the first president of the AWPTA, establishing early standards.",
+      source: "ITPT Midterms Reviewer.pdf"
+    },
+    {
+      id: "itpt_f4_3",
+      question: "Which ancient Greek practitioner is considered one of the earliest advocates of manual friction, hydrotherapy, and physical exercise?",
+      options: ["Galen", "Hippocrates", "Socrates", "Aristotle"],
+      answer: 1,
+      explanation: "Hippocrates advocated for massage, water therapy, and therapeutic movement to restore physical health as early as 460 BC.",
+      source: "ITPT Midterms Reviewer.pdf"
+    },
+    // 5. WEEK 1 - INTRO TO PT.pdf
+    {
+      id: "itpt_f5_1",
+      question: "What is the standard professional definition of Physical Therapy?",
       options: [
-        "The patient signs a waiver freeing the PT of all liabilities",
-        "The patient is educated on benefits, risks, and alternatives of treatment and voluntarily agrees to proceed",
-        "The physician directs the PT to do whatever is necessary",
-        "The patient's family approves treatment without the patient's knowledge"
+        "A field limited strictly to administering pharmacological drugs for pain",
+        "The art and science of treatment by active/passive movements, physical agents, and education to restore movement function",
+        "A system of surgical procedures targeting skeletal fractures",
+        "The practice of diagnosing organic medical diseases independently of clinical symptoms"
       ],
       answer: 1,
-      explanation: "Informed consent is the voluntary agreement of a patient to undergo a treatment plan after understanding its risks, benefits, and alternatives."
+      explanation: "Physical therapy focuses on movement science, physical modalities, active exercises, and educational programs to restore physical function.",
+      source: "WEEK 1 - INTRO TO PT.pdf"
     },
     {
-      id: "itpt_25",
-      question: "Which of the following historical tools was a prominent precursor to modern hydrotherapy?",
-      options: ["Goniometer", "Whirlpool bath", "Diathermy machine", "Theraband"],
+      id: "itpt_f5_2",
+      question: "What is the primary focus of all physical therapy interventions?",
+      options: [
+        "Maximizing the clinic's billing codes",
+        "To restore, maintain, and promote optimal physical function and quality of life",
+        "Performing diagnostic radiological imaging",
+        "Prescribing muscle relaxants"
+      ],
       answer: 1,
-      explanation: "Whirlpools and thermal baths are early hydrotherapy devices used to treat pain, inflammation, and stiff joints."
+      explanation: "The ultimate goal of PT is to optimize human movement, restore function, prevent disability, and enhance patient quality of life.",
+      source: "WEEK 1 - INTRO TO PT.pdf"
+    },
+    // 6. WEEK 11 to 15 - INTRO TO PT.pdf
+    {
+      id: "itpt_f6_1",
+      question: "Which statement accurately describes the clinical role of a Physical Therapist Assistant (PTA)?",
+      options: [
+        "They evaluate patients and design the initial plan of care independently",
+        "They perform physical therapy procedures and interventions under the direct supervision of a licensed PT",
+        "They are authorized to perform spinal manipulations and write prescriptions",
+        "They operate entirely independently of the supervising PT's assessment"
+      ],
+      answer: 1,
+      explanation: "PTAs carry out delegated physical therapy interventions under the direct supervision and guidelines of a registered PT.",
+      source: "WEEK 11 to 15 - INTRO TO PT.pdf"
+    },
+    {
+      id: "itpt_f6_2",
+      question: "In an acute care hospital setting, what is the primary initial focus of physical therapy?",
+      options: [
+        "Long-term high-intensity athletic conditioning",
+        "Early mobilization, preventing bedrest complications, and safe discharge planning",
+        "Performing electromyography diagnostics",
+        "Fabricating complex lower extremity orthoses"
+      ],
+      answer: 1,
+      explanation: "Acute care PT emphasizes early mobility, cardiac/pulmonary monitoring, avoiding bed sores, and preparing safe home discharge pathways.",
+      source: "WEEK 11 to 15 - INTRO TO PT.pdf"
+    },
+    // 7. WEEK 2 - INTRO TO PT.pdf
+    {
+      id: "itpt_f7_1",
+      question: "Which ancient Roman physician utilized therapeutic massage and exercise to treat injuries of gladiators?",
+      options: ["Hippocrates", "Galen", "Asclepius", "Cicero"],
+      answer: 1,
+      explanation: "Galen, a Roman physician of Greek origin, used physical exercises, manual friction, and baths to treat gladiator injuries.",
+      source: "WEEK 2 - INTRO TO PT.pdf"
+    },
+    {
+      id: "itpt_f7_2",
+      question: "In what country did Per Henrik Ling develop the 'Swedish Movement Cure', establishing a major basis for active exercise?",
+      options: ["Germany", "Sweden", "United Kingdom", "France"],
+      answer: 1,
+      explanation: "Per Henrik Ling developed Swedish gymnastics, massage, and structured exercises in Sweden, laying early foundations for therapeutic movement.",
+      source: "WEEK 2 - INTRO TO PT.pdf"
+    },
+    // 8. WEEK 8 - INTRO TO PT.pdf
+    {
+      id: "itpt_f8_1",
+      question: "Under the Code of Ethics for physical therapists, under what condition may a PT disclose confidential patient details?",
+      options: [
+        "When requested by a curious colleague not involved in the case",
+        "Only when required by law, court order, or when necessary to prevent imminent harm to the public",
+        "Whenever a family member asks for details without the patient's consent",
+        "At any time to promote case studies on social media"
+      ],
+      answer: 1,
+      explanation: "Patient confidentiality is absolute except under legal mandate, court orders, or clear public health and safety emergencies.",
+      source: "WEEK 8 - INTRO TO PT.pdf"
+    },
+    {
+      id: "itpt_f8_2",
+      question: "What does the ethical principle of 'beneficence' represent in physical therapy practice?",
+      options: [
+        "Avoiding the infliction of harm or injury at all costs",
+        "Acting in the best interest of the patient to promote their well-being and positive outcomes",
+        "Allowing the patient to make all clinical decisions autonomously",
+        "Treating all individuals with equity and fairness"
+      ],
+      answer: 1,
+      explanation: "Beneficence is the moral duty to do good, promote patient recovery, and act in ways that directly benefit the patient's health.",
+      source: "WEEK 8 - INTRO TO PT.pdf"
     }
   ],
   OSA: [
+    // 1. OSA KAHOOT COMPILATION.pdf
     {
-      id: "osa_1",
-      question: "Which artery connects the two anterior cerebral arteries in the Circle of Willis?",
+      id: "osa_f1_1",
+      question: "Which muscle is the primary abductor of the shoulder beyond 15 degrees, innervated by the axillary nerve?",
+      options: ["Supraspinatus", "Deltoid", "Latissimus dorsi", "Pectoralis major"],
+      answer: 1,
+      explanation: "The deltoid is the primary shoulder abductor, innervated by the axillary nerve (C5-C6), acting once supraspinatus initiates the motion.",
+      source: "OSA KAHOOT COMPILATION.pdf"
+    },
+    {
+      id: "osa_f1_2",
+      question: "What cranial nerve controls facial expression muscles and taste on the anterior two-thirds of the tongue?",
+      options: ["CN V (Trigeminal)", "CN VII (Facial)", "CN IX (Glossopharyngeal)", "CN XII (Hypoglossal)"],
+      answer: 1,
+      explanation: "The Facial nerve (CN VII) supplies motor innervation to facial muscles and sensory taste fibers to the anterior 2/3 of the tongue.",
+      source: "OSA KAHOOT COMPILATION.pdf"
+    },
+    {
+      id: "osa_f1_3",
+      question: "What is the shock-absorbing gelatinous center of the intervertebral disc called?",
+      options: ["Annulus fibrosus", "Nucleus pulposus", "Vertebral endplate", "Ligamentum flavum"],
+      answer: 1,
+      explanation: "The nucleus pulposus is the elastic, gel-like inner core of the intervertebral disc that distributes axial loads.",
+      source: "OSA KAHOOT COMPILATION.pdf"
+    },
+    // 2. OSA MID LEC 2_NEURO.pdf
+    {
+      id: "osa_f2_1",
+      question: "Which cerebral lobe contains the primary somatosensory cortex (postcentral gyrus)?",
+      options: ["Frontal lobe", "Parietal lobe", "Occipital lobe", "Temporal lobe"],
+      answer: 1,
+      explanation: "The postcentral gyrus in the parietal lobe contains the primary somatosensory cortex, which processes tactile inputs.",
+      source: "OSA MID LEC 2_NEURO.pdf"
+    },
+    {
+      id: "osa_f2_2",
+      question: "What is the deep sagittal groove that separates the left and right cerebral hemispheres?",
+      options: ["Central sulcus", "Longitudinal fissure", "Lateral sulcus", "Parieto-occipital sulcus"],
+      answer: 1,
+      explanation: "The longitudinal fissure is the deep cleft dividing the cerebrum into left and right hemispheres.",
+      source: "OSA MID LEC 2_NEURO.pdf"
+    },
+    {
+      id: "osa_f2_3",
+      question: "Which white matter pathway connects the left and right cerebral hemispheres, facilitating interhemispheric communication?",
+      options: ["Internal capsule", "Corpus callosum", "Corona radiata", "Optic tract"],
+      answer: 1,
+      explanation: "The corpus callosum is the largest commissural tract, connecting homologous cortical regions of both hemispheres.",
+      source: "OSA MID LEC 2_NEURO.pdf"
+    },
+    // 3. OSA MID LEC 3&4_EMBRYO WILLIS.pdf
+    {
+      id: "osa_f3_1",
+      question: "The central nervous system develops embryologically from which primary germ layer?",
+      options: ["Mesoderm", "Endoderm", "Ectoderm", "Neural crest cells"],
+      answer: 2,
+      explanation: "The ectoderm layer thickens to form the neural plate, which folds into the neural tube to generate the CNS.",
+      source: "OSA MID LEC 3&4_EMBRYO WILLIS.pdf"
+    },
+    {
+      id: "osa_f3_2",
+      question: "What arterial circle at the base of the brain provides collateral blood flow to the cerebral hemispheres?",
+      options: ["Circle of Willis", "Coronary sinus", "Dural venous sinus", "Pulmonary trunk"],
+      answer: 0,
+      explanation: "The Circle of Willis anastomosis connects carotid and vertebrobasilar systems, protecting the brain from ischemia.",
+      source: "OSA MID LEC 3&4_EMBRYO WILLIS.pdf"
+    },
+    {
+      id: "osa_f3_3",
+      question: "Which artery connects the internal carotid system with the posterior cerebral artery in the Circle of Willis?",
       options: [
-        "Posterior communicating artery",
         "Anterior communicating artery",
+        "Posterior communicating artery",
         "Middle cerebral artery",
         "Basilar artery"
       ],
       answer: 1,
-      explanation: "The anterior communicating artery connects the left and right anterior cerebral arteries, forming the front of the Circle of Willis."
+      explanation: "The posterior communicating artery links the internal carotid branches to the posterior cerebral artery.",
+      source: "OSA MID LEC 3&4_EMBRYO WILLIS.pdf"
     },
+    // 4. OSA MID&POST LEC 2.5_NEURO.pdf
     {
-      id: "osa_2",
-      question: "Which muscle is primarily responsible for initiating the first 15 degrees of shoulder abduction?",
-      options: ["Deltoid", "Supraspinatus", "Infraspinatus", "Subscapularis"],
+      id: "osa_f4_1",
+      question: "Where do the majority of fibers of the lateral corticospinal tract decussate (cross to the opposite side)?",
+      options: ["Spinal cord entry level", "Lower medulla oblongata (pyramidal decussation)", "Midbrain tectum", "Internal capsule"],
       answer: 1,
-      explanation: "The supraspinatus initiates shoulder abduction (first 15 degrees) before the deltoid takes over for the rest of the range."
+      explanation: "About 85-90% of corticospinal fibers cross in the lower medulla at the pyramidal decussation to form the lateral corticospinal tract.",
+      source: "OSA MID&POST LEC 2.5_NEURO.pdf"
     },
     {
-      id: "osa_3",
-      question: "The Circle of Willis is situated in which anatomical area?",
-      options: ["Epidural space", "Subdural space", "Subarachnoid space", "Mediastinum"],
-      answer: 2,
-      explanation: "The Circle of Willis lies within the subarachnoid space surrounding the optic chiasm and infundibulum at the base of the brain."
-    },
-    {
-      id: "osa_4",
-      question: "How many vertebrae typically make up the lumbar spine?",
-      options: ["7", "12", "5", "4"],
-      answer: 2,
-      explanation: "There are normally 5 lumbar vertebrae (L1-L5) in the human vertebral column."
-    },
-    {
-      id: "osa_5",
-      question: "Which nerve innervates the gastrocnemius and soleus muscles?",
-      options: ["Tibial nerve", "Common fibular nerve", "Femoral nerve", "Obturator nerve"],
-      answer: 0,
-      explanation: "The tibial nerve (a branch of the sciatic nerve) innervates the muscles in the posterior compartment of the leg."
-    },
-    {
-      id: "osa_6",
-      question: "The embryonic neural tube develops from which primary germ layer?",
-      options: ["Mesoderm", "Endoderm", "Ectoderm", "Neural crest"],
-      answer: 2,
-      explanation: "The nervous system, including the neural tube, is derived from the ectoderm during embryogenesis."
-    },
-    {
-      id: "osa_7",
-      question: "Which cranial nerve innervates the muscles of mastication?",
-      options: ["CN VII (Facial)", "CN V (Trigeminal)", "CN IX (Glossopharyngeal)", "CN XII (Hypoglossal)"],
-      answer: 1,
-      explanation: "The mandibular division (V3) of the trigeminal nerve innervates the muscles of mastication (temporalis, masseter, medial/lateral pterygoids)."
-    },
-    {
-      id: "osa_8",
-      question: "Which muscle belongs to the rotator cuff group?",
-      options: ["Teres major", "Teres minor", "Latissimus dorsi", "Pectoralis minor"],
-      answer: 1,
-      explanation: "The rotator cuff (SITS) consists of Supraspinatus, Infraspinatus, Teres minor, and Subscapularis."
-    },
-    {
-      id: "osa_9",
-      question: "What structure produces cerebrospinal fluid (CSF) in the brain ventricles?",
-      options: ["Arachnoid villi", "Ependyma", "Choroid plexus", "Microglia"],
-      answer: 2,
-      explanation: "The choroid plexus, located in the ventricles, produces CSF."
-    },
-    {
-      id: "osa_10",
-      question: "Which muscle of the leg performs dorsiflexion and inversion of the foot?",
-      options: ["Fibularis longus", "Tibialis anterior", "Gastrocnemius", "Extensor digitorum longus"],
-      answer: 1,
-      explanation: "The tibialis anterior is the primary dorsiflexor and invertor of the ankle/foot."
-    },
-    {
-      id: "osa_11",
-      question: "The basilar artery is formed by the union of which two arteries?",
+      id: "osa_f4_2",
+      question: "Which sensory pathway transmits sensations of fine touch, vibration, and conscious proprioception?",
       options: [
-        "Internal carotid arteries",
-        "Vertebral arteries",
-        "Posterior cerebral arteries",
-        "Anterior cerebral arteries"
+        "Lateral spinothalamic tract",
+        "Dorsal Column-Medial Lemniscal (DCML) pathway",
+        "Lateral corticospinal tract",
+        "Anterior spinocerebellar tract"
       ],
       answer: 1,
-      explanation: "The two vertebral arteries merge at the lower border of the pons to form the single basilar artery."
+      explanation: "The DCML pathway carries epicritic sensation (fine touch, vibration, joint position sense) up to the primary sensory cortex.",
+      source: "OSA MID&POST LEC 2.5_NEURO.pdf"
     },
     {
-      id: "osa_12",
-      question: "Which structural ligament prevents excessive hyperextension of the hip joint?",
+      id: "osa_f4_3",
+      question: "A patient sustains a lesion of the right spinothalamic tract in the cervical spinal cord. What sensory deficit occurs below the lesion?",
       options: [
-        "Ischiofemoral ligament",
-        "Ligamentum teres",
-        "Iliofemoral ligament (Y-ligament of Bigelow)",
-        "Pubofemoral ligament"
+        "Loss of pain and temperature on the right side",
+        "Loss of pain and temperature on the left side",
+        "Loss of vibration and proprioception on the right side",
+        "Loss of vibration and proprioception on the left side"
       ],
-      answer: 2,
-      explanation: "The iliofemoral ligament is the strongest ligament in the body and prevents hyperextension of the hip."
-    },
-    {
-      id: "osa_13",
-      question: "Which muscle is the primary flexor of the elbow joint when the forearm is pronated?",
-      options: ["Biceps brachii", "Brachialis", "Brachioradialis", "Pronator teres"],
       answer: 1,
-      explanation: "The brachialis is a pure elbow flexor and remains active regardless of forearm pronation/supination, unlike the biceps brachii."
+      explanation: "Since spinothalamic tract fibers cross 1-2 levels above entry in the spinal cord, a right-sided tract lesion blocks left-sided pain and temperature sensations.",
+      source: "OSA MID&POST LEC 2.5_NEURO.pdf"
     },
+    // 5. OSA POST LEC 1 .pdf
     {
-      id: "osa_14",
-      question: "What nerve is compressed in Carpal Tunnel Syndrome?",
-      options: ["Radial nerve", "Ulnar nerve", "Median nerve", "Axillary nerve"],
+      id: "osa_f5_1",
+      question: "Which meningeal layer is thin, highly vascular, and directly adheres to the gyri and sulci of the brain tissue?",
+      options: ["Dura mater", "Arachnoid mater", "Pia mater", "Subdural space"],
       answer: 2,
-      explanation: "The median nerve passes through the carpal tunnel under the flexor retinaculum and is compressed in CTS."
+      explanation: "The pia mater is the delicate, innermost protective layer that wraps directly around the contours of the brain and spinal cord.",
+      source: "OSA POST LEC 1 .pdf"
     },
     {
-      id: "osa_15",
-      question: "Which organ system is responsible for regulating blood calcium levels via calcitonin and parathyroid hormone?",
-      options: ["Endocrine system", "Integumentary system", "Digestive system", "Urinary system"],
-      answer: 0,
-      explanation: "The endocrine system, through the thyroid (calcitonin) and parathyroid glands (PTH), regulates blood calcium."
+      id: "osa_f5_2",
+      question: "Through what structures does cerebrospinal fluid (CSF) drain from the subarachnoid space into the superior sagittal sinus?",
+      options: ["Choroid plexus", "Arachnoid granulations (villi)", "Lateral ventricles", "Astrocyte foot processes"],
+      answer: 1,
+      explanation: "CSF is reabsorbed into the venous system through one-way valves called arachnoid granulations projecting into dural sinuses.",
+      source: "OSA POST LEC 1 .pdf"
+    },
+    // 6. WEEK 1 - ORGAN SYSTEM.pdf
+    {
+      id: "osa_f6_1",
+      question: "In the levels of structural organization, what refers to a group of similar cells working together to perform a specialized activity?",
+      options: ["Organ", "Tissue", "Organelle", "System"],
+      answer: 1,
+      explanation: "Cells combine to form tissues (epithelial, connective, muscular, nervous), which then form organs.",
+      source: "WEEK 1 - ORGAN SYSTEM.pdf"
     },
     {
-      id: "osa_16",
-      question: "Which muscle inserts onto the tibial tuberosity via the patellar ligament?",
-      options: ["Biceps femoris", "Gracilis", "Quadriceps femoris", "Sartorius"],
+      id: "osa_f6_2",
+      question: "Which organ system contains the lungs, trachea, and larynx, functioning in gas exchange?",
+      options: ["Cardiovascular system", "Respiratory system", "Lymphatic system", "Endocrine system"],
+      answer: 1,
+      explanation: "The respiratory system handles ventilation, gas exchange, and vocalization.",
+      source: "WEEK 1 - ORGAN SYSTEM.pdf"
+    },
+    // 7. WEEK 10 - ORGAN SYSTEM.pdf
+    {
+      id: "osa_f7_1",
+      question: "What are the two anatomical divisions of the human nervous system?",
+      options: [
+        "Somatic and Autonomic",
+        "Central (CNS) and Peripheral (PNS)",
+        "Sympathetic and Parasympathetic",
+        "Sensory and Motor"
+      ],
+      answer: 1,
+      explanation: "CNS includes brain and spinal cord. PNS includes nerves, ganglia, and plexuses outside the skull/vertebral column.",
+      source: "WEEK 10 - ORGAN SYSTEM.pdf"
+    },
+    {
+      id: "osa_f7_2",
+      question: "Which glial cells are mobile phagocytic cells that clean cellular debris inside the central nervous system?",
+      options: ["Astrocytes", "Microglia", "Oligodendrocytes", "Ependymal cells"],
+      answer: 1,
+      explanation: "Microglia function as specialized resident macrophages in the CNS to defend against pathogens and remove damage.",
+      source: "WEEK 10 - ORGAN SYSTEM.pdf"
+    },
+    // 8. WEEK 11 - ORGAN SYSTEM .pdf
+    {
+      id: "osa_f8_1",
+      question: "Which endocrine gland is commonly referred to as the 'master gland' because it regulates several other endocrine organs?",
+      options: ["Thyroid gland", "Adrenal gland", "Pituitary gland", "Pancreas"],
       answer: 2,
-      explanation: "The quadriceps femoris group inserts into the patella and subsequently onto the tibial tuberosity via the patellar ligament."
+      explanation: "The pituitary gland (hypophysis) secretes tropic hormones that control thyroid, adrenals, and gonads.",
+      source: "WEEK 11 - ORGAN SYSTEM .pdf"
     },
     {
-      id: "osa_17",
-      question: "Which structural component of the intervertebral disc is gel-like and shock-absorbing?",
-      options: ["Annulus fibrosus", "Nucleus pulposus", "Vertebral endplate", "Ligamentum flavum"],
+      id: "osa_f8_2",
+      question: "Which hormone is produced by pancreatic beta cells to lower blood glucose levels?",
+      options: ["Glucagon", "Insulin", "Somatostatin", "Epinephrine"],
       answer: 1,
-      explanation: "The nucleus pulposus is the elastic, gelatinous core of the intervertebral disc that distributes compressive loads."
+      explanation: "Insulin promotes glucose uptake into skeletal muscles and adipose tissue, lowering circulating blood sugar.",
+      source: "WEEK 11 - ORGAN SYSTEM .pdf"
     },
+    // 9. WEEK 13 to 14 - ORGAN SYSTEM.pdf
     {
-      id: "osa_18",
-      question: "What is the primary action of the psoas major muscle?",
-      options: ["Hip extension", "Hip flexion", "Hip abduction", "Knee flexion"],
-      answer: 1,
-      explanation: "The psoas major (combining with iliacus to form iliopsoas) is the primary flexor of the hip joint."
-    },
-    {
-      id: "osa_19",
-      question: "Which nerve innervates the diaphragm?",
-      options: ["Phrenic nerve", "Vagus nerve", "Intercostal nerve", "Accessory nerve"],
-      answer: 0,
-      explanation: "The phrenic nerve, originating from spinal roots C3-C5 ('keeps the diaphragm alive'), innervates the diaphragm."
-    },
-    {
-      id: "osa_20",
-      question: "Which lobe of the cerebrum contains the primary motor cortex?",
-      options: ["Parietal lobe", "Occipital lobe", "Temporal lobe", "Frontal lobe"],
+      id: "osa_f9_1",
+      question: "Which chamber of the heart has the thickest muscular wall and pumps oxygenated blood directly into the systemic circulation?",
+      options: ["Right atrium", "Right ventricle", "Left atrium", "Left ventricle"],
       answer: 3,
-      explanation: "The frontal lobe contains the precentral gyrus, which houses the primary motor cortex (Brodmann area 4)."
+      explanation: "The left ventricle requires high contractile force to pump blood through the aorta to the rest of the body.",
+      source: "WEEK 13 to 14 - ORGAN SYSTEM.pdf"
     },
     {
-      id: "osa_21",
-      question: "The lateral collateral ligament of the knee attaches to which bone?",
-      options: ["Tibia", "Fibula", "Femur only", "Patella"],
+      id: "osa_f9_2",
+      question: "What is the name of the heart valve situated between the right atrium and the right ventricle?",
+      options: ["Mitral valve", "Tricuspid valve", "Aortic valve", "Pulmonary valve"],
       answer: 1,
-      explanation: "The LCL runs from the lateral femoral epicondyle to the head of the fibula."
+      explanation: "The right atrioventricular valve has three cusps and is called the tricuspid valve.",
+      source: "WEEK 13 to 14 - ORGAN SYSTEM.pdf"
+    },
+    // 10. WEEK 15 to 16 - ORGAN SYSTEM.pdf
+    {
+      id: "osa_f10_1",
+      question: "What is the structural and functional unit of the kidney responsible for filtering blood and forming urine?",
+      options: ["Nephron", "Renal pelvis", "Glomerulus", "Ureter"],
+      answer: 0,
+      explanation: "Each kidney contains over a million nephrons that filter waste and regulate electrolytes and water.",
+      source: "WEEK 15 to 16 - ORGAN SYSTEM.pdf"
     },
     {
-      id: "osa_22",
-      question: "Which muscle is innervated by the axillary nerve?",
-      options: ["Teres major", "Pectoralis major", "Deltoid", "Latissimus dorsi"],
-      answer: 2,
-      explanation: "The axillary nerve innervates the deltoid and teres minor muscles."
-    },
-    {
-      id: "osa_23",
-      question: "Which meningeal layer is the tough, fibrous outer protective covering of the central nervous system?",
-      options: ["Pia mater", "Arachnoid mater", "Dura mater", "Ligamentum flavum"],
-      answer: 2,
-      explanation: "The dura mater is the thick, outermost layer of the meninges surrounding the brain and spinal cord."
-    },
-    {
-      id: "osa_24",
-      question: "What is the anatomical term for the shoulder joint?",
-      options: ["Acromioclavicular joint", "Glenohumeral joint", "Sternoclavicular joint", "Scapulothoracic joint"],
+      id: "osa_f10_2",
+      question: "What tube transports urine from the urinary bladder to the outside of the body?",
+      options: ["Ureter", "Urethra", "Collecting duct", "Renal tubule"],
       answer: 1,
-      explanation: "The glenohumeral joint is the ball-and-socket joint between the glenoid cavity of the scapula and the head of the humerus."
+      explanation: "Ureters connect kidneys to the bladder. The urethra discharges urine from the bladder to the exterior.",
+      source: "WEEK 15 to 16 - ORGAN SYSTEM.pdf"
+    },
+    // 11. WEEK 2 & 3 - ORGAN SYSTEM.pdf
+    {
+      id: "osa_f11_1",
+      question: "Which long bone of the thigh is the longest, heaviest, and strongest skeletal element in the human body?",
+      options: ["Tibia", "Fibula", "Femur", "Humerus"],
+      answer: 2,
+      explanation: "The femur transmits body weight to the tibia and serves as a major insertion for hip/knee muscles.",
+      source: "WEEK 2 & 3 - ORGAN SYSTEM.pdf"
     },
     {
-      id: "osa_25",
-      question: "Which artery is the major blood supply to the visual cortex of the occipital lobe?",
-      options: [
-        "Anterior cerebral artery",
-        "Middle cerebral artery",
-        "Posterior cerebral artery",
-        "Internal carotid artery"
-      ],
+      id: "osa_f11_2",
+      question: "What classification of joint is characterized by the presence of a fluid-filled cavity, allowing free movements?",
+      options: ["Fibrous joint", "Cartilaginous joint", "Synovial joint", "Synarthrosis"],
       answer: 2,
-      explanation: "The posterior cerebral artery (PCA) supplies the occipital lobe and visual cortex."
+      explanation: "Synovial joints have a synovial cavity with fluid, articular cartilage, and joint capsules to facilitate free motion.",
+      source: "WEEK 2 & 3 - ORGAN SYSTEM.pdf"
+    },
+    // 12. WEEK 7 - ORGAN SYSTEM.pdf
+    {
+      id: "osa_f12_1",
+      question: "What structural tissue connects muscle to bone?",
+      options: ["Ligament", "Tendon", "Cartilage", "Aponeurosis"],
+      answer: 1,
+      explanation: "Tendons are dense regular connective tissue structures designed to transmit muscular pulling forces to bones.",
+      source: "WEEK 7 - ORGAN SYSTEM.pdf"
+    },
+    {
+      id: "osa_f12_2",
+      question: "What is the structural unit of compact bone tissue consisting of concentric lamellae around a central canal?",
+      options: ["Trabecula", "Osteon (Haversian system)", "Lacuna", "Canaliculus"],
+      answer: 1,
+      explanation: "Osteons align along stress lines in compact bone, containing vessels and nerves in their central canals.",
+      source: "WEEK 7 - ORGAN SYSTEM.pdf"
+    },
+    // 13. WEEK 8 - ORGAN SYSTEM.pdf
+    {
+      id: "osa_f13_1",
+      question: "What is the superficial, thinner layer of the skin composed of keratinized stratified squamous epithelium?",
+      options: ["Dermis", "Epidermis", "Hypodermis", "Subcutaneous layer"],
+      answer: 1,
+      explanation: "The epidermis forms the protective outer skin barrier, lacking blood vessels.",
+      source: "WEEK 8 - ORGAN SYSTEM.pdf"
+    },
+    {
+      id: "osa_f13_2",
+      question: "Which structural protein gives epidermal cells, hair, and nails their tough, water-resistant properties?",
+      options: ["Collagen", "Elastin", "Keratin", "Melanin"],
+      answer: 2,
+      explanation: "Keratin is produced by keratinocytes, hardening cells to defend against heat, microbes, and chemicals.",
+      source: "WEEK 8 - ORGAN SYSTEM.pdf"
+    },
+    // 14. WEEK 9 - ORGAN SYSTEM.pdf
+    {
+      id: "osa_f14_1",
+      question: "In what organ of the digestive system does the vast majority of chemical digestion and nutrient absorption occur?",
+      options: ["Stomach", "Small intestine", "Large intestine", "Esophagus"],
+      answer: 1,
+      explanation: "Villi and microvilli in the small intestine expand surface area, finalizing enzymatic digestion and absorption.",
+      source: "WEEK 9 - ORGAN SYSTEM.pdf"
+    },
+    {
+      id: "osa_f14_2",
+      question: "Which accessory organ produces bile to assist in the emulsification and digestion of fats?",
+      options: ["Gallbladder", "Pancreas", "Liver", "Spleen"],
+      answer: 2,
+      explanation: "The liver synthesizes bile, which is stored and concentrated in the gallbladder before release into the duodenum.",
+      source: "WEEK 9 - ORGAN SYSTEM.pdf"
     }
   ],
   PHYSIO: [
+    // 1. INTEG PHYSIO _2L MIDTERMS.pdf
     {
-      id: "physio_1",
-      question: "What is the normal pacemaker of the human heart?",
-      options: ["AV Node", "Bundle of His", "Purkinje Fibers", "SA Node"],
-      answer: 3,
-      explanation: "The Sinoatrial (SA) node is the heart's natural pacemaker, generating electrical impulses that spread through the cardiac muscle."
-    },
-    {
-      id: "physio_2",
-      question: "Which lung volume represents the volume of air inspired or expired during a single normal, quiet breath?",
-      options: ["Inspiratory Reserve Volume", "Tidal Volume", "Residual Volume", "Vital Capacity"],
-      answer: 1,
-      explanation: "Tidal Volume (VT) is the amount of air inhaled or exhaled with each breath during quiet, restful breathing (typically ~500 ml)."
-    },
-    {
-      id: "physio_3",
-      question: "What functional unit of the kidney is responsible for urine formation?",
-      options: ["Nephron", "Glomerulus", "Collecting duct", "Loop of Henle"],
-      answer: 0,
-      explanation: "The nephron is the structural and functional unit of the kidney, consisting of a renal corpuscle and renal tubule."
-    },
-    {
-      id: "physio_4",
-      question: "Which of the following describes the Frank-Starling law of the heart?",
+      id: "phys_f1_1",
+      question: "How is the resting membrane potential of a typical neuron (-70mV) primarily maintained against ion leakage?",
       options: [
-        "Heart rate increases during inhalation",
-        "Stroke volume increases in response to an increase in end-diastolic volume (stretch)",
-        "Blood pressure is inversely proportional to vascular resistance",
-        "Cardiac output decreases with age"
+        "Voltage-gated calcium channels",
+        "Na+/K+ ATPase pump (3 Na+ out, 2 K+ in)",
+        "Passive diffusion of proteins",
+        "Chloride leak channels"
       ],
       answer: 1,
-      explanation: "The Frank-Starling law states that the force of cardiac contraction is directly proportional to the initial fiber length (end-diastolic volume)."
+      explanation: "The Na+/K+ pump uses ATP to pump 3 sodium ions out and 2 potassium ions in, maintaining concentration gradients and cell negativity.",
+      source: "INTEG PHYSIO _2L MIDTERMS.pdf"
     },
     {
-      id: "physio_5",
-      question: "Which chemical element binds to troponin C, initiating skeletal muscle contraction?",
+      id: "phys_f1_2",
+      question: "Which chemical element acts as the primary intracellular cation in human cells?",
       options: ["Sodium", "Potassium", "Calcium", "Magnesium"],
-      answer: 2,
-      explanation: "Calcium binding to troponin C causes a conformational shift in tropomyosin, exposing actin-binding sites for myosin cross-bridge cycling."
-    },
-    {
-      id: "physio_6",
-      question: "What is the primary mode of carbon dioxide transport in human blood?",
-      options: [
-        "Dissolved in plasma",
-        "Carbaminohemoglobin",
-        "Bicarbonate ions (HCO3-)",
-        "Carbonic acid gas"
-      ],
-      answer: 2,
-      explanation: "Around 70% of carbon dioxide is transported in blood as bicarbonate ions formed within red blood cells."
-    },
-    {
-      id: "physio_7",
-      question: "What hormone, released by the kidneys, stimulates red blood cell production in bone marrow?",
-      options: ["Renin", "Erythropoietin (EPO)", "Aldosterone", "Cortisol"],
       answer: 1,
-      explanation: "Erythropoietin (EPO) is released by kidneys in response to cellular hypoxia, triggering erythropoiesis."
+      explanation: "Potassium (K+) is highly concentrated inside the cell, while sodium (Na+) is the primary extracellular cation.",
+      source: "INTEG PHYSIO _2L MIDTERMS.pdf"
+    },
+    // 2. INTEG PHYSIO _CARDIAC_ MIDTERMS.pdf
+    {
+      id: "phys_f2_1",
+      question: "What is the physiological purpose of the electrical conduction delay at the Atrioventricular (AV) node?",
+      options: [
+        "To speed up the heart rate during exercise",
+        "To allow complete atrial contraction and ventricular filling",
+        "To prevent blood backflow into the vena cava",
+        "To bypass the bundle of His"
+      ],
+      answer: 1,
+      explanation: "The ~0.1-second delay ensures that ventricles are filled with blood before they contract.",
+      source: "INTEG PHYSIO _CARDIAC_ MIDTERMS.pdf"
     },
     {
-      id: "physio_8",
-      question: "Which type of blood vessel contains valves to prevent the backflow of blood?",
-      options: ["Arteries", "Arterioles", "Capillaries", "Veins"],
-      answer: 3,
-      explanation: "Veins, operating under low pressure, contain one-way semilunar valves to ensure blood flows toward the heart."
-    },
-    {
-      id: "physio_9",
-      question: "What type of muscle fibers are highly resistant to fatigue, containing high levels of myoglobin and mitochondria?",
-      options: ["Type I (Slow Oxidative)", "Type IIa (Fast Oxidative)", "Type IIx (Fast Glycolytic)", "White muscle fibers"],
+      id: "phys_f2_2",
+      question: "During which phase of the cardiac cycle are all heart valves closed while ventricular pressure rises rapidly?",
+      options: ["Isovolumetric contraction", "Isovolumetric relaxation", "Ventricular ejection", "Rapid inflow"],
       answer: 0,
-      explanation: "Type I fibers (slow-twitch) rely on aerobic metabolism and are highly resistant to fatigue, suited for endurance."
+      explanation: "Isovolumetric contraction occurs at the start of systole when AV and semilunar valves are closed, raising pressure without volume change.",
+      source: "INTEG PHYSIO _CARDIAC_ MIDTERMS.pdf"
     },
+    // 3. INTEG PHYSIO _CIRCULATORY MIDTERMS.pdf
     {
-      id: "physio_10",
-      question: "What occurs to airway resistance when the sympathetic nervous system stimulates beta-2 receptors on bronchial smooth muscle?",
-      options: ["Increases due to bronchoconstriction", "Decreases due to bronchodilation", "Remains unchanged", "Airway collapses completely"],
-      answer: 1,
-      explanation: "Sympathetic stimulation of beta-2 adrenergic receptors causes relaxation of bronchial smooth muscle (bronchodilation), decreasing resistance."
-    },
-    {
-      id: "physio_11",
-      question: "What is the primary action of Antidiuretic Hormone (ADH) on the kidney?",
-      options: [
-        "Increases sodium excretion",
-        "Increases water reabsorption in the collecting ducts",
-        "Decreases blood pressure",
-        "Stimulates glucose secretion"
-      ],
-      answer: 1,
-      explanation: "ADH (Vasopressin) increases the permeability of the renal collecting ducts to water by inserting aquaporin channels, conserving body water."
-    },
-    {
-      id: "physio_12",
-      question: "During heavy exercise, what shift occurs in the oxygen-hemoglobin dissociation curve to promote oxygen unloading at tissues?",
-      options: ["Shift to the right", "Shift to the left", "No shift", "Horizontal flattening"],
-      answer: 0,
-      explanation: "Increased temperature, CO2, acidity (lower pH), and 2,3-DPG cause a right shift, reducing hemoglobin's affinity for oxygen to release it to tissues."
-    },
-    {
-      id: "physio_13",
-      question: "Which enzyme is secreted by kidneys to convert angiotensinogen to angiotensin I?",
-      options: ["ACE", "Renin", "Aldosterone", "Erythropoietin"],
-      answer: 1,
-      explanation: "Renin, produced by juxtaglomerular cells, catalyzes the cleavage of angiotensinogen into angiotensin I in response to low blood pressure."
-    },
-    {
-      id: "physio_14",
-      question: "What is normal human blood pH?",
-      options: ["7.00 - 7.10", "7.35 - 7.45", "7.50 - 7.60", "6.80 - 6.95"],
-      answer: 1,
-      explanation: "Normal arterial blood pH is tightly regulated between 7.35 and 7.45."
-    },
-    {
-      id: "physio_15",
-      question: "In skeletal muscle, which structure acts as the storage site for intracellular calcium?",
-      options: ["T-tubules", "Sarcolemma", "Sarcoplasmic Reticulum", "M-line"],
+      id: "phys_f3_1",
+      question: "According to Poiseuille's Law, vascular resistance is inversely proportional to which power of the vessel radius?",
+      options: ["Second power", "Third power", "Fourth power", "Fifth power"],
       answer: 2,
-      explanation: "The sarcoplasmic reticulum (SR) stores calcium and releases it upon depolarization of the muscle fiber."
+      explanation: "Resistance is proportional to 1/r^4. A small change in vessel radius yields a massive change in vascular flow resistance.",
+      source: "INTEG PHYSIO _CIRCULATORY MIDTERMS.pdf"
     },
     {
-      id: "physio_16",
-      question: "What is the physiological effect of aldosterone on renal tubules?",
-      options: [
-        "Inhibits sodium and water reabsorption",
-        "Promotes sodium reabsorption and potassium excretion",
-        "Stimulates calcium excretion",
-        "Decreases blood volume"
-      ],
+      id: "phys_f3_2",
+      question: "Which blood vessels are the principal site of adjustable systemic vascular resistance and blood pressure control?",
+      options: ["Capillaries", "Arterioles", "Veins", "Venules"],
       answer: 1,
-      explanation: "Aldosterone acts on the distal tubules and collecting ducts to reabsorb sodium and secrete potassium, causing water to follow sodium."
+      explanation: "Arterioles contain abundant smooth muscle in their walls, allowing vasoconstriction and vasodilation to regulate TPR.",
+      source: "INTEG PHYSIO _CIRCULATORY MIDTERMS.pdf"
     },
+    // 4. INTEG PHYSIO _RENAL MIDTERMS.pdf
     {
-      id: "physio_17",
-      question: "What causes the first heart sound (S1) or 'lub'?",
+      id: "phys_f4_1",
+      question: "What force is the primary driving factor for Glomerular Filtration Rate (GFR) in the renal corpuscle?",
       options: [
-        "Closure of the semilunar valves",
-        "Closure of the atrioventricular (AV) valves",
-        "Opening of the aortic valve",
-        "Filling of the ventricles"
-      ],
-      answer: 1,
-      explanation: "The first heart sound (S1) is caused by the closure of the mitral and tricuspid (AV) valves at the start of ventricular systole."
-    },
-    {
-      id: "physio_18",
-      question: "Which of the following occurs during hyperventilation?",
-      options: [
-        "PaCO2 increases, causing respiratory acidosis",
-        "PaCO2 decreases, causing respiratory alkalosis",
-        "Oxygen levels drop dangerously",
-        "pH of blood decreases"
-      ],
-      answer: 1,
-      explanation: "Hyperventilation drives off excess CO2, causing low arterial carbon dioxide levels (hypocapnia) and increasing blood pH (respiratory alkalosis)."
-    },
-    {
-      id: "physio_19",
-      question: "What is the formula to calculate Cardiac Output (CO)?",
-      options: [
-        "CO = Stroke Volume / Heart Rate",
-        "CO = Stroke Volume x Heart Rate",
-        "CO = Systolic BP - Diastolic BP",
-        "CO = Heart Rate x Total Peripheral Resistance"
-      ],
-      answer: 1,
-      explanation: "Cardiac Output (volume of blood pumped per minute) is the product of Stroke Volume (SV) and Heart Rate (HR)."
-    },
-    {
-      id: "physio_20",
-      question: "What chemical transmitter is released at the neuromuscular junction to trigger skeletal muscle contraction?",
-      options: ["Norepinephrine", "Dopamine", "Acetylcholine", "Serotonin"],
-      answer: 2,
-      explanation: "Acetylcholine (ACh) is released by somatic motor neurons, binding to nicotinic receptors on the motor endplate."
-    },
-    {
-      id: "physio_21",
-      question: "Which metabolic energy pathway is primary for short-duration, high-intensity sprints (under 10 seconds)?",
-      options: ["Phosphagen (ATP-PCr) system", "Anaerobic glycolysis", "Aerobic oxidation", "Beta-oxidation"],
-      answer: 0,
-      explanation: "The phosphagen system utilizes stored ATP and creatine phosphate for rapid energy delivery during maximum efforts lasting up to 10 seconds."
-    },
-    {
-      id: "physio_22",
-      question: "What physiological change occurs in blood vessels during vasodilation?",
-      options: [
-        "Vascular resistance increases, raising blood pressure",
-        "Vascular resistance decreases, lowering blood pressure",
-        "Lumen size decreases",
-        "Blood flow is completely halted"
-      ],
-      answer: 1,
-      explanation: "Vasodilation increases blood vessel lumen diameter, which decreases peripheral vascular resistance and helps lower blood pressure."
-    },
-    {
-      id: "physio_23",
-      question: "What is surfactant's function in the lungs?",
-      options: [
-        "To increase surface tension and collapse alveoli",
-        "To reduce surface tension, preventing alveolar collapse during expiration",
-        "To destroy foreign pathogens in bronchioles",
-        "To speed up oxygen binding to red blood cells"
-      ],
-      answer: 1,
-      explanation: "Surfactant, produced by Type II alveolar cells, lowers surface tension to stabilize alveoli and reduce the work of breathing."
-    },
-    {
-      id: "physio_24",
-      question: "What is the functional residual capacity (FRC) of the lungs?",
-      options: [
-        "Volume of air left in lungs after normal tidal expiration",
-        "Maximum amount of air inspired after normal inspiration",
-        "Total air lungs can hold",
-        "Amount of air that can be forced out after maximal inhalation"
+        "Glomerular capillary hydrostatic pressure",
+        "Bowman's capsule hydrostatic pressure",
+        "Glomerular oncotic pressure",
+        "Renal vein blood pressure"
       ],
       answer: 0,
-      explanation: "FRC is the sum of Expiratory Reserve Volume (ERV) and Residual Volume (RV), representing the air left in the lungs after a normal exhale."
+      explanation: "Glomerular hydrostatic pressure (~55 mmHg) pushes fluid out of capillaries into Bowman's space, driving filtration.",
+      source: "INTEG PHYSIO _RENAL MIDTERMS.pdf"
     },
     {
-      id: "physio_25",
-      question: "Which endocrine gland produces insulin and glucagon?",
-      options: ["Adrenal gland", "Pituitary gland", "Pancreas", "Thyroid gland"],
+      id: "phys_f4_2",
+      question: "In which segment of the renal tubule does the vast majority of solute and water reabsorption occur?",
+      options: ["Proximal convoluted tubule (PCT)", "Loop of Henle", "Distal convoluted tubule", "Collecting duct"],
+      answer: 0,
+      explanation: "The PCT reabsorbs about 65% of filtered water, sodium, potassium, and 100% of filtered glucose and amino acids.",
+      source: "INTEG PHYSIO _RENAL MIDTERMS.pdf"
+    },
+    // 5. INTEG PHYSIO _RESPIRATORY MIDTERMS.pdf
+    {
+      id: "phys_f5_1",
+      question: "What lung volume calculation represents the amount of air remaining in the lungs after a normal passive expiration?",
+      options: [
+        "Residual Volume (RV)",
+        "Functional Residual Capacity (FRC)",
+        "Expiratory Reserve Volume (ERV)",
+        "Tidal Volume (VT)"
+      ],
+      answer: 1,
+      explanation: "FRC = ERV + RV. It acts as an oxygen reservoir, preventing lung collapse during normal respiration cycles.",
+      source: "INTEG PHYSIO _RESPIRATORY MIDTERMS.pdf"
+    },
+    {
+      id: "phys_f5_2",
+      question: "In what chemical form is the majority of carbon dioxide transported in systemic venous blood?",
+      options: ["Dissolved gas in plasma", "Carbaminohemoglobin", "Bicarbonate ions (HCO3-)", "Carbonic acid gas"],
       answer: 2,
-      explanation: "The islets of Langerhans in the pancreas contain alpha cells (glucagon) and beta cells (insulin) that regulate glucose homeostasis."
+      explanation: "About 70% of CO2 is converted into bicarbonate by carbonic anhydrase inside red blood cells, then transported in plasma.",
+      source: "INTEG PHYSIO _RESPIRATORY MIDTERMS.pdf"
+    },
+    // 6. Physio - Finals Lesson 1.pdf
+    {
+      id: "phys_f6_1",
+      question: "Which hormone, secreted by the thyroid gland, stimulates cell oxygen consumption and increases basal metabolic rate?",
+      options: ["Calcitonin", "Thyroxine (T4)", "Parathyroid hormone", "Thyrotropin"],
+      answer: 1,
+      explanation: "Thyroxine (T4) and triiodothyronine (T3) increase metabolic activity, protein synthesis, and sensitivity to catecholamines.",
+      source: "Physio - Finals Lesson 1.pdf"
+    },
+    {
+      id: "phys_f6_2",
+      question: "Which hormone, synthesized in the hypothalamus and released by the neurohypophysis, triggers uterine contractions?",
+      options: ["Prolactin", "Oxytocin", "Vasopressin", "Luteinizing hormone"],
+      answer: 1,
+      explanation: "Oxytocin stimulates uterine smooth muscle contraction during birth and milk ejection from mammary glands.",
+      source: "Physio - Finals Lesson 1.pdf"
+    },
+    // 7. physio from ninja nerd.pdf
+    {
+      id: "phys_f7_1",
+      question: "Under the Bohr effect, how does high blood acidity (low pH) and elevated CO2 affect hemoglobin's affinity for oxygen?",
+      options: [
+        "Affinity increases, shifting the curve to the left",
+        "Affinity decreases, shifting the curve to the right to release oxygen",
+        "Affinity remains completely unchanged",
+        "Hemoglobin stops binding oxygen permanently"
+      ],
+      answer: 1,
+      explanation: "High H+ and CO2 stabilize the T-state of hemoglobin, reducing oxygen affinity (right shift) and assisting oxygen delivery to exercising tissues.",
+      source: "physio from ninja nerd.pdf"
+    },
+    {
+      id: "phys_f7_2",
+      question: "During physiological stress, sympathetic activation of beta-2 adrenergic receptors causes which respiratory response?",
+      options: ["Bronchoconstriction", "Bronchodilation", "Alveolar collapse", "Mucus plug formation"],
+      answer: 1,
+      explanation: "Beta-2 receptor activation relaxes bronchial smooth muscle, causing bronchodilation to facilitate airflow.",
+      source: "physio from ninja nerd.pdf"
+    },
+    {
+      id: "phys_f7_3",
+      question: "Which hormone is secreted by renal cells in response to tissue hypoxia to stimulate erythropoiesis?",
+      options: ["Renin", "Erythropoietin (EPO)", "Aldosterone", "Angiotensinogen"],
+      answer: 1,
+      explanation: "EPO is released by interstitial cells in the renal cortex during hypoxia, stimulating red blood cell production in marrow.",
+      source: "physio from ninja nerd.pdf"
+    },
+    // 8. WEEK 1 - INTEGRATIVE PHYSIOLOGY.pdf
+    {
+      id: "phys_f8_1",
+      question: "What term describes the net movement of water across a semipermeable membrane from low solute to high solute concentration?",
+      options: ["Active transport", "Facilitated diffusion", "Osmosis", "Filtration"],
+      answer: 2,
+      explanation: "Osmosis is the passive diffusion of water driven by osmotic pressure gradients.",
+      source: "WEEK 1 - INTEGRATIVE PHYSIOLOGY.pdf"
+    },
+    {
+      id: "phys_f8_2",
+      question: "Which electrolyte is the most abundant extracellular anion in human body fluids?",
+      options: ["Sodium", "Chloride", "Bicarbonate", "Phosphate"],
+      answer: 1,
+      explanation: "Chloride (Cl-) balances positive sodium ions outside cells, playing roles in fluid balance and gastric acid.",
+      source: "WEEK 1 - INTEGRATIVE PHYSIOLOGY.pdf"
+    },
+    // 9. WEEK 11 to 15 - INTEGRATIVE PHYSIOLOGY.pdf
+    {
+      id: "phys_f9_1",
+      question: "Which hormone is released by pancreatic islet beta cells in response to elevated blood glucose levels?",
+      options: ["Glucagon", "Insulin", "Somatostatin", "Cortisol"],
+      answer: 1,
+      explanation: "Insulin promotes glucose transport into cells, reducing circulating blood sugar.",
+      source: "WEEK 11 to 15 - INTEGRATIVE PHYSIOLOGY.pdf"
+    },
+    {
+      id: "phys_f9_2",
+      question: "Which mineralocorticoid hormone promotes renal sodium reabsorption and potassium excretion to regulate blood pressure?",
+      options: ["Cortisol", "Aldosterone", "Antidiuretic hormone", "Erythropoietin"],
+      answer: 1,
+      explanation: "Aldosterone, released from the adrenal cortex, acts on the distal tubule and collecting duct to conserve sodium and excrete potassium.",
+      source: "WEEK 11 to 15 - INTEGRATIVE PHYSIOLOGY.pdf"
+    },
+    // 10. WEEK 2 - INTEGRATIVE PHYSIOLOGY.pdf
+    {
+      id: "phys_f10_1",
+      question: "The opening of which ion channel is responsible for the rapid depolarization phase of a skeletal muscle action potential?",
+      options: [
+        "Voltage-gated potassium channels",
+        "Voltage-gated sodium channels",
+        "Ligand-gated chloride channels",
+        "Calcium leak channels"
+      ],
+      answer: 1,
+      explanation: "Sodium influx through open voltage-gated Na+ channels drives the membrane potential positive during depolarization.",
+      source: "WEEK 2 - INTEGRATIVE PHYSIOLOGY.pdf"
+    },
+    {
+      id: "phys_f10_2",
+      question: "In skeletal muscle, which structure acts as the primary storage site for calcium ions needed for contraction?",
+      options: ["Transverse tubules (T-tubules)", "Sarcolemma", "Sarcoplasmic Reticulum (SR)", "Golgi apparatus"],
+      answer: 2,
+      explanation: "The SR stores calcium and releases it via ryanodine receptors upon depolarization of T-tubules.",
+      source: "WEEK 2 - INTEGRATIVE PHYSIOLOGY.pdf"
+    },
+    // 11. WEEK 3 - INTEGRATIVE PHYSIOLOGY.pdf
+    {
+      id: "phys_f11_1",
+      question: "Which neurotransmitter is released by somatic motor neurons at the neuromuscular junction (NMJ)?",
+      options: ["Norepinephrine", "Dopamine", "Acetylcholine (ACh)", "GABA"],
+      answer: 2,
+      explanation: "ACh is released into the synaptic cleft, binding to nicotinic receptors to trigger endplate potentials.",
+      source: "WEEK 3 - INTEGRATIVE PHYSIOLOGY.pdf"
+    },
+    {
+      id: "phys_f11_2",
+      question: "What class of receptors is found on the motor endplate of skeletal muscle fibers to bind acetylcholine?",
+      options: ["Muscarinic receptors", "Nicotinic cholinergic receptors", "Beta-1 adrenergic receptors", "Alpha-2 adrenergic receptors"],
+      answer: 1,
+      explanation: "Nicotinic receptors are ligand-gated ion channels that allow sodium influx upon ACh binding, depolarizing the muscle cell.",
+      source: "WEEK 3 - INTEGRATIVE PHYSIOLOGY.pdf"
+    },
+    // 12. WEEK 7 to 9 - INTEGRATIVE PHYSIOLOGY.pdf
+    {
+      id: "phys_f12_1",
+      question: "Which gas law states that the total pressure of a mixture of gases is equal to the sum of their individual partial pressures?",
+      options: ["Boyle's Law", "Dalton's Law", "Henry's Law", "Charles's Law"],
+      answer: 1,
+      explanation: "Dalton's Law shows that each gas in a mixture exerts pressure independently, determining partial pressure gradients for respiration.",
+      source: "WEEK 7 to 9 - INTEGRATIVE PHYSIOLOGY.pdf"
+    },
+    {
+      id: "phys_f12_2",
+      question: "Where is the primary respiratory control center that establishes the basic rhythm of breathing located?",
+      options: ["Cerebellum", "Medulla oblongata", "Thalamus", "Hypothalamus"],
+      answer: 1,
+      explanation: "The medulla oblongata houses dorsal and ventral respiratory groups that regulate diaphragmatic and intercostal firing.",
+      source: "WEEK 7 to 9 - INTEGRATIVE PHYSIOLOGY.pdf"
+    },
+    // 13. WEEK 8 - INTEGRATIVE PHYSIOLOGY.pdf
+    {
+      id: "phys_f13_1",
+      question: "Which enzyme is secreted by juxtaglomerular cells in response to low renal perfusion pressure?",
+      options: ["Angiotensin-converting enzyme (ACE)", "Renin", "Aldosterone", "Erythropoietin"],
+      answer: 1,
+      explanation: "Renin cleaves angiotensinogen into angiotensin I, starting the renin-angiotensin-aldosterone system (RAAS).",
+      source: "WEEK 8 - INTEGRATIVE PHYSIOLOGY.pdf"
+    },
+    {
+      id: "phys_f13_2",
+      question: "Which hormone increases water permeability in the renal collecting ducts by inserting aquaporin-2 channels?",
+      options: ["Aldosterone", "Antidiuretic Hormone (ADH / Vasopressin)", "Atrial natriuretic peptide", "Thyroxine"],
+      answer: 1,
+      explanation: "ADH binds to V2 receptors, inserting aquaporin channels to reabsorb water and concentrate urine.",
+      source: "WEEK 8 - INTEGRATIVE PHYSIOLOGY.pdf"
     }
   ],
   KINES: [
+    // 1. Functional_Anatomy_and_Kinesiology_Blank_Exam.pdf
     {
-      id: "kines_1",
-      question: "What type of lever system is most common in the human musculoskeletal system?",
+      id: "kine_f1_1",
+      question: "A standing calf raise (tiptoe lift) represents which class of mechanical lever?",
+      options: ["First-class lever", "Second-class lever", "Third-class lever", "Fourth-class lever"],
+      answer: 1,
+      explanation: "In a calf raise, the load (body weight) is in the middle, between the fulcrum (MTP joints) and the effort (gastrocnemius pull).",
+      source: "Functional_Anatomy_and_Kinesiology_Blank_Exam.pdf"
+    },
+    {
+      id: "kine_f1_2",
+      question: "Extending the head at the atlanto-occipital joint is an example of which class of lever?",
+      options: ["First-class lever", "Second-class lever", "Third-class lever", "No mechanical lever"],
+      answer: 0,
+      explanation: "Head extension is a first-class lever, where the fulcrum (atlanto-occipital joint) lies between the effort (neck extensors) and the load (face/head weight).",
+      source: "Functional_Anatomy_and_Kinesiology_Blank_Exam.pdf"
+    },
+    // 3. KINES - Week 4.pdf
+    {
+      id: "kine_f3_1",
+      question: "Which muscle is the primary lateral pelvic stabilizer, preventing pelvic drop on the contralateral side during single-leg stance?",
+      options: ["Gluteus maximus", "Gluteus medius", "Iliopsoas", "Sartorius"],
+      answer: 1,
+      explanation: "The stance leg's gluteus medius contracts to keep the pelvis level; weakness causes a Trendelenburg sign (contralateral hip drop).",
+      source: "KINES - Week 4.pdf"
+    },
+    {
+      id: "kine_f3_2",
+      question: "Which strong hip ligament is primary in limiting excessive hyperextension of the hip joint?",
+      options: ["Ischiofemoral ligament", "Iliofemoral ligament (Y-ligament of Bigelow)", "Pubofemoral ligament", "Ligamentum teres"],
+      answer: 1,
+      explanation: "The iliofemoral ligament, shaped like an inverted Y, stabilizes the hip anteriorly and limits hyperextension.",
+      source: "KINES - Week 4.pdf"
+    },
+    // 4. KINES FINALS.pdf
+    {
+      id: "kine_f4_1",
+      question: "What is the close-packed position of the hip joint?",
+      options: [
+        "30 degrees flexion and abduction",
+        "Full extension, internal rotation, and abduction",
+        "Full flexion, external rotation, and adduction",
+        "Neutral extension with external rotation"
+      ],
+      answer: 1,
+      explanation: "Full extension, internal rotation, and abduction represents the close-packed position of the hip, tightening all capsule ligaments.",
+      source: "KINES FINALS.pdf"
+    },
+    {
+      id: "kine_f4_2",
+      question: "Which muscle is the primary and strongest flexor of the hip joint?",
+      options: ["Rectus femoris", "Iliopsoas", "Sartorius", "Tensor fasciae latae"],
+      answer: 1,
+      explanation: "The iliopsoas (psoas major and iliacus) is the primary hip flexor, active in both open and closed chain movements.",
+      source: "KINES FINALS.pdf"
+    },
+    // 5. Kinesiology Wrist & Hand .pdf
+    {
+      id: "kine_f5_1",
+      question: "Which carpal bone is the most frequently fractured during a fall on an outstretched hand (FOOSH)?",
+      options: ["Lunate", "Scaphoid", "Triquetrum", "Capitate"],
+      answer: 1,
+      explanation: "The scaphoid absorbs the force of a FOOSH, often leading to fractures that are high risk for avascular necrosis.",
+      source: "Kinesiology Wrist & Hand .pdf"
+    },
+    {
+      id: "kine_f5_2",
+      question: "What connective tissue structure forms the roof of the carpal tunnel, compressing the median nerve in CTS?",
+      options: ["Flexor retinaculum (transverse carpal ligament)", "Extensor retinaculum", "Palmar aponeurosis", "Palmar radiocarpal ligament"],
+      answer: 0,
+      explanation: "The flexor retinaculum bridges the carpal arch, forming the carpal tunnel where the median nerve and flexor tendons pass.",
+      source: "Kinesiology Wrist & Hand .pdf"
+    },
+    // 6. kines - week 6.pdf
+    {
+      id: "kine_f6_1",
+      question: "During weight-bearing terminal knee extension (closed chain), the 'screw-home' mechanism locks the knee via which osseous motion?",
+      options: [
+        "Internal rotation of the femur on a fixed tibia",
+        "External rotation of the femur on a fixed tibia",
+        "External rotation of the tibia on a fixed femur",
+        "Lateral translation of the patella"
+      ],
+      answer: 0,
+      explanation: "In closed-chain extension, the convex femur internally rotates on the concave tibia to lock the knee joint.",
+      source: "kines - week 6.pdf"
+    },
+    {
+      id: "kine_f6_2",
+      question: "Which knee ligament primarily resists anterior translation of the tibia relative to the femur?",
+      options: ["Posterior cruciate ligament (PCL)", "Anterior cruciate ligament (ACL)", "Medial collateral ligament (MCL)", "Lateral collateral ligament (LCL)"],
+      answer: 1,
+      explanation: "The ACL prevents the tibia from sliding forward on the femur and controls rotational stability.",
+      source: "kines - week 6.pdf"
+    },
+    // 7. kines midterm.pdf
+    {
+      id: "kine_f7_1",
+      question: "Which rotator cuff muscle initiates the first 15 degrees of shoulder abduction?",
+      options: ["Deltoid", "Supraspinatus", "Infraspinatus", "Subscapularis"],
+      answer: 1,
+      explanation: "The supraspinatus initiates abduction before the deltoid gains a favorable line of pull beyond 15 degrees.",
+      source: "kines midterm.pdf"
+    },
+    {
+      id: "kine_f7_2",
+      question: "Weakness or paralysis of which muscle leads to 'winging scapula' due to loss of scapular protraction?",
+      options: ["Levator scapulae", "Serratus anterior", "Pectoralis minor", "Trapezius"],
+      answer: 1,
+      explanation: "The serratus anterior holds the medial border of the scapula flat against the thoracic cage. Injury to the long thoracic nerve causes winging.",
+      source: "kines midterm.pdf"
+    },
+    // 8. kines post test compilation .pdf
+    {
+      id: "kine_f8_1",
+      question: "What type of muscle contraction occurs when muscle tension rises but no change in joint angle or muscle length occurs?",
+      options: ["Concentric contraction", "Eccentric contraction", "Isometric contraction", "Isokinetic contraction"],
+      answer: 2,
+      explanation: "Isometric contractions develop force without shortening or lengthening the muscle.",
+      source: "kines post test compilation .pdf"
+    },
+    {
+      id: "kine_f8_2",
+      question: "In biomechanics, what is the definition of a force's 'moment arm'?",
+      options: [
+        "The total length of the bone segment",
+        "The perpendicular distance from the line of action of the force to the axis of rotation",
+        "The angle of muscle pull relative to the joint",
+        "The amount of linear translation in the joint"
+      ],
+      answer: 1,
+      explanation: "The moment arm is the shortest distance between the rotation axis and the muscle's line of pull, determining torque.",
+      source: "kines post test compilation .pdf"
+    },
+    // 9. kines wrist & hand.pdf
+    {
+      id: "kine_f9_1",
+      question: "Which carpal bone serves as the central keystone of the proximal row, articulating with the radius?",
+      options: ["Scaphoid", "Lunate", "Pisiform", "Hamate"],
+      answer: 1,
+      explanation: "The lunate is situated in the center of the proximal row, articulating with the radius, and is highly prone to dislocation.",
+      source: "kines wrist & hand.pdf"
+    },
+    {
+      id: "kine_f9_2",
+      question: "Which muscle extends and abducts the wrist, innervated by the radial nerve?",
+      options: [
+        "Flexor carpi radialis",
+        "Extensor carpi radialis longus",
+        "Extensor carpi ulnaris",
+        "Flexor carpi ulnaris"
+      ],
+      answer: 1,
+      explanation: "The ECRL extends the wrist and assists in radial deviation (abduction), supplied by the radial nerve.",
+      source: "kines wrist & hand.pdf"
+    },
+    // 10. kiness knee mcq.pdf
+    {
+      id: "kine_f10_1",
+      question: "Which knee ligament acts as the primary constraint against posterior translation of the tibia relative to the femur?",
+      options: ["Anterior cruciate ligament (ACL)", "Posterior cruciate ligament (PCL)", "Lateral collateral ligament (LCL)", "Medial collateral ligament (MCL)"],
+      answer: 1,
+      explanation: "The PCL prevents the tibia from sliding backward on the femur, tested via the posterior drawer test.",
+      source: "kiness knee mcq.pdf"
+    },
+    {
+      id: "kine_f10_2",
+      question: "What knee structures act as shock absorbers, increase congruency, and deepen the tibial articular facets?",
+      options: ["Cruciate ligaments", "Menisci (medial and lateral)", "Patellar retinaculum", "Prepatellar bursa"],
+      answer: 1,
+      explanation: "The crescent-shaped fibrocartilaginous menisci absorb compressive loads and stabilize the humerotibial articulation.",
+      source: "kiness knee mcq.pdf"
+    },
+    // 11. week 2 kines.pdf
+    {
+      id: "kine_f11_1",
+      question: "What biomechanical term describes a rigid bar that turns around a fixed pivot point (fulcrum)?",
+      options: ["Pulley", "Lever", "Wheel and axle", "Inclined plane"],
+      answer: 1,
+      explanation: "Levers consist of a fulcrum, an effort arm, and a resistance arm to gain mechanical advantage.",
+      source: "week 2 kines.pdf"
+    },
+    {
+      id: "kine_f11_2",
+      question: "Most muscles and joints in the human body are structured to operate as which class of lever?",
       options: ["First-class lever", "Second-class lever", "Third-class lever", "Fourth-class lever"],
       answer: 2,
-      explanation: "Third-class levers (effort force in the middle, between fulcrum and load) are most common in the body, favoring range of motion and speed over mechanical advantage."
+      explanation: "Third-class levers (effort in the middle) favor speed and range of motion over mechanical force advantage.",
+      source: "week 2 kines.pdf"
     },
+    // 12. week 3 kines.pdf
     {
-      id: "kines_2",
-      question: "During the gait cycle, what percentage is typically spent in the stance phase during normal walking?",
-      options: ["40%", "60%", "50%", "80%"],
+      id: "kine_f12_1",
+      question: "According to the force-velocity relationship for concentric contractions, as muscle shortening velocity increases, force capacity does what?",
+      options: ["Increases", "Decreases", "Remains constant", "Fluctuates randomly"],
       answer: 1,
-      explanation: "Normal walking gait is divided into stance phase (~60%) and swing phase (~40%)."
+      explanation: "Concentric force drops as shortening speed increases because cross-bridges cannot attach fast enough.",
+      source: "week 3 kines.pdf"
     },
     {
-      id: "kines_3",
-      question: "Which carpometacarpal (CMC) joint in the hand is a classic saddle joint, allowing flexion/extension, abduction/adduction, and opposition?",
-      options: ["Index finger CMC", "Thumb (1st) CMC", "Pinky (5th) CMC", "Wrist joint"],
+      id: "kine_f12_2",
+      question: "What passive muscle property describes the capacity to return to its original resting length after a stretch is removed?",
+      options: ["Contractility", "Elasticity", "Plasticity", "Excitability"],
       answer: 1,
-      explanation: "The first CMC joint (thumb) is a saddle joint between the trapezium and the base of the first metacarpal."
-    },
-    {
-      id: "kines_4",
-      question: "What is the mechanical advantage of a second-class lever?",
-      options: [
-        "Always less than 1",
-        "Always greater than 1",
-        "Equal to 1",
-        "Variable depending on muscle force"
-      ],
-      answer: 1,
-      explanation: "In second-class levers, the effort arm is always longer than the resistance arm, meaning the mechanical advantage is always greater than 1."
-    },
-    {
-      id: "kines_5",
-      question: "During a concentric contraction, what is the relationship between muscle force and velocity of contraction?",
-      options: [
-        "As velocity increases, force capacity decreases",
-        "As velocity increases, force capacity increases",
-        "Force remains constant regardless of velocity",
-        "Velocity and force are independent"
-      ],
-      answer: 0,
-      explanation: "According to the force-velocity curve for concentric contractions, as the speed of shortening increases, the maximum force the muscle can generate decreases."
-    },
-    {
-      id: "kines_6",
-      question: "Which term describes a joint movement that occurs in the sagittal plane around a frontal-horizontal axis?",
-      options: ["Abduction", "Flexion", "Internal rotation", "Lateral flexion"],
-      answer: 1,
-      explanation: "Flexion and extension occur in the sagittal plane around a coronal (frontal-horizontal) axis."
-    },
-    {
-      id: "kines_7",
-      question: "What muscle is the primary antagonist during elbow extension?",
-      options: ["Triceps brachii", "Biceps brachii", "Anconeus", "Supinator"],
-      answer: 1,
-      explanation: "The biceps brachii (elbow flexor) acts as the primary antagonist to the triceps brachii (elbow extensor)."
-    },
-    {
-      id: "kines_8",
-      question: "What is the close-packed position of the knee joint?",
-      options: [
-        "Full flexion with external rotation",
-        "Full extension with external rotation of the tibia",
-        "30 degrees of flexion",
-        "90 degrees of flexion"
-      ],
-      answer: 1,
-      explanation: "The close-packed position of the knee is full extension, where the cruciate and collateral ligaments are maximally taut, and the screw-home mechanism is locked."
-    },
-    {
-      id: "kines_9",
-      question: "In kinematic terminology, what is 'osteokinematics'?",
-      options: [
-        "Movement of joint surfaces relative to each other (e.g. roll, glide, spin)",
-        "Movement of bony segments in space (e.g. flexion, abduction)",
-        "The forces that cause bony movements",
-        "Microscopic structural cellular changes in bone under loads"
-      ],
-      answer: 1,
-      explanation: "Osteokinematics deals with the motion of bones relative to the cardinal planes, whereas arthrokinematics deals with accessory movements inside the joint."
-    },
-    {
-      id: "kines_10",
-      question: "Which of the following represents a closed kinetic chain exercise?",
-      options: ["Seated knee extension", "Bicep curl", "Squat", "Dumbbell chest fly"],
-      answer: 2,
-      explanation: "In closed kinetic chain (CKC) exercises, the distal segment is fixed to a solid surface (like feet on the ground in a squat)."
-    },
-    {
-      id: "kines_11",
-      question: "What is the screw-home mechanism of the knee?",
-      options: [
-        "Internal rotation of the femur on a fixed tibia during flexion",
-        "External rotation of the tibia on a fixed femur during terminal knee extension",
-        "Side-to-side gliding of the patella",
-        "Hyperextension limit of the knee"
-      ],
-      answer: 1,
-      explanation: "To lock the knee in full extension, the tibia rotates externally (on a fixed femur) or the femur rotates internally (on a fixed tibia)."
-    },
-    {
-      id: "kines_12",
-      question: "What type of muscle contraction occurs when the muscle develops tension but elongates under an external load?",
-      options: ["Isokinetic contraction", "Concentric contraction", "Eccentric contraction", "Isometric contraction"],
-      answer: 2,
-      explanation: "An eccentric contraction occurs when the muscle lengthens while resisting a force (e.g., lowering a weight)."
-    },
-    {
-      id: "kines_13",
-      question: "Which phase of the gait cycle begins when the heel of the stance foot contacts the ground?",
-      options: ["Midstance", "Initial Contact (Heel strike)", "Terminal Stance", "Preswing"],
-      answer: 1,
-      explanation: "Initial Contact is the instant the foot touches the ground, beginning the stance phase of walking."
-    },
-    {
-      id: "kines_14",
-      question: "Which wrist bone acts as the anatomical keystone and lies at the center of the proximal carpal row, articulating with the radius?",
-      options: ["Scaphoid", "Lunate", "Capitate", "Pisiform"],
-      answer: 1,
-      explanation: "The lunate lies in the middle of the proximal carpal row and is highly susceptible to dislocation."
-    },
-    {
-      id: "kines_15",
-      question: "What is the primary function of the patella in terms of knee biomechanics?",
-      options: [
-        "Protects the posterior cruciate ligament",
-        "Increases the moment arm of the quadriceps muscle, improving extension efficiency",
-        "Prevents knee hyperextension",
-        "Allows lateral rotation of the lower leg"
-      ],
-      answer: 1,
-      explanation: "The patella acts as an anatomical pulley, increasing the distance of the quadriceps tendon from the joint axis, which increases mechanical torque."
-    },
-    {
-      id: "kines_16",
-      question: "What is the term for a muscle that assists the prime mover in performing a specific action?",
-      options: ["Antagonist", "Fixator", "Synergist", "Agonist only"],
-      answer: 2,
-      explanation: "A synergist muscle assists the agonist (prime mover) by contributing force or stabilizing joints to prevent unwanted motion."
-    },
-    {
-      id: "kines_17",
-      question: "Which type of lever is exemplified by standing on your tiptoes (calf raise)?",
-      options: ["First-class lever", "Second-class lever", "Third-class lever", "No lever exists"],
-      answer: 1,
-      explanation: "A calf raise represents a second-class lever: the MTP joints act as the fulcrum, the body weight acting down through the tarsals is the load, and the gastroc-soleus pulling up on the calcaneus is the effort."
-    },
-    {
-      id: "kines_18",
-      question: "What describes the 'moment arm' of a force?",
-      options: [
-        "Length of the bone being moved",
-        "Perpendicular distance from the line of action of the force to the axis of rotation",
-        "Angle of muscle insertion",
-        "Amount of muscular force generated"
-      ],
-      answer: 1,
-      explanation: "The moment arm is the shortest (perpendicular) distance between the joint axis and the line of action of the muscle pull."
-    },
-    {
-      id: "kines_19",
-      question: "During which phase of swing phase in gait is the foot accelerated forward?",
-      options: ["Initial swing", "Midswing", "Terminal swing", "Loading response"],
-      answer: 0,
-      explanation: "Initial swing begins as the foot leaves the ground (toe-off) and accelerates to swing forward."
-    },
-    {
-      id: "kines_20",
-      question: "What wrist joint motion occurs in the frontal plane?",
-      options: ["Flexion / Extension", "Pronation / Supination", "Radial / Ulnar Deviation", "Circumduction"],
-      answer: 2,
-      explanation: "Radial and ulnar deviation occur in the frontal plane around an anteroposterior (AP) axis."
-    },
-    {
-      id: "kines_21",
-      question: "Which arthrokinematic movement refers to the rotation of one joint surface on another around a fixed axis?",
-      options: ["Roll", "Glide (slide)", "Spin", "Traction"],
-      answer: 2,
-      explanation: "Spin is the rotation of a moving joint segment around a longitudinal axis relative to the stationary segment."
-    },
-    {
-      id: "kines_22",
-      question: "According to the concave-convex rule, when a convex joint surface moves on a fixed concave surface, the roll and glide occur in which direction?",
-      options: [
-        "In the same direction",
-        "In opposite directions",
-        "Perpendicular to each other",
-        "No glide occurs"
-      ],
-      answer: 1,
-      explanation: "The rule states that when a convex surface moves, the roll and glide occur in opposite directions to keep the joint centered."
-    },
-    {
-      id: "kines_23",
-      question: "What joint connects the upper extremity to the axial skeleton?",
-      options: ["Glenohumeral joint", "Sternoclavicular (SC) joint", "Acromioclavicular (AC) joint", "Scapulothoracic joint"],
-      answer: 1,
-      explanation: "The sternoclavicular (SC) joint is the only true skeletal articulation linking the shoulder girdle and arm to the trunk."
-    },
-    {
-      id: "kines_24",
-      question: "Which elbow joint ligament provides stability against valgus (abduction) stresses?",
-      options: [
-        "Radial collateral ligament",
-        "Ulnar (medial) collateral ligament",
-        "Annular ligament",
-        "Quadrate ligament"
-      ],
-      answer: 1,
-      explanation: "The ulnar collateral ligament (UCL) of the elbow stabilizes the medial side of the joint against valgus forces."
-    },
-    {
-      id: "kines_25",
-      question: "What is the main function of the interosseous membrane between the radius and ulnar?",
-      options: [
-        "Restricts elbow extension",
-        "Binds bones together and transmits forces from the hand/radius to the ulna",
-        "Secretes synovial fluid",
-        "Supplies nerves to fingers"
-      ],
-      answer: 1,
-      explanation: "The interosseous membrane holds the radius and ulna together during pronation/supination and transfers loads from the hand (via the radius) to the ulna and humerus."
+      explanation: "Elasticity allows muscle to store and release energy, returning to its resting baseline configuration.",
+      source: "week 3 kines.pdf"
     }
   ],
   NEUROSCI: [
+    // 1. LECTURE 4.1 NEUROSCI .pdf
     {
-      id: "neuro_1",
-      question: "Which cranial nerve is tested when asking the patient to stick out their tongue and checking for lateral deviation?",
+      id: "neur_f1_1",
+      question: "Which cranial nerve provides motor innervation to all intrinsic and extrinsic muscles of the tongue (except palatoglossus)?",
       options: ["CN IX (Glossopharyngeal)", "CN X (Vagus)", "CN XI (Accessory)", "CN XII (Hypoglossal)"],
       answer: 3,
-      explanation: "The hypoglossal nerve (CN XII) supplies motor innervation to the tongue. Lesions cause the tongue to deviate toward the weak/affected side."
+      explanation: "CN XII (Hypoglossal) is a pure motor nerve controlling tongue protrusion and shape; damage causes deviation to the lesion side.",
+      source: "LECTURE 4.1 NEUROSCI .pdf"
     },
     {
-      id: "neuro_2",
-      question: "What spinal cord tract is primarily responsible for transmitting sensations of pain and temperature?",
-      options: [
-        "Dorsal Columns (DCML)",
-        "Lateral Spinothalamic Tract",
-        "Lateral Corticospinal Tract",
-        "Ventral Spinocerebellar Tract"
-      ],
-      answer: 1,
-      explanation: "The lateral spinothalamic tract carries pain and temperature signals, decussating at the level of entry in the spinal cord."
-    },
-    {
-      id: "neuro_3",
-      question: "A patient presents with ipsilateral motor loss, ipsilateral loss of proprioception/vibration, and contralateral loss of pain/temperature below the level of a spinal lesion. What clinical syndrome is this?",
-      options: [
-        "Central Cord Syndrome",
-        "Anterior Cord Syndrome",
-        "Brown-Séquard Syndrome (Hemicord)",
-        "Syringomyelia"
-      ],
-      answer: 2,
-      explanation: "Brown-Séquard syndrome results from hemisection of the spinal cord, causing distinct ipsilateral and contralateral deficits due to the decussation patterns of different tracts."
-    },
-    {
-      id: "neuro_4",
-      question: "Which area of the brain is primary for motor speech production, and leads to expressive aphasia when damaged?",
-      options: ["Wernicke's Area", "Broca's Area", "Prefrontal Cortex", "Angular Gyrus"],
-      answer: 1,
-      explanation: "Broca's area, located in the dominant frontal lobe, coordinates the motor program for speech. Damage leads to non-fluent/expressive aphasia."
-    },
-    {
-      id: "neuro_5",
-      question: "What structure in the brain acts as the primary relay station for sensory information heading to the cerebral cortex?",
-      options: ["Hypothalamus", "Basal Ganglia", "Thalamus", "Hippocampus"],
-      answer: 2,
-      explanation: "The thalamus processes and relays all sensory input (except olfaction) to the primary sensory areas of the cerebral cortex."
-    },
-    {
-      id: "neuro_6",
-      question: "Which cranial nerve controls pupil constriction and the majority of extraocular eye movements?",
-      options: ["CN II (Optic)", "CN III (Oculomotor)", "CN IV (Trochlear)", "CN VI (Abducens)"],
-      answer: 1,
-      explanation: "CN III supplies the superior, inferior, and medial recti, inferior oblique, and carries parasympathetic fibers for pupillary constriction."
-    },
-    {
-      id: "neuro_7",
-      question: "What spinal cord level represents the typical termination of the adult spinal cord (conus medullaris)?",
-      options: ["T12", "L1 - L2", "L4 - L5", "S2"],
-      answer: 1,
-      explanation: "The spinal cord ends as the conus medullaris at the L1-L2 vertebral level in adults, after which the cauda equina continues."
-    },
-    {
-      id: "neuro_8",
-      question: "The dorsal column-medial lemniscal (DCML) pathway decussates in which part of the central nervous system?",
-      options: ["Spinal cord level of entry", "Pons", "Medulla oblongata", "Internal capsule"],
-      answer: 2,
-      explanation: "The DCML pathway fibers ascend ipsilaterally and decussate (as internal arcuate fibers) in the caudal medulla."
-    },
-    {
-      id: "neuro_9",
-      question: "Damage to the basal ganglia (specifically loss of dopaminergic neurons in the substantia nigra) leads to which disorder?",
-      options: [
-        "Multiple Sclerosis",
-        "Huntington's Disease",
-        "Parkinson's Disease",
-        "Amyotrophic Lateral Sclerosis"
-      ],
-      answer: 2,
-      explanation: "Parkinson's disease is characterized by the degeneration of dopamine-producing neurons in the substantia nigra pars compacta."
-    },
-    {
-      id: "neuro_10",
-      question: "What reflex center is located in the superior colliculus of the midbrain?",
-      options: ["Auditory reflexes", "Visual reflexes", "Balance regulation", "Cardiovascular control"],
-      answer: 1,
-      explanation: "The superior colliculi coordinate head and eye movements in response to visual stimuli, whereas the inferior colliculi handle auditory reflexes."
-    },
-    {
-      id: "neuro_11",
-      question: "Which tract is the primary pathway for voluntary fine motor control of the limbs?",
-      options: [
-        "Vestibulospinal tract",
-        "Reticulospinal tract",
-        "Lateral Corticospinal tract",
-        "Tectospinal tract"
-      ],
-      answer: 2,
-      explanation: "The lateral corticospinal tract carries voluntary motor signals from the cortex, decussating in the pyramids of the medulla to run down the spinal cord."
-    },
-    {
-      id: "neuro_12",
-      question: "A patient has difficulty smiling, closing their eye tight, and has lost taste on the anterior two-thirds of the tongue. Which nerve is affected?",
-      options: ["Trigeminal nerve (CN V)", "Facial nerve (CN VII)", "Glossopharyngeal nerve (CN IX)", "Vagus nerve (CN X)"],
-      answer: 1,
-      explanation: "The facial nerve (CN VII) supplies the muscles of facial expression and carries taste from the anterior 2/3 of the tongue."
-    },
-    {
-      id: "neuro_13",
-      question: "What cerebral lobe contains Wernicke's area, which is essential for language comprehension?",
-      options: ["Frontal lobe", "Temporal lobe", "Parietal lobe", "Occipital lobe"],
-      answer: 1,
-      explanation: "Wernicke's area lies in the posterior part of the superior temporal gyrus in the dominant hemisphere."
-    },
-    {
-      id: "neuro_14",
-      question: "Which glial cells are responsible for myelinating axons inside the Central Nervous System?",
-      options: ["Schwann cells", "Astrocytes", "Oligodendrocytes", "Microglia"],
-      answer: 2,
-      explanation: "Oligodendrocytes myelinate axons in the CNS, whereas Schwann cells myelinate axons in the Peripheral Nervous System (PNS)."
-    },
-    {
-      id: "neuro_15",
-      question: "Which cerebellar structure is primarily involved in coordinating posture, muscle tone, and gait stability?",
-      options: ["Vermis and flocculonodular lobe", "Lateral hemispheres", "Dentate nucleus", "Red nucleus"],
+      id: "neur_f1_2",
+      question: "Which cranial nerve innervates the muscles of mastication (masseter, temporalis, pterygoids)?",
+      options: ["CN V (Trigeminal - Mandibular V3)", "CN VII (Facial)", "CN IX (Glossopharyngeal)", "CN XII (Hypoglossal)"],
       answer: 0,
-      explanation: "The vermis and flocculonodular lobes (vestibulocerebellum/spinocerebellum) control axial stability, balance, and posture."
+      explanation: "The motor branch of CN V3 controls chewing muscles, while CN VII controls facial expressions.",
+      source: "LECTURE 4.1 NEUROSCI .pdf"
     },
     {
-      id: "neuro_16",
-      question: "What clinical sign is characterized by dorsiflexion of the great toe and fanning of other toes when the lateral sole of the foot is stroked?",
-      options: ["Hoffmann's Sign", "Babinski's Sign", "Clonus", "Romberg Test"],
-      answer: 1,
-      explanation: "A positive Babinski sign indicates an Upper Motor Neuron (UMN) lesion in adults."
-    },
-    {
-      id: "neuro_17",
-      question: "Which cranial nerve innervates the sternocleidomastoid and trapezius muscles?",
+      id: "neur_f1_3",
+      question: "Which cranial nerve supplies motor fibers to the sternocleidomastoid and trapezius muscles?",
       options: ["CN X (Vagus)", "CN XI (Spinal Accessory)", "CN XII (Hypoglossal)", "CN VII (Facial)"],
       answer: 1,
-      explanation: "The spinal accessory nerve (CN XI) provides motor innervation to the SCM and trapezius."
+      explanation: "CN XI controls shoulder shrugging (trapezius) and head rotation (SCM).",
+      source: "LECTURE 4.1 NEUROSCI .pdf"
     },
+    // 2. NEUROSCI - LESSON 1 (MIDTERM)  .pdf
     {
-      id: "neuro_18",
-      question: "What artery, if occluded, typically causes contralateral lower extremity motor and sensory deficits greater than upper extremity deficits?",
-      options: [
-        "Middle cerebral artery (MCA)",
-        "Anterior cerebral artery (ACA)",
-        "Posterior cerebral artery (PCA)",
-        "Basilar artery"
-      ],
+      id: "neur_f2_1",
+      question: "Which glial cells are responsible for producing myelin sheaths inside the Central Nervous System?",
+      options: ["Schwann cells", "Oligodendrocytes", "Astrocytes", "Microglia"],
       answer: 1,
-      explanation: "The ACA supplies the medial surface of the frontal and parietal cortex, which corresponds to the homunculus representation of the lower extremity."
+      explanation: "Oligodendrocytes myelinate multiple CNS axon segments, whereas Schwann cells myelinate a single PNS segment.",
+      source: "NEUROSCI - LESSON 1 (MIDTERM)  .pdf"
     },
     {
-      id: "neuro_19",
-      question: "Which pathway is responsible for unconscious proprioception, carrying signals from muscles/joints to the cerebellum?",
-      options: ["DCML", "Spinothalamic", "Spinocerebellar tract", "Rubrospinal tract"],
-      answer: 2,
-      explanation: "The spinocerebellar tracts (dorsal/ventral) transmit proprioceptive feedback to the ipsilateral cerebellum to coordinate movement."
-    },
-    {
-      id: "neuro_20",
-      question: "What is the function of the myelin sheath around an axon?",
-      options: [
-        "Slows down electrical impulses to prevent damage",
-        "Increases the speed of nerve impulse propagation via saltatory conduction",
-        "Acts as a blood barrier",
-        "Provides direct glucose to the soma"
-      ],
-      answer: 1,
-      explanation: "Myelin insulates the axon, allowing action potentials to jump from one Node of Ranvier to the next, significantly speeding up conduction."
-    },
-    {
-      id: "neuro_21",
-      question: "A lesion in the optic chiasm (compressing crossing fibers) leads to which visual defect?",
-      options: [
-        "Ipsilateral blindness",
-        "Contralateral homonymous hemianopsia",
-        "Bitemporal hemianopsia (tunnel vision)",
-        "Cortical blindness"
-      ],
-      answer: 2,
-      explanation: "An optic chiasm lesion (commonly from pituitary tumors) interrupts crossing nasal fibers, which receive visual fields from the temporal sides, causing bitemporal hemianopsia."
-    },
-    {
-      id: "neuro_22",
-      question: "Which neurotransmitter is primarily inhibitory within the spinal cord?",
-      options: ["Glutamate", "GABA", "Glycine", "Acetylcholine"],
-      answer: 2,
-      explanation: "Glycine is the primary inhibitory neurotransmitter in the spinal cord, whereas GABA is the primary inhibitor in the brain."
-    },
-    {
-      id: "neuro_23",
-      question: "Which cranial nerve provides general sensation to the face?",
-      options: ["CN V (Trigeminal)", "CN VII (Facial)", "CN IX (Glossopharyngeal)", "CN XII (Hypoglossal)"],
+      id: "neur_f2_2",
+      question: "Which glial cells myelinate axonal pathways in the Peripheral Nervous System?",
+      options: ["Schwann cells", "Oligodendrocytes", "Astrocytes", "Ependymal cells"],
       answer: 0,
-      explanation: "CN V (Trigeminal) is the primary sensory nerve of the face, split into ophthalmic (V1), maxillary (V2), and mandibular (V3) branches."
+      explanation: "Schwann cells provide myelin sheaths for peripheral nerves, assisting in nerve regeneration.",
+      source: "NEUROSCI - LESSON 1 (MIDTERM)  .pdf"
     },
     {
-      id: "neuro_24",
-      question: "What is the main neurological consequence of a Lower Motor Neuron (LMN) lesion?",
+      id: "neur_f2_3",
+      question: "What is the primary excitatory neurotransmitter utilized in the human cerebral cortex?",
+      options: ["GABA", "Glycine", "Glutamate", "Acetylcholine"],
+      answer: 2,
+      explanation: "Glutamate is the main excitatory transmitter in the CNS, acting on AMPA, NMDA, and kainate receptors.",
+      source: "NEUROSCI - LESSON 1 (MIDTERM)  .pdf"
+    },
+    // 3. NEUROSCI - MIDTERM.pdf
+    {
+      id: "neur_f3_1",
+      question: "Which descending spinal cord tract is the primary pathway for voluntary fine motor control of the limbs?",
       options: [
-        "Spasticity and hyperreflexia",
-        "Flaccidity, muscle atrophy, fasciculations, and hyporeflexia",
-        "Clonus and Babinski sign",
-        "Rigidity and tremors"
+        "Vestibulospinal tract",
+        "Lateral Corticospinal tract",
+        "Tectospinal tract",
+        "Rubrospinal tract"
       ],
       answer: 1,
-      explanation: "LMN lesions disrupt final motor paths, causing flaccid paralysis, rapid muscle wasting, fasciculations, and diminished reflexes."
+      explanation: "The lateral corticospinal tract descends from the motor cortex, crosses in the medulla, and controls distal voluntary movements.",
+      source: "NEUROSCI - MIDTERM.pdf"
     },
     {
-      id: "neuro_25",
-      question: "Which meningeal space contains circulating cerebrospinal fluid and major cerebral vessels?",
-      options: ["Epidural space", "Subdural space", "Subarachnoid space", "Subpial space"],
+      id: "neur_f3_2",
+      question: "Which brainstem region contains the critical reflex centers for cardiovascular, vasomotor, and respiratory control?",
+      options: ["Pons", "Medulla oblongata", "Midbrain", "Cerebellum"],
+      answer: 1,
+      explanation: "The medulla contains centers regulating heart rate, vascular tone, swallowing, and respiration.",
+      source: "NEUROSCI - MIDTERM.pdf"
+    },
+    {
+      id: "neur_f3_3",
+      question: "What thalamic structure acts as the primary sensory relay station, routing ascending inputs to the cerebral cortex?",
+      options: ["Hypothalamus", "Thalamus", "Basal ganglia", "Hippocampus"],
+      answer: 1,
+      explanation: "The thalamus processes and routes all sensory signals (except smell) to their respective cortical areas.",
+      source: "NEUROSCI - MIDTERM.pdf"
+    },
+    // 4. NEUROSCI - Week 1.pdf
+    {
+      id: "neur_f4_1",
+      question: "In embryological neural tube closure, where does the closure process first begin?",
+      options: ["Anterior neuropore", "Posterior neuropore", "Future cervical spinal cord region", "Optic vesicle"],
       answer: 2,
-      explanation: "The subarachnoid space lies between the arachnoid and pia mater and contains CSF and arterial vessels."
+      explanation: "Neural tube closure begins in the cervical region and zips both rostrally and caudally.",
+      source: "NEUROSCI - Week 1.pdf"
+    },
+    {
+      id: "neur_f4_2",
+      question: "Which embryological brain vesicle gives rise to the cerebral hemispheres and lateral ventricles?",
+      options: ["Telencephalon", "Diencephalon", "Mesencephalon", "Metencephalon"],
+      answer: 0,
+      explanation: "The prosencephalon splits into the telencephalon (cerebrum) and diencephalon (thalamus).",
+      source: "NEUROSCI - Week 1.pdf"
+    },
+    // 5. NEUROSCI - Week 3.pdf
+    {
+      id: "neur_f5_1",
+      question: "Sensations of pain and temperature are transmitted to the brain via which tract?",
+      options: [
+        "Dorsal column-medial lemniscal pathway",
+        "Lateral spinothalamic tract",
+        "Lateral corticospinal tract",
+        "Spinocerebellar tract"
+      ],
+      answer: 1,
+      explanation: "The spinothalamic tract carries pain and temperature inputs, crossing in the spinal cord.",
+      source: "NEUROSCI - Week 3.pdf"
+    },
+    {
+      id: "neur_f5_2",
+      question: "Which pathway carries sensory information for fine touch, vibration, and conscious proprioception?",
+      options: ["Spinothalamic tract", "DCML (Dorsal Column-Medial Lemniscal) pathway", "Corticospinal tract", "Spinocerebellar tract"],
+      answer: 1,
+      explanation: "The DCML pathway carries epicritic inputs, ascending ipsilaterally to decussate in the medulla.",
+      source: "NEUROSCI - Week 3.pdf"
+    },
+    {
+      id: "neur_f5_3",
+      question: "Which pathway carries unconscious proprioception from muscles and joints to the cerebellum?",
+      options: ["DCML pathway", "Spinocerebellar tract", "Spinothalamic tract", "Rubrospinal tract"],
+      answer: 1,
+      explanation: "The spinocerebellar tracts supply the cerebellum with joint position feedback for coordination.",
+      source: "NEUROSCI - Week 3.pdf"
+    },
+    // 6. NEUROSCI FINALS.pdf
+    {
+      id: "neur_f6_1",
+      question: "What brain structure coordinates voluntary movement, balance, and posture?",
+      options: ["Basal ganglia", "Cerebellum", "Thalamus", "Hippocampus"],
+      answer: 1,
+      explanation: "The cerebellum acts as a comparator, adjusting motor cortex signals for balance and accuracy.",
+      source: "NEUROSCI FINALS.pdf"
+    },
+    {
+      id: "neur_f6_2",
+      question: "Parkinson's disease is characterized by the degeneration of dopaminergic neurons in which basal ganglia structure?",
+      options: ["Caudate nucleus", "Substantia nigra pars compacta", "Putamen", "Globus pallidus"],
+      answer: 1,
+      explanation: "Loss of dopamine from the substantia nigra disrupts motor control loops, causing tremors and rigidity.",
+      source: "NEUROSCI FINALS.pdf"
+    },
+    {
+      id: "neur_f6_3",
+      question: "Damage to the basal ganglia typically causes which clinical signs?",
+      options: [
+        "Intention tremors and cerebellar ataxia",
+        "Rigidity, bradykinesia, resting tremors, or involuntary movements",
+        "Flaccid paralysis and hyporeflexia",
+        "Complete sensory anesthesia below the lesion"
+      ],
+      answer: 1,
+      explanation: "Basal ganglia disorders disrupt movement initiation and inhibition, causing hyperkinetic or hypokinetic signs.",
+      source: "NEUROSCI FINALS.pdf"
+    },
+    // 7. neuro finals first week.pdf
+    {
+      id: "neur_f7_1",
+      question: "A pituitary tumor compressing the midline of the optic chiasm results in which visual field deficit?",
+      options: ["Ipsilateral monocular blindness", "Bitemporal hemianopsia (tunnel vision)", "Contralateral homonymous hemianopsia", "Quadrantanopia"],
+      answer: 1,
+      explanation: "Optic chiasm compression blocks crossing nasal fibers, which receive temporal visual fields, causing bitemporal hemianopsia.",
+      source: "neuro finals first week.pdf"
+    },
+    {
+      id: "neur_f7_2",
+      question: "A lesion of the right optic tract causes which visual field deficit?",
+      options: ["Right homonymous hemianopsia", "Left homonymous hemianopsia", "Bitemporal hemianopsia", "Binasal hemianopsia"],
+      answer: 1,
+      explanation: "An optic tract lesion causes contralateral homonymous hemianopsia; a right tract lesion causes left-sided visual field loss.",
+      source: "neuro finals first week.pdf"
+    }
+  ],
+  INHOUSE: [
+    {
+      id: "inho_f2_1",
+      question: "According to the convex-concave rule, when a convex joint surface moves on a fixed concave surface, the roll and glide occur in which direction?",
+      options: ["In the same direction", "In opposite directions", "Perpendicular to each other", "They do not glide"],
+      answer: 1,
+      explanation: "Convex-on-concave arthrokinematics dictates that the joint surface glides in the opposite direction of the bone roll.",
+      source: "Inhouse-Notes-Final.pdf"
+    },
+    {
+      id: "inho_f2_2",
+      question: "When a concave joint surface moves on a fixed convex surface, in what direction do the roll and glide occur?",
+      options: ["In the same direction", "In opposite directions", "In perpendicular planes", "No glide occurs"],
+      answer: 0,
+      explanation: "Concave-on-convex arthrokinematics dictates that the joint surface rolls and glides in the same direction as the bony shaft movement.",
+      source: "Inhouse-Notes-Final.pdf"
+    },
+    {
+      id: "inho_f2_3",
+      question: "What is the close-packed position of the glenohumeral (shoulder) joint?",
+      options: [
+        "55 degrees abduction, 30 degrees horizontal adduction",
+        "Full abduction and external rotation",
+        "Full extension and internal rotation",
+        "Neutral arm at the side"
+      ],
+      answer: 1,
+      explanation: "Full abduction combined with external rotation is the close-packed position where the glenohumeral capsule and ligaments are maximally taut.",
+      source: "Inhouse-Notes-Final.pdf"
     }
   ]
 };
@@ -1183,12 +1283,54 @@ const ITPT_LAWS_DB = [
   { title: "PPTA founding", date: "December 8, 1964", description: "The establishment of the Philippine Physical Therapy Association, the official national organization" }
 ];
 
+const MEDTERM_DB = [
+  { term: "Myo-", meaning: "muscle" },
+  { term: "Osteo-", meaning: "bone" },
+  { term: "Arthro-", meaning: "joint" },
+  { term: "Neuro-", meaning: "nerve" },
+  { term: "Chondro-", meaning: "cartilage" },
+  { term: "-itis", meaning: "inflammation" },
+  { term: "-algia", meaning: "pain" },
+  { term: "-ectomy", meaning: "surgical removal" },
+  { term: "-plasty", meaning: "surgical repair" },
+  { term: "Hyper-", meaning: "above normal / excessive" },
+  { term: "Hypo-", meaning: "below normal / deficient" },
+  { term: "Ipsi-", meaning: "same side" },
+  { term: "Contra-", meaning: "opposite side" },
+  { term: "Dys-", meaning: "difficult, painful, or abnormal" }
+];
+
+const SYMBOLS_DB = [
+  { symbol: "c̄ (c with a bar)", meaning: "with" },
+  { symbol: "s̄ (s with a bar)", meaning: "without" },
+  { symbol: "ā (a with a bar)", meaning: "before" },
+  { symbol: "p̄ (p with a bar)", meaning: "after" },
+  { symbol: "q̄ (q with a bar)", meaning: "every" },
+  { symbol: "#", meaning: "fracture" },
+  { symbol: "Δ (Delta)", meaning: "change" },
+  { symbol: "//", meaning: "parallel (e.g. parallel bars)" },
+  { symbol: "1°", meaning: "primary" },
+  { symbol: "2°", meaning: "secondary to / due to" },
+  { symbol: "s/p", meaning: "status post (after surgery/event)" },
+  { symbol: "c/o", meaning: "complains of" },
+  { symbol: "prn", meaning: "as needed / when necessary" },
+  { symbol: "bid", meaning: "twice daily" },
+  { symbol: "tid", meaning: "three times daily" },
+  { symbol: "qid", meaning: "four times daily" },
+  { symbol: "Rx", meaning: "prescription, treatment, or therapy" },
+  { symbol: "Hx", meaning: "history" },
+  { symbol: "Dx", meaning: "diagnosis" },
+  { symbol: "Sx", meaning: "symptoms" },
+  { symbol: "Tx", meaning: "treatment or traction" },
+  { symbol: "Fx", meaning: "fracture" }
+];
+
 // Procedurally generates questions based on matrices to reach a target count
 function generateProceduralQuestions(topic, countNeeded) {
   let generated = [];
   let idIndex = 0;
   
-  if (topic === "OSA" || topic === "KINES") {
+  if (topic === "OSA" || topic === "KINES" || topic === "INHOUSE") {
     // Generate muscle and joint questions
     MUSCLES_DB.forEach(muscle => {
       // Question Type 1: Muscle Innervation
@@ -1237,7 +1379,7 @@ function generateProceduralQuestions(topic, countNeeded) {
       });
     });
 
-    if (topic === "KINES") {
+    if (topic === "KINES" || topic === "INHOUSE") {
       KINESIOLOGY_DB.forEach(k => {
         // Joint type
         let wrongTypes = KINESIOLOGY_DB
@@ -1246,7 +1388,7 @@ function generateProceduralQuestions(topic, countNeeded) {
           .sort(() => Math.random() - 0.5)
           .slice(0, 3);
         generated.push({
-          id: `kines_gen_type_${idIndex++}`,
+          id: `${topic.toLowerCase()}_gen_type_${idIndex++}`,
           question: `What class of joint is the ${k.joint}?`,
           options: [k.type, ...wrongTypes],
           answer: 0,
@@ -1260,7 +1402,7 @@ function generateProceduralQuestions(topic, countNeeded) {
           .sort(() => Math.random() - 0.5)
           .slice(0, 3);
         generated.push({
-          id: `kines_gen_close_${idIndex++}`,
+          id: `${topic.toLowerCase()}_gen_close_${idIndex++}`,
           question: `What is the close-packed position for the ${k.joint}?`,
           options: [k.closePacked, ...wrongClose],
           answer: 0,
@@ -1393,12 +1535,48 @@ function generateProceduralQuestions(topic, countNeeded) {
         explanation: `${law.title} is defined as ${law.description}.`
       });
     });
+
+    // Generate Medical Terminology questions
+    MEDTERM_DB.forEach(m => {
+      let wrongMeanings = MEDTERM_DB
+        .map(x => x.meaning)
+        .filter((v, i, s) => s.indexOf(v) === i && v !== m.meaning)
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3);
+      generated.push({
+        id: `itpt_gen_med_${idIndex++}`,
+        question: `In medical terminology, what does the prefix/suffix '${m.term}' mean?`,
+        options: [m.meaning, ...wrongMeanings],
+        answer: 0,
+        explanation: `The prefix/suffix '${m.term}' stands for '${m.meaning}'.`
+      });
+    });
+  }
+
+  if (topic === "ITPT" || topic === "INHOUSE") {
+    // Generate questions from SYMBOLS_DB
+    SYMBOLS_DB.forEach(item => {
+      let wrongMeanings = SYMBOLS_DB
+        .map(x => x.meaning)
+        .filter((v, i, s) => s.indexOf(v) === i && v !== item.meaning)
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3);
+      
+      generated.push({
+        id: `${topic.toLowerCase()}_gen_sym_${idIndex++}`,
+        question: `In clinical charts and physical therapy documentation, what does the shorthand symbol or abbreviation '${item.symbol}' stand for?`,
+        options: [item.meaning, ...wrongMeanings],
+        answer: 0,
+        explanation: `The shorthand symbol/abbreviation '${item.symbol}' represents '${item.meaning}'.`,
+        source: "Basic MedTerm Hand outs.docx.pdf"
+      });
+    });
   }
 
   // Pad out with extra clones if needed, modifying questions slightly to ensure uniqueness
   let padIndex = 1;
   while (generated.length < countNeeded) {
-    if (topic === "OSA" || topic === "KINES") {
+    if (topic === "OSA" || topic === "KINES" || topic === "INHOUSE") {
       let muscle = MUSCLES_DB[padIndex % MUSCLES_DB.length];
       generated.push({
         id: `${topic.toLowerCase()}_pad_${padIndex++}`,
@@ -1430,23 +1608,29 @@ function generateProceduralQuestions(topic, countNeeded) {
   return generated;
 }
 
-// Fetches list of questions, padding and shuffling to return exactly limit items
+// Fetches list of questions, padding and shuffling to return exactly limit items (limit = -1 returns all combined)
 function getQuestionsForTopic(topic, limit = 25) {
   let baseQuestions = [...(QUESTION_BANK[topic] || [])];
   
-  // Combine base questions with procedurally generated questions
-  let combinedPool = [...baseQuestions];
-  if (combinedPool.length < limit) {
-    let needed = limit - combinedPool.length;
-    let extraQuestions = generateProceduralQuestions(topic, needed);
-    combinedPool = [...combinedPool, ...extraQuestions];
+  // Combine base questions with procedurally generated questions (up to 100)
+  let extraQuestions = generateProceduralQuestions(topic, 100);
+  let combinedPool = [...baseQuestions, ...extraQuestions];
+  
+  // Deduplicate by ID
+  let uniqueMap = new Map();
+  combinedPool.forEach(q => uniqueMap.set(q.id, q));
+  combinedPool = Array.from(uniqueMap.values());
+  
+  let limitToUse = limit === -1 ? combinedPool.length : limit;
+  if (limitToUse > combinedPool.length) {
+    limitToUse = combinedPool.length;
   }
   
   // Shuffle the combined questions
   combinedPool.sort(() => Math.random() - 0.5);
   
   // Slice to the requested limit
-  let slicedQuestions = combinedPool.slice(0, limit);
+  let slicedQuestions = combinedPool.slice(0, limitToUse);
 
   // Scramble the options and update the correct answer index for every question
   return slicedQuestions.map(q => {

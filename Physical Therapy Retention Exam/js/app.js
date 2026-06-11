@@ -4,6 +4,7 @@
 const REVIEWER_FILES = {
   sem1: {
     ITPT: [
+      "Basic MedTerm Hand outs.docx.pdf",
       "INTRO TO PT POST LEC 1.pdf",
       "INTRO TO PT POST LEC 2 .pdf",
       "ITPT Midterms Reviewer.pdf",
@@ -35,18 +36,21 @@ const REVIEWER_FILES = {
       "INTEG PHYSIO _RENAL MIDTERMS.pdf",
       "INTEG PHYSIO _RESPIRATORY MIDTERMS.pdf",
       "Physio - Finals Lesson 1.pdf",
+      "physio from ninja nerd.pdf",
       "WEEK 1 - INTEGRATIVE PHYSIOLOGY.pdf",
       "WEEK 11 to 15 - INTEGRATIVE PHYSIOLOGY.pdf",
       "WEEK 2 - INTEGRATIVE PHYSIOLOGY.pdf",
       "WEEK 3 - INTEGRATIVE PHYSIOLOGY.pdf",
       "WEEK 7 to 9 - INTEGRATIVE PHYSIOLOGY.pdf",
       "WEEK 8 - INTEGRATIVE PHYSIOLOGY.pdf"
+    ],
+    INHOUSE: [
+      "Inhouse-Notes-Final.pdf"
     ]
   },
   sem2: {
     KINES: [
       "Functional_Anatomy_and_Kinesiology_Blank_Exam.pdf",
-      "Inhouse-Notes-Final.pdf",
       "KINES - Week 4.pdf",
       "KINES FINALS.pdf",
       "Kinesiology Wrist & Hand .pdf",
@@ -83,7 +87,39 @@ const SCRAMBLE_WORDS = [
   { word: "MYELIN", clue: "The insulating lipid sheath around axons that allows saltatory conduction." },
   { word: "THALAMUS", clue: "The primary sensory relay station routing signals to the cerebral cortex." },
   { word: "KINESIOLOGY", clue: "The scientific study of human body movement." },
-  { word: "GONIOMETER", clue: "The primary tool used to measure joint range of motion (ROM)." }
+  { word: "GONIOMETER", clue: "The primary tool used to measure joint range of motion (ROM)." },
+  { word: "SARTORIUS", clue: "Longest muscle in the body, active in hip flexion, abduction, and lateral rotation." },
+  { word: "SPASTICITY", clue: "Velocity-dependent increase in muscle tone due to an upper motor neuron lesion." },
+  { word: "AUTONOMY", clue: "Ethical principle respecting the patient's right to make self-determined choices." },
+  { word: "SYNAPSE", clue: "The functional junction across which nerve impulses pass between neurons." },
+  { word: "AORTA", clue: "The largest artery in the human body, carrying oxygenated blood from the left ventricle." },
+  { word: "LACTIC", clue: "The type of acid that accumulates in muscles during anaerobic glycolysis." },
+  { word: "GLUTEUS", clue: "The large muscle group of the buttocks essential for hip extension and abduction." },
+  { word: "QUADRICEPS", clue: "Four-headed thigh muscle group responsible for extending the knee joint." },
+  { word: "CEREBELLUM", clue: "Brain structure responsible for coordinating balance, posture, and movement details." },
+  { word: "MENINGES", clue: "The three protective membranes (dura, arachnoid, pia) enclosing the brain and spinal cord." },
+  { word: "PHRENIC", clue: "The nerve originating from C3-C5 that innervates the diaphragm." },
+  { word: "CLONUS", clue: "A series of involuntary, rhythmic, muscular contractions and relaxations (UMN sign)." },
+  { word: "BABINSKI", clue: "Dorsiflexion of the great toe and fanning of others upon stroking the sole (UMN sign)." },
+  { word: "SCOLIOSIS", clue: "Abnormal lateral curvature of the vertebral column." },
+  { word: "LIGAMENT", clue: "Fibrous connective tissue connecting bone to bone at a joint." },
+  { word: "TENDON", clue: "Tough band of fibrous connective tissue connecting muscle to bone." },
+  { word: "PRONATION", clue: "Triplanar movement of the foot combining eversion, abduction, and dorsiflexion." },
+  { word: "SUPINATION", clue: "Triplanar movement of the foot combining inversion, adduction, and plantarflexion." },
+  { word: "CHONDRO", clue: "Medical prefix/root word referring to cartilage." },
+  { word: "MYO", clue: "Medical prefix/root word referring to muscle." },
+  { word: "ARTHRO", clue: "Medical prefix/root word referring to joint." },
+  { word: "NEURO", clue: "Medical prefix/root word referring to nerve or nervous system." },
+  { word: "ALDOSTERONE", clue: "Adrenal hormone that promotes renal sodium reabsorption and potassium excretion." },
+  { word: "ERYTHROPOIETIN", clue: "Kidney hormone that triggers red blood cell production in bone marrow." },
+  { word: "SURFACTANT", clue: "Lipoprotein complex in the lungs that reduces alveolar surface tension." },
+  { word: "VASOPRESSIN", clue: "Antidiuretic hormone (ADH) that increases water reabsorption in collecting ducts." },
+  { word: "FRACTURE", clue: "Clinical meaning of the '#' shorthand symbol." },
+  { word: "STATUSPOST", clue: "Clinical meaning of the 's/p' abbreviation." },
+  { word: "WITHOUT", clue: "Clinical meaning of the 's' with a bar over it (s̄) symbol." },
+  { word: "BEFORE", clue: "Clinical meaning of the 'a' with a bar over it (ā) symbol." },
+  { word: "AFTER", clue: "Clinical meaning of the 'p' with a bar over it (p̄) symbol." },
+  { word: "CHANGE", clue: "Clinical meaning of the 'Δ' (Delta) symbol." }
 ];
 
 // Matcher Game Definition Pairs
@@ -95,7 +131,47 @@ const MATCHER_PAIRS = [
   { key: "Third-class lever", val: "Most common biomechanical lever in human joints" },
   { key: "Lunate", val: "Keystone bone of the proximal wrist carpal row" },
   { key: "CN VII (Facial)", val: "Taste anterior 2/3 of tongue, facial expressions" },
-  { key: "Brown-Séquard", val: "Ipsilateral motor loss, contralateral pain loss" }
+  { key: "Brown-Séquard", val: "Ipsilateral motor loss, contralateral pain loss" },
+  { key: "RA 7277", val: "Magna Carta for Disabled Persons in the Philippines" },
+  { key: "RA 9442", val: "Law expanding privileges and 20% discounts for PWDs" },
+  { key: "Deltoid", val: "Shoulder abductor innervated by the axillary nerve" },
+  { key: "Supraspinatus", val: "Initiates first 15 degrees of shoulder abduction" },
+  { key: "Biceps Femoris", val: "Hamstring muscle that flexes knee and extends hip" },
+  { key: "Tibialis Anterior", val: "Primary foot dorsiflexor and invertor of the ankle" },
+  { key: "Phrenic Nerve", val: "Arises from C3-C5 nerve roots to supply diaphragm" },
+  { key: "Oligodendrocytes", val: "Glial cells that produce myelin sheaths inside CNS" },
+  { key: "Schwann Cells", val: "Glial cells that produce myelin sheaths inside PNS" },
+  { key: "Thalamus", val: "Primary relay station for sensory pathways to cortex" },
+  { key: "Broca's Area", val: "Frontal lobe speech area, motor planning of speech" },
+  { key: "Wernicke's Area", val: "Temporal lobe speech area, language comprehension" },
+  { key: "Tidal Volume", val: "Quiet inhalation and exhalation, average 500 mL" },
+  { key: "Residual Volume", val: "Air left in lungs after forced maximal exhalation" },
+  { key: "SA Node", val: "Natural pacemaker of the heart, located in right atrium" },
+  { key: "Acetylcholine", val: "Neurotransmitter released at neuromuscular junctions" },
+  { key: "First-class lever", val: "Fulcrum in middle, represented by head extension" },
+  { key: "Second-class lever", val: "Load in middle, represented by a standing calf raise" },
+  { key: "Concave-Convex Rule", val: "Convex surface rolls and glides in opposite direction" },
+  { key: "Goniometer", val: "Universal tool used to measure joint angles and ROM" },
+  { key: "Spasticity", val: "Velocity-dependent hypertonia due to UMN damage" },
+  { key: "Babinski Sign", val: "Great toe extension on sole stroke, UMN pathology" },
+  { key: "Myo-", val: "Medical prefix meaning muscle" },
+  { key: "Osteo-", val: "Medical prefix meaning bone" },
+  { key: "Arthro-", val: "Medical prefix meaning joint" },
+  { key: "Neuro-", val: "Medical prefix meaning nerve" },
+  { key: "Chondro-", val: "Medical prefix meaning cartilage" },
+  { key: "Hyperventilation", val: "Deep rapid breathing decreasing PaCO2 (respiratory alkalosis)" },
+  { key: "Aldosterone", val: "Hormone increasing renal sodium reabsorption and potassium excretion" },
+  { key: "Erythropoietin", val: "Kidney hormone triggering bone marrow red blood cell production" },
+  { key: "Surfactant", val: "Alveolar fluid complex reducing surface tension to prevent collapse" },
+  { key: "Vasopressin", val: "Antidiuretic hormone increasing water reabsorption in renal tubules" },
+  { key: "c̄", val: "with (Latin: cum)" },
+  { key: "s̄", val: "without (Latin: sine)" },
+  { key: "ā", val: "before (Latin: ante)" },
+  { key: "p̄", val: "after (Latin: post)" },
+  { key: "s/p", val: "status post (after surgery/event)" },
+  { key: "#", val: "fracture (shorthand symbol)" },
+  { key: "Δ", val: "change (Greek delta)" },
+  { key: "//", val: "parallel (e.g. parallel bars)" }
 ];
 
 // Global Gamified State
@@ -425,7 +501,10 @@ function renderReviewerFileList() {
       fileItem.innerHTML = `📄 <span style="flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${fileName}</span>`;
       
       const semPathSegment = state.currentSem === "sem1" ? "1ST SEMESTER" : "2ND SEMESTER";
-      const relativePath = `1st Year Reviewers/${semPathSegment}/${topic}/${fileName}`;
+      let relativePath = `1st Year Reviewers/${semPathSegment}/${topic}/${fileName}`;
+      if (fileName === "Inhouse-Notes-Final.pdf") {
+        relativePath = "1st Year Reviewers/2ND SEMESTER/KINES/Inhouse-Notes-Final.pdf";
+      }
       
       fileItem.onclick = () => {
         document.querySelectorAll(".file-item").forEach(el => el.classList.remove("active"));
@@ -441,13 +520,21 @@ function renderReviewerFileList() {
 
 function loadPDF(path, title) {
   const readerPane = document.getElementById("pdf-reader-pane");
+  let finalPath = path;
+  let displayTitle = title;
+  
+  if (title === "Inhouse-Notes-Final.pdf") {
+    finalPath = path + "#page=50";
+    displayTitle = "Inhouse-Notes-Final.pdf (Pages 50-156 only)";
+  }
+  
   readerPane.innerHTML = `
     <div class="reader-header" style="gap: 8px;">
       <button class="sub-tab-btn back-btn-pdf" onclick="closePDF()" style="padding: 4px 10px; font-size: 11px;">← Back</button>
-      <div class="reader-title" style="flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${title}</div>
-      <button class="sub-tab-btn" onclick="openFullscreenPDF('${path}')" style="padding: 4px 10px; font-size: 11px; white-space: nowrap;">Fullscreen ↗</button>
+      <div class="reader-title" style="flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${displayTitle}</div>
+      <button class="sub-tab-btn" onclick="openFullscreenPDF('${finalPath}')" style="padding: 4px 10px; font-size: 11px; white-space: nowrap;">Fullscreen ↗</button>
     </div>
-    <iframe class="pdf-iframe" src="${path}"></iframe>
+    <iframe class="pdf-iframe" src="${finalPath}"></iframe>
   `;
   const container = document.querySelector(".reviewer-container");
   if (container) {
@@ -556,23 +643,15 @@ function startPractice(mode) {
   if (mode === "quiz") {
     topic = document.getElementById("quiz-topic").value;
     state.quizTopic = topic;
-    count = 100;
-    state.activeQuizQuestions = getQuestionsForTopic(topic, count);
+    state.activeQuizQuestions = getQuestionsForTopic(topic, -1);
   } else if (mode === "exam") {
-    state.quizTopic = "ALL";
-    count = 600;
-    const topics = ["ITPT", "OSA", "PHYSIO", "KINES", "NEUROSCI"];
-    let allQuestions = [];
-    topics.forEach(t => {
-      const qList = getQuestionsForTopic(t, 120);
-      allQuestions = allQuestions.concat(qList);
-    });
-    allQuestions.sort(() => Math.random() - 0.5);
-    state.activeQuizQuestions = allQuestions;
-  } else if (mode === "challenge") {
-    topic = ["ITPT", "OSA", "PHYSIO", "KINES", "NEUROSCI"][Math.floor(Math.random() * 5)];
+    topic = document.getElementById("exam-topic").value;
     state.quizTopic = topic;
-    count = 10;
+    state.activeQuizQuestions = getQuestionsForTopic(topic, -1);
+  } else if (mode === "challenge") {
+    topic = ["ITPT", "OSA", "PHYSIO", "KINES", "NEUROSCI", "INHOUSE"][Math.floor(Math.random() * 6)];
+    state.quizTopic = topic;
+    count = 25;
     state.activeQuizQuestions = getQuestionsForTopic(topic, count);
   }
   
@@ -596,7 +675,7 @@ function renderQuestion() {
   
   const modeLabel = document.getElementById("session-mode-label");
   if (state.quizMode === "challenge") {
-    modeLabel.innerHTML = `🔥 Streak: <strong style="color:var(--accent-color);">${state.streak}/10</strong>`;
+    modeLabel.innerHTML = `🔥 Streak: <strong style="color:var(--accent-color);">${state.streak}/25</strong>`;
   } else {
     modeLabel.textContent = `${state.quizMode.toUpperCase()} MODE`;
   }
@@ -667,9 +746,11 @@ function submitOrNext() {
     });
     
     const expContainer = document.getElementById("explanation-container");
+    const displaySource = q.source ? (q.source === "Inhouse-Notes-Final.pdf" ? "Inhouse-Notes-Final.pdf (Pages 50-156)" : q.source) : "General Board Review";
     expContainer.innerHTML = `
       <div class="explanation-box" style="animation: bounceIn 0.3s ease-out;">
         <strong>${isCorrect ? "Correct (+10 XP)!" : "Incorrect."}</strong> ${q.explanation}
+        <div style="margin-top: 8px; font-size: 11px; color: var(--text-muted); font-weight: 600;">Source: ${displaySource}</div>
       </div>
     `;
     
@@ -700,7 +781,7 @@ function showResults() {
   triggerQuestCompletion("takeTest");
   
   const desc = document.getElementById("result-evaluation");
-  if (state.quizMode === "challenge" && state.streak === 10) {
+  if (state.quizMode === "challenge" && state.streak === 25) {
     state.trophyCount++;
     localStorage.setItem("pt_trophies", state.trophyCount.toString());
     updateTrophyUI();
@@ -709,7 +790,7 @@ function showResults() {
     
     desc.innerHTML = `
       <div style="font-size: 28px; color: gold; animation: pulse 1s infinite;">🏆 CHAMPION! 🏆</div>
-      <div style="margin-top: 10px;">Perfect 10/10 score! A gold trophy has been added to your shelf, and you gained <strong>+150 XP</strong>.</div>
+      <div style="margin-top: 10px;">Perfect 25/25 score! A gold trophy has been added to your shelf, and you gained <strong>+150 XP</strong>.</div>
     `;
   } else {
     if (pct === 100) {
@@ -730,28 +811,28 @@ function startScrambleGame() {
   document.getElementById("challenge-intro-screen").style.display = "none";
   document.getElementById("scramble-session").style.display = "flex";
   
-  // Choose 5 random scramble words
-  currentScrambleList = [...SCRAMBLE_WORDS].sort(() => Math.random() - 0.5).slice(0, 5);
+  // Choose 25 random scramble words
+  currentScrambleList = [...SCRAMBLE_WORDS].sort(() => Math.random() - 0.5).slice(0, 25);
   state.scrambleRound = 0;
   loadScrambleRound();
 }
 
 function loadScrambleRound() {
-  if (state.scrambleRound >= 5) {
+  if (state.scrambleRound >= 25) {
     // Game won! Add trophy
     state.trophyCount++;
     localStorage.setItem("pt_trophies", state.trophyCount.toString());
     updateTrophyUI();
-    addXP(100);
+    addXP(150);
     triggerQuestCompletion("perfectScore");
-    alert("🏆 Congratulations! You solved all 5 word scrambles! A gold trophy is added to your shelf.");
+    alert("🏆 Congratulations! You solved all 25 word scrambles! A gold trophy is added to your shelf.");
     resetPracticeViews();
     return;
   }
   
   state.scrambleActiveWord = currentScrambleList[state.scrambleRound];
   
-  document.getElementById("scramble-round-indicator").textContent = `Round ${state.scrambleRound + 1} of 5`;
+  document.getElementById("scramble-round-indicator").textContent = `Round ${state.scrambleRound + 1} of 25`;
   document.getElementById("scramble-clue").textContent = state.scrambleActiveWord.clue;
   
   // Scramble word letters
@@ -782,8 +863,8 @@ function submitScrambleWord() {
   
   if (ans === correct) {
     SoundEffect.playCorrect();
-    addXP(20);
-    feedback.innerHTML = `<span style="color:#10b981;">Correct! +20 XP Gained!</span>`;
+    addXP(10);
+    feedback.innerHTML = `<span style="color:#10b981;">Correct! +10 XP Gained!</span>`;
     submitBtn.textContent = "Next Round";
   } else {
     SoundEffect.playWrong();
@@ -797,13 +878,39 @@ function startMatcherGame() {
   document.getElementById("challenge-intro-screen").style.display = "none";
   document.getElementById("matcher-session").style.display = "flex";
   
-  // Choose 4 random definitions pairs
-  currentMatcherPairs = [...MATCHER_PAIRS].sort(() => Math.random() - 0.5).slice(0, 4);
+  // Choose 25 random definitions pairs
+  currentMatcherPairs = [...MATCHER_PAIRS].sort(() => Math.random() - 0.5).slice(0, 25);
+  state.matcherRound = 0;
+  loadMatcherRound();
+}
+
+function loadMatcherRound() {
+  if (state.matcherRound >= 5) {
+    state.trophyCount++;
+    localStorage.setItem("pt_trophies", state.trophyCount.toString());
+    updateTrophyUI();
+    addXP(150);
+    triggerQuestCompletion("perfectScore");
+    alert("🏆 Brilliant! All 25 anatomical terms matched correctly! Gold trophy added.");
+    resetPracticeViews();
+    return;
+  }
+  
+  // Slice 5 pairs for this round
+  state.matcherActivePairs = currentMatcherPairs.slice(state.matcherRound * 5, (state.matcherRound + 1) * 5);
   state.matcherSelectedLeft = null;
   state.matcherSelectedRight = null;
   state.matcherMatchesCount = 0;
-  document.getElementById("matcher-feedback").textContent = "";
   
+  const header = document.querySelector("#matcher-session .session-header div");
+  if (header) {
+    header.innerHTML = `
+      <div style="font-size: 12px; font-weight: 800; color: var(--accent-color); text-transform: uppercase;">ANATOMICAL MATCHER</div>
+      <div style="font-size: 16px; font-weight: 800; margin-top: 4px;">Round ${state.matcherRound + 1} of 5 (Total Match: ${state.matcherRound * 5}/25)</div>
+    `;
+  }
+  
+  document.getElementById("matcher-feedback").textContent = "";
   renderMatcherGrid();
 }
 
@@ -815,8 +922,8 @@ function renderMatcherGrid() {
   rightCol.innerHTML = "";
   
   // Shuffled lists
-  let leftItems = [...currentMatcherPairs].sort(() => Math.random() - 0.5);
-  let rightItems = [...currentMatcherPairs].sort(() => Math.random() - 0.5);
+  let leftItems = [...state.matcherActivePairs].sort(() => Math.random() - 0.5);
+  let rightItems = [...state.matcherActivePairs].sort(() => Math.random() - 0.5);
   
   leftItems.forEach(item => {
     const btn = document.createElement("button");
@@ -867,31 +974,27 @@ function checkMatcherEvaluation() {
   const val = state.matcherSelectedRight.val;
   
   // Find correct pair
-  const correctPair = currentMatcherPairs.find(p => p.key === key && p.val === val);
+  const correctPair = state.matcherActivePairs.find(p => p.key === key && p.val === val);
   const feedback = document.getElementById("matcher-feedback");
   
   if (correctPair) {
     // Correct Match
     SoundEffect.playCorrect();
-    addXP(25);
+    addXP(10);
     
     state.matcherSelectedLeft.el.className = "option-btn correct";
     state.matcherSelectedRight.el.className = "option-btn correct";
     
     state.matcherMatchesCount++;
-    feedback.innerHTML = `<span style="color:#10b981;">Correct Match! (+25 XP)</span>`;
+    const totalMatched = (state.matcherRound * 5) + state.matcherMatchesCount;
+    feedback.innerHTML = `<span style="color:#10b981;">Correct Match! (${totalMatched}/25)</span>`;
     
-    if (state.matcherMatchesCount === 4) {
-      // Game Won
+    if (state.matcherMatchesCount === 5) {
+      // Round Won
       setTimeout(() => {
-        state.trophyCount++;
-        localStorage.setItem("pt_trophies", state.trophyCount.toString());
-        updateTrophyUI();
-        addXP(100);
-        triggerQuestCompletion("perfectScore");
-        alert("🏆 Brilliant! All anatomical terms matched correctly! Gold trophy added.");
-        resetPracticeViews();
-      }, 800);
+        state.matcherRound++;
+        loadMatcherRound();
+      }, 1000);
     }
   } else {
     // Mismatch
@@ -1002,6 +1105,7 @@ function getQuestionTopic(q) {
   if (id.startsWith("phys")) return "PHYSIO";
   if (id.startsWith("kine")) return "KINES";
   if (id.startsWith("neur")) return "NEUROSCI";
+  if (id.startsWith("inho")) return "INHOUSE";
   return "UNKNOWN";
 }
 
@@ -1024,7 +1128,8 @@ function saveAttemptToHistory(mode, topic, score, total) {
       OSA: { correct: 0, total: 0 },
       PHYSIO: { correct: 0, total: 0 },
       KINES: { correct: 0, total: 0 },
-      NEUROSCI: { correct: 0, total: 0 }
+      NEUROSCI: { correct: 0, total: 0 },
+      INHOUSE: { correct: 0, total: 0 }
     };
     
     state.activeQuizQuestions.forEach((q, idx) => {
@@ -1054,7 +1159,8 @@ function updateProgressAnalyticsUI() {
     OSA: 0,
     PHYSIO: 0,
     KINES: 0,
-    NEUROSCI: 0
+    NEUROSCI: 0,
+    INHOUSE: 0
   };
   
   history.forEach(entry => {
@@ -1079,8 +1185,8 @@ function updateProgressAnalyticsUI() {
     }
   });
   
-  // Overall readiness is average of the best scores of the 5 subjects
-  let overallReadiness = (bestScores.ITPT + bestScores.OSA + bestScores.PHYSIO + bestScores.KINES + bestScores.NEUROSCI) / 5;
+  // Overall readiness is average of the best scores of the 6 subjects
+  let overallReadiness = (bestScores.ITPT + bestScores.OSA + bestScores.PHYSIO + bestScores.KINES + bestScores.NEUROSCI + bestScores.INHOUSE) / 6;
   
   const pctLabel = document.getElementById("overall-readiness-pct");
   const pctBar = document.getElementById("overall-readiness-bar");
@@ -1100,7 +1206,8 @@ function updateProgressAnalyticsUI() {
       { id: "OSA", name: "Organ System Anatomy" },
       { id: "PHYSIO", name: "Integrative Physiology" },
       { id: "KINES", name: "Kinesiology & Biomechanics" },
-      { id: "NEUROSCI", name: "Neuroscience" }
+      { id: "NEUROSCI", name: "Neuroscience" },
+      { id: "INHOUSE", name: "Inhouse Notes (Pages 50-156)" }
     ];
     
     subjectGrid.innerHTML = subjects.map(sub => {
@@ -1180,24 +1287,40 @@ const DOTS_PATHWAYS = [
     title: "Cardiopulmonary Blood Flow",
     steps: [
       "Right Atrium (deoxygenated blood enters)",
-      "Right Ventricle (pumps to lungs)",
-      "Pulmonary Artery (transports to lungs)",
-      "Lungs (gas exchange occurs)",
+      "Right Ventricle (pumps to lungs via pulmonary trunk)",
+      "Lungs (gas exchange oxygenates blood)",
       "Left Atrium (oxygenated blood enters)",
-      "Left Ventricle (pumps to body)",
-      "Aorta (distributes to systemic circulation)"
+      "Left Ventricle (pumps to body via aorta)"
     ]
   },
   {
     title: "Action Potential Propagation",
     steps: [
-      "Resting Membrane Potential (-70mV)",
-      "Depolarization Threshold (-55mV)",
-      "Voltage-Gated Sodium Channels Open (Influx)",
-      "Peak Action Potential (+30mV)",
-      "Voltage-Gated Potassium Channels Open (Outflux)",
-      "Hyperpolarization (refractory period)",
-      "Na+/K+ Pump Restores Resting Potential"
+      "Resting Potential (membrane at -70mV)",
+      "Depolarization (reaches -55mV threshold)",
+      "Sodium Influx (Na+ channels open, membrane rises)",
+      "Repolarization (K+ channels open, potassium leaves)",
+      "Hyperpolarization (Na+/K+ pump restores balance)"
+    ]
+  },
+  {
+    title: "Sliding Filament Theory",
+    steps: [
+      "Calcium Release (sarcoplasmic reticulum releases Ca2+)",
+      "Troponin Binding (calcium binds to troponin C)",
+      "Tropomyosin Shift (exposes active site on actin)",
+      "Cross-Bridge Binding (myosin heads bind to actin)",
+      "Power Stroke (myosin pulls actin, sliding filaments)"
+    ]
+  },
+  {
+    title: "Spinal Sensory Pathway (DCML)",
+    steps: [
+      "Peripheral Receptor (detects vibration/fine touch)",
+      "Dorsal Root Ganglion (first-order neuron cell body)",
+      "Ipsilateral Spinal Cord (ascends in dorsal columns)",
+      "Caudal Medulla Decussation (synapses and crosses midline)",
+      "Primary Somatosensory Cortex (processed in postcentral gyrus)"
     ]
   }
 ];
@@ -1206,11 +1329,28 @@ function startDotsGame() {
   document.getElementById("challenge-intro-screen").style.display = "none";
   document.getElementById("dots-session").style.display = "flex";
   
-  const pathway = DOTS_PATHWAYS[Math.floor(Math.random() * DOTS_PATHWAYS.length)];
+  state.dotsPathwayList = [...DOTS_PATHWAYS].sort(() => Math.random() - 0.5).slice(0, 5);
+  state.dotsRound = 0;
+  loadDotsRound();
+}
+
+function loadDotsRound() {
+  if (state.dotsRound >= 5) {
+    state.trophyCount++;
+    localStorage.setItem("pt_trophies", state.trophyCount.toString());
+    updateTrophyUI();
+    addXP(150);
+    triggerQuestCompletion("perfectScore");
+    alert("🏆 Excellent! You successfully connected all 5 pathways (25 steps total)! Gold trophy added.");
+    resetPracticeViews();
+    return;
+  }
+  
+  const pathway = state.dotsPathwayList[state.dotsRound];
   state.dotsPathway = pathway;
   state.dotsStepIndex = 0;
   
-  document.getElementById("dots-pathway-title").textContent = pathway.title;
+  document.getElementById("dots-pathway-title").textContent = `${pathway.title} (Round ${state.dotsRound + 1} of 5)`;
   document.getElementById("dots-feedback").textContent = "";
   
   state.dotsShuffledSteps = pathway.steps.map((text, idx) => ({ text, originalIndex: idx }));
@@ -1249,20 +1389,16 @@ function selectDotsNode(node, element) {
     SoundEffect.playCorrect();
     element.className = "dot-node correct";
     state.dotsStepIndex++;
-    addXP(15);
-    feedback.innerHTML = `<span style="color:#10b981;">Correct step! (+15 XP)</span>`;
+    addXP(10);
+    const totalSteps = (state.dotsRound * 5) + state.dotsStepIndex;
+    feedback.innerHTML = `<span style="color:#10b981;">Correct step! (${totalSteps}/25 total steps)</span>`;
     
     if (state.dotsStepIndex === state.dotsPathway.steps.length) {
-      feedback.innerHTML = `<span style="color:#10b981; font-weight:800;">Pathway Completed! (+100 XP)</span>`;
+      feedback.innerHTML = `<span style="color:#10b981; font-weight:800;">Pathway Round ${state.dotsRound + 1} Completed!</span>`;
       setTimeout(() => {
-        state.trophyCount++;
-        localStorage.setItem("pt_trophies", state.trophyCount.toString());
-        updateTrophyUI();
-        addXP(100);
-        triggerQuestCompletion("perfectScore");
-        alert("🏆 Excellent! You successfully connected all the dots in sequence! Gold trophy added.");
-        resetPracticeViews();
-      }, 1000);
+        state.dotsRound++;
+        loadDotsRound();
+      }, 1200);
     }
   } else {
     SoundEffect.playWrong();
@@ -1272,7 +1408,7 @@ function selectDotsNode(node, element) {
     setTimeout(() => {
       state.dotsStepIndex = 0;
       renderDotsNodes();
-      feedback.innerHTML = `<span style="color:var(--text-muted);">Start again from the first step.</span>`;
+      feedback.innerHTML = `<span style="color:var(--text-muted);">Start again from the first step of this pathway.</span>`;
     }, 800);
   }
 }
@@ -1287,7 +1423,41 @@ const GUESS_CLUES = [
   { clue: "What clinical sign (dorsiflexion of the great toe and fanning of others) indicates an UMN lesion in adults?", answer: "BABINSKI" },
   { clue: "What is the primary muscle of respiration, innervated by the phrenic nerve?", answer: "DIAPHRAGM" },
   { clue: "Which cranial nerve innervates the muscles of mastication?", answer: "TRIGEMINAL" },
-  { clue: "Which wrist bone acts as the keystone in the proximal carpal row and lies at the center?", answer: "LUNATE" }
+  { clue: "Which wrist bone acts as the keystone in the proximal carpal row and lies at the center?", answer: "LUNATE" },
+  { clue: "Compressed ulnar nerve at the elbow causes which hand deformity?", answer: "CLAW" },
+  { clue: "Clinical regulatory law enacted in June 1969 for Philippine PT & OT.", answer: "RA5680" },
+  { clue: "Hormone that increases water reabsorption in the renal collecting ducts (abbreviation).", answer: "ADH" },
+  { clue: "Medical prefix meaning 'same side'.", answer: "IPSI" },
+  { clue: "Medical prefix meaning 'opposite side'.", answer: "CONTRA" },
+  { clue: "Medical suffix meaning pain.", answer: "ALGIA" },
+  { clue: "Medical suffix meaning inflammation.", answer: "ITIS" },
+  { clue: "Medical suffix meaning surgical removal.", answer: "ECTOMY" },
+  { clue: "Medical suffix meaning surgical repair.", answer: "PLASTY" },
+  { clue: "Medical prefix meaning below normal or deficient.", answer: "HYPO" },
+  { clue: "Medical prefix meaning above normal or excessive.", answer: "HYPER" },
+  { clue: "Medical prefix referring to muscle.", answer: "MYO" },
+  { clue: "Medical prefix referring to bone.", answer: "OSTEO" },
+  { clue: "Medical prefix referring to joint.", answer: "ARTHRO" },
+  { clue: "Medical prefix referring to nerve.", answer: "NEURO" },
+  { clue: "Medical prefix referring to cartilage.", answer: "CHONDRO" },
+  { clue: "The natural pacemaker of the heart, located in the right atrium (abbreviation).", answer: "SANODE" },
+  { clue: "Winging scapula is caused by injury to which nerve?", answer: "LONGTHORACIC" },
+  { clue: "The most common biomechanical class of lever in human joints.", answer: "THIRDCLASS" },
+  { clue: "Glial cells that produce myelin sheaths inside the Central Nervous System.", answer: "OLIGODENDROCYTES" },
+  { clue: "Glial cells that produce myelin sheaths inside the Peripheral Nervous System.", answer: "SCHWANN" },
+  { clue: "Quiet breathing volume, averaging approximately 500 mL in healthy adults.", answer: "TIDAL" },
+  { clue: "The volume of air left in lungs after a maximal forced exhalation.", answer: "RESIDUAL" },
+  { clue: "Neurotransmitter released at the neuromuscular junction.", answer: "ACETYLCHOLINE" },
+  { clue: "Triplanar movement of the foot combining eversion, abduction, and dorsiflexion.", answer: "PRONATION" },
+  { clue: "Triplanar movement of the foot combining inversion, adduction, and plantarflexion.", answer: "SUPINATION" },
+  { clue: "Spinal cord tract transmitting sensations of pain and temperature.", answer: "SPINOTHALAMIC" },
+  { clue: "Cranial nerve CN VII which controls taste on anterior 2/3 of tongue.", answer: "FACIAL" },
+  { clue: "Cranial nerve CN XI which innervates SCM and trapezius.", answer: "ACCESSORY" },
+  { clue: "What does the symbol 'c' with a bar over it stand for?", answer: "WITH" },
+  { clue: "What does the symbol 's' with a bar over it stand for?", answer: "WITHOUT" },
+  { clue: "What does the symbol '#' stand for in clinical charts?", answer: "FRACTURE" },
+  { clue: "What clinical abbreviation stands for 'as needed' or 'when necessary'?", answer: "PRN" },
+  { clue: "What does the symbol 'Δ' represent in clinical charts?", answer: "CHANGE" }
 ];
 
 let currentGuessList = [];
@@ -1295,19 +1465,19 @@ function startGuessGame() {
   document.getElementById("challenge-intro-screen").style.display = "none";
   document.getElementById("guess-session").style.display = "flex";
   
-  currentGuessList = [...GUESS_CLUES].sort(() => Math.random() - 0.5).slice(0, 5);
+  currentGuessList = [...GUESS_CLUES].sort(() => Math.random() - 0.5).slice(0, 25);
   state.guessRound = 0;
   loadGuessRound();
 }
 
 function loadGuessRound() {
-  if (state.guessRound >= 5) {
+  if (state.guessRound >= 25) {
     state.trophyCount++;
     localStorage.setItem("pt_trophies", state.trophyCount.toString());
     updateTrophyUI();
-    addXP(100);
+    addXP(150);
     triggerQuestCompletion("perfectScore");
-    alert("🏆 Outstanding! You solved all 5 clinical case guesses! Gold trophy added.");
+    alert("🏆 Outstanding! You solved all 25 clinical case guesses! Gold trophy added.");
     resetPracticeViews();
     return;
   }
@@ -1318,7 +1488,7 @@ function loadGuessRound() {
   state.guessWrongCount = 0;
   state.guessMaxWrong = 6;
   
-  document.getElementById("guess-round-indicator").textContent = `Round ${state.guessRound + 1} of 5`;
+  document.getElementById("guess-round-indicator").textContent = `Round ${state.guessRound + 1} of 25`;
   document.getElementById("guess-clue").textContent = roundData.clue;
   document.getElementById("guess-feedback").textContent = "";
   
@@ -1335,7 +1505,11 @@ function renderGuessSlots() {
     const slot = document.createElement("div");
     slot.className = "guess-letter-slot";
     
-    if (state.guessGuessedLetters.includes(char)) {
+    // Handle dashes if present in answers
+    if (char === "-") {
+      slot.textContent = "-";
+      slot.style.border = "none";
+    } else if (state.guessGuessedLetters.includes(char)) {
       slot.textContent = char;
     } else {
       slot.textContent = "";
@@ -1379,15 +1553,16 @@ function selectGuessLetter(char, element) {
     
     let won = true;
     for (let i = 0; i < state.guessWord.length; i++) {
-      if (!state.guessGuessedLetters.includes(state.guessWord[i])) {
+      const c = state.guessWord[i];
+      if (c !== "-" && !state.guessGuessedLetters.includes(c)) {
         won = false;
         break;
       }
     }
     
     if (won) {
-      feedback.innerHTML = `<span style="color:#10b981;">Correct word solved! (+20 XP)</span>`;
-      addXP(20);
+      feedback.innerHTML = `<span style="color:#10b981;">Correct word solved! (+10 XP)</span>`;
+      addXP(10);
       setTimeout(() => {
         state.guessRound++;
         loadGuessRound();
@@ -1419,7 +1594,37 @@ const COMPLETE_WORD_POOL = [
   { word: "TROPONIN", clue: "The calcium-binding protein on thin filaments that initiates muscle contraction.", blanks: [2, 5] },
   { word: "MYELIN", clue: "The insulating lipid sheath around axons.", blanks: [1, 4] },
   { word: "GONIOMETER", clue: "The primary tool used to measure joint range of motion.", blanks: [1, 5, 8] },
-  { word: "SARTORIUS", clue: "The longest muscle in the body, flexes, abducts, and laterally rotates the hip.", blanks: [1, 4, 7] }
+  { word: "SARTORIUS", clue: "The longest muscle in the body, flexes, abducts, and laterally rotates the hip.", blanks: [1, 4, 7] },
+  { word: "CHONDROCYTE", clue: "A mature cell embedded inside cartilage matrix.", blanks: [2, 6, 9] },
+  { word: "OSTEOCLAST", clue: "Bone cell responsible for bone resorption/breakdown.", blanks: [1, 5, 8] },
+  { word: "FIBRILLATION", clue: "Rapid, irregular, unsynchronized contraction of muscle fibers.", blanks: [2, 6, 10] },
+  { word: "ALDOSTERONE", clue: "Adrenal hormone regulating sodium and potassium balance.", blanks: [1, 5, 8] },
+  { word: "ERYTHROPOIETIN", clue: "Kidney hormone stimulating red blood cell production.", blanks: [2, 6, 9, 12] },
+  { word: "HYPERVENTILATION", clue: "Rapid deep breathing causing low carbon dioxide levels.", blanks: [3, 7, 11, 14] },
+  { word: "DORSIFLEXION", clue: "Ankle movement bringing the top of the foot closer to the shin.", blanks: [1, 5, 9] },
+  { word: "PLANTARFLEXION", clue: "Ankle movement pressing the sole of the foot downward.", blanks: [2, 6, 10] },
+  { word: "SUPINATION", clue: "Forearm rotation turning the palm upward.", blanks: [1, 5, 8] },
+  { word: "PRONATION", clue: "Forearm rotation turning the palm downward.", blanks: [1, 4, 7] },
+  { word: "IPSILATERAL", clue: "Situated on or affecting the same side.", blanks: [2, 6, 9] },
+  { word: "CONTRALATERAL", clue: "Situated on or affecting the opposite side.", blanks: [3, 7, 10] },
+  { word: "SPASTICITY", clue: "Velocity-dependent increase in muscle tone (UMN sign).", blanks: [2, 5, 8] },
+  { word: "FLACCIDITY", clue: "Loss of muscle tone and reflexes (LMN sign).", blanks: [2, 5, 8] },
+  { word: "ACETYLCHOLINE", clue: "Neurotransmitter at the neuromuscular junction.", blanks: [2, 6, 9, 11] },
+  { word: "SARCOPLASMIC", clue: "Storage reticulum for intracellular calcium in muscle.", blanks: [2, 6, 9] },
+  { word: "TRIGEMINAL", clue: "Cranial nerve V, innervates muscles of chewing.", blanks: [1, 4, 7] },
+  { word: "GLOSSOPHARYNGEAL", clue: "Cranial nerve IX, controls gag reflex and posterior taste.", blanks: [3, 7, 11, 14] },
+  { word: "HYPOGLOSSAL", clue: "Cranial nerve XII, controls motor movement of tongue.", blanks: [2, 6, 9] },
+  { word: "SPINOTHALAMIC", clue: "Sensory tract for pain and temperature.", blanks: [2, 6, 9] },
+  { word: "CORTICOSPINAL", clue: "Motor tract for voluntary movement.", blanks: [3, 7, 10] },
+  { word: "BIOMECHANICS", clue: "Study of mechanical forces acting on living structures.", blanks: [2, 5, 8, 10] },
+  { word: "GONIOMETRY", clue: "Measurement of joint range of motion angles.", blanks: [2, 6, 8] },
+  { word: "SURFACTANT", clue: "Lipoprotein in lungs that reduces surface tension.", blanks: [1, 5, 8] },
+  { word: "NEPHROLOGY", clue: "Medical specialty dealing with kidney function.", blanks: [2, 5, 8] },
+  { word: "AORTA", clue: "Largest systemic artery leaving the left ventricle.", blanks: [1, 3] },
+  { word: "PHRENIC", clue: "Spinal root nerve (C3-C5) supplying the diaphragm.", blanks: [1, 4] },
+  { word: "FRACTURE", clue: "The clinical condition represented by the '#' symbol.", blanks: [1, 4, 6] },
+  { word: "STATUSPOST", clue: "Full spelling of the clinical abbreviation 's/p'.", blanks: [2, 6, 8] },
+  { word: "WITHOUT", clue: "Clinical meaning of the 's' with a bar over it (s̄) symbol.", blanks: [2, 5] }
 ];
 
 let currentCompleteList = [];
@@ -1427,19 +1632,19 @@ function startCompleteWordGame() {
   document.getElementById("challenge-intro-screen").style.display = "none";
   document.getElementById("complete-session").style.display = "flex";
   
-  currentCompleteList = [...COMPLETE_WORD_POOL].sort(() => Math.random() - 0.5).slice(0, 5);
+  currentCompleteList = [...COMPLETE_WORD_POOL].sort(() => Math.random() - 0.5).slice(0, 25);
   state.completeRound = 0;
   loadCompleteRound();
 }
 
 function loadCompleteRound() {
-  if (state.completeRound >= 5) {
+  if (state.completeRound >= 25) {
     state.trophyCount++;
     localStorage.setItem("pt_trophies", state.trophyCount.toString());
     updateTrophyUI();
-    addXP(100);
+    addXP(150);
     triggerQuestCompletion("perfectScore");
-    alert("🏆 Brilliant! You completed all 5 word blanks correctly! Gold trophy added.");
+    alert("🏆 Brilliant! You completed all 25 word blanks correctly! Gold trophy added.");
     resetPracticeViews();
     return;
   }
@@ -1451,7 +1656,7 @@ function loadCompleteRound() {
   state.completeUserSelections = {};
   state.completeSelectedBlankIdx = 0;
   
-  document.getElementById("complete-round-indicator").textContent = `Round ${state.completeRound + 1} of 5`;
+  document.getElementById("complete-round-indicator").textContent = `Round ${state.completeRound + 1} of 25`;
   document.getElementById("complete-clue").textContent = state.completeClue;
   document.getElementById("complete-feedback").textContent = "";
   
@@ -1551,8 +1756,8 @@ function selectCompleteChoice(char) {
     const feedback = document.getElementById("complete-feedback");
     if (isCorrect) {
       SoundEffect.playCorrect();
-      addXP(20);
-      feedback.innerHTML = `<span style="color:#10b981;">Correct! Word completed! (+20 XP)</span>`;
+      addXP(10);
+      feedback.innerHTML = `<span style="color:#10b981;">Correct! Word completed! (+10 XP)</span>`;
       setTimeout(() => {
         state.completeRound++;
         loadCompleteRound();
@@ -1578,7 +1783,39 @@ const FOUR_WORDS_POOL = [
   { clues: ["Heart", "Output", "Pump", "Vessel"], answer: "AORTA" },
   { clues: ["Brain", "Synapse", "Axon", "Myelin"], answer: "NEURON" },
   { clues: ["Joint", "Fluid", "Smooth", "Cavity"], answer: "SYNOVIAL" },
-  { clues: ["Muscle", "Fatigue", "Acid", "Sore"], answer: "LACTIC" }
+  { clues: ["Muscle", "Fatigue", "Acid", "Sore"], answer: "LACTIC" },
+  { clues: ["Nerve", "C3-C5", "Breath", "Diaphragm"], answer: "PHRENIC" },
+  { clues: ["Same", "Side", "Ipsi", "Stroke"], answer: "IPSILATERAL" },
+  { clues: ["Opposite", "Side", "Contra", "Lesion"], answer: "CONTRALATERAL" },
+  { clues: ["Cartilage", "Cell", "Mature", "Chondro"], answer: "CHONDROCYTE" },
+  { clues: ["Bone", "Cell", "Build", "Blast"], answer: "OSTEOBLAST" },
+  { clues: ["Kidney", "Unit", "Filter", "Urine"], answer: "NEPHRON" },
+  { clues: ["Breathe", "Rapid", "Alkalosis", "Low-CO2"], answer: "HYPERVENTILATION" },
+  { clues: ["Hormone", "Salt", "Renal", "Adrenal"], answer: "ALDOSTERONE" },
+  { clues: ["Hormone", "EPO", "Blood", "Marrow"], answer: "ERYTHROPOIETIN" },
+  { clues: ["Reflex", "Toe", "UMN", "Dorsiflex"], answer: "BABINSKI" },
+  { clues: ["Tone", "High", "Velocity", "Spastic"], answer: "SPASTICITY" },
+  { clues: ["Tone", "Low", "Flaccid", "LMN"], answer: "FLACCIDITY" },
+  { clues: ["Pacemaker", "SA", "Atrium", "Lub-dub"], answer: "SANODE" },
+  { clues: ["Inhale", "Exhale", "Quiet", "500mL"], answer: "TIDAL" },
+  { clues: ["Lungs", "Remaining", "Forced", "1200mL"], answer: "RESIDUAL" },
+  { clues: ["Neuro", "Chemical", "NMJ", "Muscle"], answer: "ACETYLCHOLINE" },
+  { clues: ["Calcium", "Store", "Reticulum", "Sarcoplasmic"], answer: "SARCOPLASMIC" },
+  { clues: ["Mastication", "Chew", "CN-V", "Mandible"], answer: "TRIGEMINAL" },
+  { clues: ["Expression", "Smile", "CN-VII", "Bells-Palsy"], answer: "FACIAL" },
+  { clues: ["Shrug", "SCM", "Trapezius", "CN-XI"], answer: "ACCESSORY" },
+  { clues: ["Pain", "Temp", "Ascending", "Tract"], answer: "SPINOTHALAMIC" },
+  { clues: ["Motor", "Voluntary", "Descending", "Pyramids"], answer: "CORTICOSPINAL" },
+  { clues: ["Angle", "ROM", "Measure", "Universal"], answer: "GONIOMETER" },
+  { clues: ["Lungs", "Tension", "Reduce", "Alveoli"], answer: "SURFACTANT" },
+  { clues: ["Wrist", "Drop", "Nerve", "Extensor"], answer: "RADIAL" },
+  { clues: ["Thompson", "Tendon", "Heel", "Rupture"], answer: "ACHILLES" },
+  { clues: ["Shoulder", "Abduct", "First-15", "Rotator"], answer: "SUPRASPINATUS" },
+  { clues: ["Wrist", "Row", "Keystone", "Lunate"], answer: "LUNATE" },
+  { clues: ["Fulcrum", "Center", "Head-Extension", "Lever"], answer: "FIRSTCLASS" },
+  { clues: ["Shorthand", "Chart", "Broken", "#"], answer: "FRACTURE" },
+  { clues: ["Latin", "Bar", "Cum", "c"], answer: "WITH" },
+  { clues: ["Latin", "Bar", "Sine", "s"], answer: "WITHOUT" }
 ];
 
 let currentFourWordsList = [];
@@ -1586,19 +1823,19 @@ function startFourWordsGame() {
   document.getElementById("challenge-intro-screen").style.display = "none";
   document.getElementById("four-words-session").style.display = "flex";
   
-  currentFourWordsList = [...FOUR_WORDS_POOL].sort(() => Math.random() - 0.5).slice(0, 5);
+  currentFourWordsList = [...FOUR_WORDS_POOL].sort(() => Math.random() - 0.5).slice(0, 25);
   state.fourWordsRound = 0;
   loadFourWordsRound();
 }
 
 function loadFourWordsRound() {
-  if (state.fourWordsRound >= 5) {
+  if (state.fourWordsRound >= 25) {
     state.trophyCount++;
     localStorage.setItem("pt_trophies", state.trophyCount.toString());
     updateTrophyUI();
-    addXP(100);
+    addXP(150);
     triggerQuestCompletion("perfectScore");
-    alert("🏆 Outstanding! You solved all 5 4 Words 1 Answer puzzles! Gold trophy added.");
+    alert("🏆 Outstanding! You solved all 25 4 Words 1 Answer puzzles! Gold trophy added.");
     resetPracticeViews();
     return;
   }
@@ -1608,7 +1845,7 @@ function loadFourWordsRound() {
   state.fourWordsClues = roundData.clues;
   state.fourWordsSpelled = [];
   
-  document.getElementById("four-words-round-indicator").textContent = `Round ${state.fourWordsRound + 1} of 5`;
+  document.getElementById("four-words-round-indicator").textContent = `Round ${state.fourWordsRound + 1} of 25`;
   
   document.getElementById("clue1").textContent = state.fourWordsClues[0];
   document.getElementById("clue2").textContent = state.fourWordsClues[1];
@@ -1712,8 +1949,8 @@ function submitFourWordsSpell() {
   
   if (spelled === correct) {
     SoundEffect.playCorrect();
-    addXP(25);
-    feedback.innerHTML = `<span style="color:#10b981;">Correct! +25 XP Gained!</span>`;
+    addXP(10);
+    feedback.innerHTML = `<span style="color:#10b981;">Correct! +10 XP Gained!</span>`;
     
     setTimeout(() => {
       state.fourWordsRound++;
@@ -1728,42 +1965,19 @@ function submitFourWordsSpell() {
 // ==========================================
 // 5. PANDORA'S BOX (BOT VS STUDENT)
 // ==========================================
-const PANDORA_QUESTIONS = [
-  {
-    question: "During nerve conduction velocity testing of the ulnar nerve, the therapist stimulates the nerve at the wrist and below the elbow. What conduction pathology is indicated by an increased distal latency and reduced amplitude?",
-    options: ["Axonal degeneration", "Demyelination", "Sunderland Class I neuropraxia", "Wallerian degeneration"],
-    answer: 1,
-    explanation: "Distal latency increases during demyelination due to a drop in myelin sheath propagation efficiency, whereas axonal loss typically leads directly to pure amplitude reductions."
-  },
-  {
-    question: "A patient with complete T4 spinal cord injury displays a sudden spike in blood pressure (200/100 mmHg), bradycardia, and sweating above the level of lesion. What is the immediate first action the therapist must take?",
-    options: ["Lay the patient flat immediately to improve brain perfusion", "Sit the patient upright and check the urinary drainage catheter for kinks", "Administer nitroglycerin spray sublingually", "Begin high-flow oxygen administration"],
-    answer: 1,
-    explanation: "This is Autonomic Dysreflexia, a medical emergency. Sitting the patient upright lowers BP gravimetrically, and checking for common triggers (full bladder) is critical."
-  },
-  {
-    question: "According to the concave-convex rule, when mobilizing the glenohumeral joint to improve shoulder abduction, in what direction should the humeral head be glided?",
-    options: ["Superiorly", "Anteriorly", "Inferiorly", "Posteriorly"],
-    answer: 2,
-    explanation: "The glenohumeral joint involves a convex humerus on a concave glenoid. Since roll and glide are in opposite directions, to improve abduction (superior roll), the humeral head must be glided inferiorly."
-  },
-  {
-    question: "Which lung volume calculation represents Functional Residual Capacity (FRC)?",
-    options: ["ERV + RV", "VT + IRV", "VT + ERV", "IRV + ERV + RV"],
-    answer: 0,
-    explanation: "Functional Residual Capacity (FRC) is the amount of air remaining in the lungs after a normal passive exhalation, which equals Expiratory Reserve Volume (ERV) plus Residual Volume (RV)."
-  },
-  {
-    question: "A patient with a lesion of the Right Optic Tract would present with which of the following visual field deficits?",
-    options: ["Right homonymous hemianopsia", "Left homonymous hemianopsia", "Bitemporal hemianopsia", "Ipsilateral monocular blindness"],
-    answer: 1,
-    explanation: "A lesion of the optic tract causes a contralateral homonymous hemianopsia. Thus, a Right optic tract lesion causes Left homonymous hemianopsia."
-  }
-];
-
 function startPandoraGame() {
   document.getElementById("challenge-intro-screen").style.display = "none";
   document.getElementById("pandora-session").style.display = "flex";
+  
+  // Compile exactly 25 random questions from all 6 topics
+  const topics = ["ITPT", "OSA", "PHYSIO", "KINES", "NEUROSCI", "INHOUSE"];
+  let pool = [];
+  topics.forEach(t => {
+    const qList = getQuestionsForTopic(t, 5);
+    pool = pool.concat(qList);
+  });
+  pool.sort(() => Math.random() - 0.5);
+  state.pandoraQuestions = pool.slice(0, 25);
   
   state.pandoraRound = 0;
   state.pandoraCorrectAnswerCount = 0;
@@ -1772,13 +1986,13 @@ function startPandoraGame() {
 }
 
 function loadPandoraRound() {
-  if (state.pandoraRound >= 5) {
+  if (state.pandoraRound >= 25) {
     state.trophyCount++;
     localStorage.setItem("pt_trophies", state.trophyCount.toString());
     updateTrophyUI();
-    addXP(100);
+    addXP(150);
     triggerQuestCompletion("perfectScore");
-    alert(`🏆 Pandora's Box cleared! You answered ${state.pandoraCorrectAnswerCount} / 5 correctly. Gold trophy added!`);
+    alert(`🏆 Pandora's Box cleared! You answered ${state.pandoraCorrectAnswerCount} / 25 correctly. Gold trophy added!`);
     resetPracticeViews();
     return;
   }
@@ -1786,25 +2000,31 @@ function loadPandoraRound() {
   state.pandoraAnswered = false;
   state.pandoraSelectedOption = null;
   
-  document.getElementById("pandora-round-indicator").textContent = `Round ${state.pandoraRound + 1} of 5`;
+  document.getElementById("pandora-round-indicator").textContent = `Round ${state.pandoraRound + 1} of 25`;
   document.getElementById("pandora-boxes-card").style.display = "none";
   document.getElementById("pandora-question-card").style.display = "block";
   document.getElementById("pandora-next-btn").style.display = "none";
   
   const botMsgs = [
-    "Let's see if you can handle this clinical board question, student!",
+    "Let's see if you can handle this board question, student!",
     "Ah, a classical scenario! Can you diagnose it?",
-    "Pay attention to the patient parameters. What is the correct choice?",
-    "Don't let the clinical distractors fool you! Pick wisely.",
-    "This is the final challenge. Make your CI instructor proud!"
+    "Pay attention to the parameters. What is the correct choice?",
+    "Don't let the distractors fool you! Pick wisely.",
+    "Show me what you've got on this topic!",
+    "Your neural circuits will need to fire fast here.",
+    "A crucial topic for clinical practice. Answer correctly!",
+    "Are you studying hard? Let's check this one.",
+    "The patient is waiting. Make your clinical decision!",
+    "A standard Board-level problem. Choose carefully."
   ];
-  document.getElementById("bot-message").textContent = botMsgs[state.pandoraRound];
+  const msgIndex = state.pandoraRound % botMsgs.length;
+  document.getElementById("bot-message").textContent = botMsgs[msgIndex];
   
   renderPandoraQuestion();
 }
 
 function renderPandoraQuestion() {
-  const q = PANDORA_QUESTIONS[state.pandoraRound];
+  const q = state.pandoraQuestions[state.pandoraRound];
   const container = document.getElementById("pandora-question-card");
   
   container.innerHTML = `
@@ -1837,7 +2057,7 @@ function submitPandoraAnswer() {
   if (state.pandoraAnswered) return;
   state.pandoraAnswered = true;
   
-  const q = PANDORA_QUESTIONS[state.pandoraRound];
+  const q = state.pandoraQuestions[state.pandoraRound];
   const isCorrect = state.pandoraSelectedOption === q.answer;
   
   document.querySelectorAll("#pandora-question-card .option-btn").forEach((btn, i) => {
@@ -1853,13 +2073,14 @@ function submitPandoraAnswer() {
     state.pandoraCorrectAnswerCount++;
     SoundEffect.playCorrect();
     const botAdvice = [
-      "Well done! I have a feeling Box A contains double XP, but I'll open Box C.",
+      "Well done! I have a feeling Box A is lucky, but I'll open Box C.",
       "Impressive answer! My sensors suggest Box B is safe. I'm choosing Box A.",
       "Correct! Watch out, Box C looks suspicious! I'll take Box B.",
       "Excellent. Box B is highly charged. I'll open Box A.",
       "Spot on! I will open Box B, you should choose A or C."
     ];
-    document.getElementById("bot-message").textContent = botAdvice[state.pandoraRound];
+    const advIdx = state.pandoraRound % botAdvice.length;
+    document.getElementById("bot-message").textContent = botAdvice[advIdx];
     
     setTimeout(() => {
       document.getElementById("pandora-question-card").style.display = "none";
@@ -1883,7 +2104,11 @@ function submitPandoraAnswer() {
     const explanationDiv = document.createElement("div");
     explanationDiv.className = "explanation-box";
     explanationDiv.style.marginTop = "15px";
-    explanationDiv.innerHTML = `<strong>Incorrect.</strong> ${q.explanation}`;
+    const displaySource = q.source ? (q.source === "Inhouse-Notes-Final.pdf" ? "Inhouse-Notes-Final.pdf (Pages 50-156)" : q.source) : "General Board Review";
+    explanationDiv.innerHTML = `
+      <strong>Incorrect.</strong> ${q.explanation}
+      <div style="margin-top: 8px; font-size: 11px; color: var(--text-muted); font-weight: 600;">Source: ${displaySource}</div>
+    `;
     card.appendChild(explanationDiv);
     
     document.getElementById("pandora-submit-btn").style.display = "none";
@@ -1991,4 +2216,3 @@ function nextPandoraRound() {
   state.pandoraRound++;
   loadPandoraRound();
 }
-
