@@ -95,7 +95,7 @@
 
         .contact-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 1.5rem;
         }
         
@@ -148,6 +148,58 @@
         .contact-action:hover {
             background: #e5b90f;
         }
+
+        .assistance-banner {
+            max-width: 800px;
+            margin: -1rem auto 3rem;
+            background: #34408d;
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            border: 4px solid #f6c915;
+            box-shadow: 0 10px 30px rgba(52, 64, 141, 0.2);
+        }
+
+        .assistance-title {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: #f6c915;
+        }
+
+        .assistance-text {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .assistance-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #f6c915;
+            color: #34408d;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(246, 201, 21, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .accordion-inner {
+                padding: 1rem;
+            }
+            .assistance-banner {
+                margin: 0 1rem 2rem;
+                padding: 1.5rem 1rem;
+            }
+            .assistance-title {
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -175,10 +227,10 @@
             <p class="hero-subtitle">Quick access to essential emergency services. Save these numbers or tap to call immediately.</p>
         </header>
 
-        <div class="assistance-banner fade-in-up" style="max-width: 800px; margin: -1rem auto 3rem; background: #34408d; color: white; padding: 2rem; border-radius: 16px; text-align: center; border: 4px solid #f6c915; box-shadow: 0 10px 30px rgba(52, 64, 141, 0.2);">
-            <h2 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 0.5rem; color: #f6c915;">Do you need assistance?</h2>
-            <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">Please contact us here for immediate support from National University.</p>
-            <a href="tel:123456789" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #f6c915; color: #34408d; padding: 1rem 2rem; border-radius: 50px; font-weight: 800; font-size: 1.2rem; text-decoration: none; transition: transform 0.3s ease; box-shadow: 0 4px 15px rgba(246, 201, 21, 0.3);" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+        <div class="assistance-banner fade-in-up">
+            <h2 class="assistance-title">Do you need assistance?</h2>
+            <p class="assistance-text">Please contact us here for immediate support from National University.</p>
+            <a href="tel:123456789" class="assistance-btn" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
                 <span>📞</span> 123-456-789
             </a>
         </div>
