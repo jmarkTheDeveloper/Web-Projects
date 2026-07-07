@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Contacts | SafeNU</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .page-header {
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .accordion-wrapper {
+            max-width: 900px;
+            margin: 0 auto 4rem;
+            padding: 0 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .accordion-item {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            overflow: hidden;
+            border: 1px solid rgba(52, 64, 141, 0.1);
+        }
+
+        .accordion-btn {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            background: #34408d;
+            color: #ffffff;
+            border: none;
+            border-bottom: 4px solid #f6c915;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-btn:hover {
+            background: #2b3575;
+        }
+
+        .accordion-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.5rem;
+            font-family: var(--font-heading);
+            font-weight: 700;
+        }
+
+        .accordion-title .feature-icon {
+            width: 45px;
+            height: 45px;
+            margin: 0;
+            font-size: 1.5rem;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+        }
+
+        .accordion-icon {
+            font-size: 2rem;
+            font-weight: 300;
+            color: #f6c915;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(45deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            background: #f8f9fa;
+        }
+
+        .accordion-inner {
+            padding: 2rem;
+        }
+
+        .contact-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .contact-card {
+            background: #ffffff;
+            border: 1px solid rgba(52, 64, 141, 0.1);
+            border-top: 4px solid #34408d;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(52, 64, 141, 0.1);
+        }
+
+        .contact-name {
+            font-weight: 700;
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+            color: #34408d;
+        }
+
+        .contact-detail {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-action {
+            margin-top: 1rem;
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #f6c915;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #34408d;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-action:hover {
+            background: #e5b90f;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-effects">
+        <div class="glow glow-1"></div>
+    </div>
+
+    <nav class="navbar glassmorphism">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="SafeNU Logo" class="nav-logo-img">
+                <span>Safe<span class="logo-accent">NU</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contacts.html" class="active">Emergency Contacts</a></li>
+                <li><a href="guidelines.html">Disaster Guidelines</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <header class="page-header fade-in-up">
+            <h1 class="hero-title">Emergency <span class="text-gradient">Contacts</span></h1>
+            <p class="hero-subtitle">Quick access to essential emergency services. Save these numbers or tap to call immediately.</p>
+        </header>
+
+        <div class="assistance-banner fade-in-up" style="max-width: 800px; margin: -1rem auto 3rem; background: #34408d; color: white; padding: 2rem; border-radius: 16px; text-align: center; border: 4px solid #f6c915; box-shadow: 0 10px 30px rgba(52, 64, 141, 0.2);">
+            <h2 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 0.5rem; color: #f6c915;">Do you need assistance?</h2>
+            <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">Please contact us here for immediate support from National University.</p>
+            <a href="tel:123456789" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #f6c915; color: #34408d; padding: 1rem 2rem; border-radius: 50px; font-weight: 800; font-size: 1.2rem; text-decoration: none; transition: transform 0.3s ease; box-shadow: 0 4px 15px rgba(246, 201, 21, 0.3);" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+                <span>📞</span> 123-456-789
+            </a>
+        </div>
+
+        <div class="accordion-wrapper fade-in-up delay-1">
+            <!-- Fire Departments Accordion -->
+            <div class="accordion-item" id="fire">
+                <button class="accordion-btn">
+                    <div class="accordion-title">
+                        <span class="feature-icon">🚒</span> Fire Departments
+                    </div>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <div class="contact-list">
+                            <div class="contact-card">
+                                <div class="contact-name">Sampaloc Fire Station</div>
+                                <div class="contact-detail">📞 (02) 426-0219 / +63 927 014 5627</div>
+                                <div class="contact-detail">📍 A.H. Lacson cor. Fajardo St., Sampaloc, Manila 1008</div>
+                                <a href="tel:+639270145627" class="contact-action">Call Now</a>
+                            </div>
+                            <div class="contact-card">
+                                <div class="contact-name">Manila Fire District Office</div>
+                                <div class="contact-detail">📞 (02) 309-9645</div>
+                                <div class="contact-detail">📍 Rizal Ave cor. Quirino/Cada St., Sta. Cruz, Manila 1014</div>
+                                <a href="tel:023099645" class="contact-action">Call Now</a>
+                            </div>
+                            <div class="contact-card">
+                                <div class="contact-name">Tanduay Fire Station</div>
+                                <div class="contact-detail">📞 (02) 313-0384</div>
+                                <div class="contact-detail">📍 Legenda St., Quiapo, Manila 1001</div>
+                                <a href="tel:023130384" class="contact-action">Call Now</a>
+                            </div>
+                            <div class="contact-card">
+                                <div class="contact-name">National Emergency Hotline</div>
+                                <div class="contact-detail">📞 911</div>
+                                <div class="contact-detail">📍 Nationwide</div>
+                                <a href="tel:911" class="contact-action">Call Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hospital Accordion -->
+            <div class="accordion-item" id="hospital">
+                <button class="accordion-btn">
+                    <div class="accordion-title">
+                        <span class="feature-icon">🏥</span> Hospitals & Medical
+                    </div>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <div class="contact-list">
+                            <div class="contact-card">
+                                <div class="contact-name">Ospital ng Sampaloc</div>
+                                <div class="contact-detail">📞 (8) 749-0222 / 0960 588 9068</div>
+                                <div class="contact-detail">📍 677 Geronimo St. cor. Carola St., Sampaloc, Manila</div>
+                                <a href="tel:+639605889068" class="contact-action">Call Now</a>
+                            </div>
+                            <div class="contact-card">
+                                <div class="contact-name">Hospital of the Infant Jesus Medical Center</div>
+                                <div class="contact-detail">📞 (+632) 8731-2771 to 76</div>
+                                <div class="contact-detail">📍 1556 Laong Laan cor. Gov. Forbes, Sampaloc, Manila</div>
+                                <a href="tel:+63287312771" class="contact-action">Call Now</a>
+                            </div>
+                            <div class="contact-card">
+                                <div class="contact-name">Dr. Jose Fabella Memorial Hospital</div>
+                                <div class="contact-detail">📞 (02) 735-7144</div>
+                                <div class="contact-detail">📍 Sta. Cruz, Manila</div>
+                                <a href="tel:027357144" class="contact-action">Call Now</a>
+                            </div>
+                            <div class="contact-card">
+                                <div class="contact-name">San Lazaro Hospital</div>
+                                <div class="contact-detail">📞 (02) 732-9177 / (02) 711-6966</div>
+                                <div class="contact-detail">📍 Rizal Ave, Sta. Cruz, Manila</div>
+                                <a href="tel:027329177" class="contact-action">Call Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Police Accordion -->
+            <div class="accordion-item" id="police">
+                <button class="accordion-btn">
+                    <div class="accordion-title">
+                        <span class="feature-icon">🚓</span> Police Departments
+                    </div>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <div class="contact-list">
+                            <div class="contact-card">
+                                <div class="contact-name">MPD Station 4 (Sampaloc)</div>
+                                <div class="contact-detail">📞 117 or 911</div>
+                                <div class="contact-detail">📍 G. Tuazon St. cor. Algeciras St., Sampaloc West, Manila 1015</div>
+                                <a href="tel:911" class="contact-action">Call Now</a>
+                            </div>
+                            <div class="contact-card">
+                                <div class="contact-name">Sampaloc Police Sub-Station</div>
+                                <div class="contact-detail">📞 117 / 911</div>
+                                <div class="contact-detail">📍 Altura St. cor. R.M. Blvd, Sampaloc, Manila 1015</div>
+                                <a href="tel:911" class="contact-action">Call Now</a>
+                            </div>
+                            <div class="contact-card">
+                                <div class="contact-name">PNP Text Hotline</div>
+                                <div class="contact-detail">📞 0917-847-5757</div>
+                                <div class="contact-detail">📍 Nationwide SMS</div>
+                                <a href="sms:+639178475757" class="contact-action">Text Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="footer-bottom">
+            &copy; 2026 SafeNU Disaster Management. All rights reserved.
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
