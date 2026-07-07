@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeNU | Disaster Management & Readiness</title>
+    <meta name="description"
+        content="SafeNU provides critical disaster management information, emergency contacts, and survival guidelines to keep you safe.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="background-effects">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+    </div>
+
+    <nav class="navbar glassmorphism">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="SafeNU Logo" class="nav-logo-img">
+                <span>Safe<span class="logo-accent">NU</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="contacts.html">Emergency Contacts</a></li>
+                <li><a href="guidelines.html">Disaster Guidelines</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content fade-in-up">
+                <img src="assets/logo.png" alt="SafeNU Campus First Aid Partner Logo" class="hero-logo" />
+                <div class="badge">Your Campus First Aid Partner</div>
+                <h1 class="hero-title">Your Ultimate Guide to <span class="text-gradient">Disaster Readiness</span></h1>
+                <p class="hero-subtitle">Access real-time emergency contacts, comprehensive survival guidelines, and
+                    critical resources at your fingertips.</p>
+                <div class="hero-search-container fade-in-up delay-2">
+                    <form id="heroSearchForm" class="hero-search-box">
+                        <input type="text" id="heroSearchInput"
+                            placeholder="Search for hospitals, fire stations, or guidelines..." autocomplete="off">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </form>
+                    <div class="hero-quick-links">
+                        <span>Popular:</span>
+                        <a href="contacts.html#hospital" class="quick-tag">Hospitals</a>
+                        <a href="contacts.html#fire" class="quick-tag">Fire Depts</a>
+                        <a href="contacts.html#police" class="quick-tag">Police</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-grid">
+                <div class="feature-card glass-card hover-lift delay-1">
+                    <div class="feature-icon bg-red">🚒</div>
+                    <h3>Fire Departments</h3>
+                    <p>Instant access to local fire stations, emergency hotlines, and fire safety protocols.</p>
+                    <a href="contacts.html#fire" class="card-link">View Contacts &rarr;</a>
+                </div>
+
+                <div class="feature-card glass-card hover-lift delay-2">
+                    <div class="feature-icon bg-blue">🏥</div>
+                    <h3>Hospitals & Clinics</h3>
+                    <p>Find the nearest medical facilities, ambulance services, and first-aid resources.</p>
+                    <a href="contacts.html#hospital" class="card-link">View Contacts &rarr;</a>
+                </div>
+
+                <div class="feature-card glass-card hover-lift delay-3">
+                    <div class="feature-icon bg-orange">⚡</div>
+                    <h3>Disaster Guidelines</h3>
+                    <p>Step-by-step instructions for earthquakes, floods, fires, and extreme weather.</p>
+                    <a href="guidelines.html" class="card-link">Read Guidelines &rarr;</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="footer-content">
+            <div class="footer-logo">Safe<span>NU</span></div>
+            <p>Empowering communities through preparedness and rapid response information.</p>
+            <p>This website is not affiliated with National University, but is a personal project by Jae Mark Almeria. Please contact <a href="mailto:jaemarkalmeria08@gmail.com" style="color: #f6c915; text-decoration: underline; font-weight: 600;">jaemarkalmeria08@gmail.com</a> if there are concerns to be addressed.</p>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 SafeNU Disaster Management. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
