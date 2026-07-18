@@ -1,0 +1,363 @@
+1|7 Days To Die|2013
+2|007 First Light|2010
+3|A Difficult Game About Climbing|2024
+4|A Little to the Left|2022
+5|A Plague Tale - Requiem|2022
+6|A Plague Tale - Innocence|2019
+7|Ace Combat 7 - Skies Uknown|2019
+8|Age of Empires|1997
+9|Age of Empires II|1999
+10|Age of Empires III|2005
+11|Age of Empires IV|2021
+12|Alan Wake|2010
+13|Alan Wake 2|2023
+14|Alien Isolation|2014
+15|Amnesia: The Bunker|2023
+16|Armored Core VI - Fires of Rubicon|2023
+17|Assassin's Creed|2007
+18|Assassin's Creed 2|2009
+19|Assassin's Creed 3|2012
+20|Assassin's Creed 4 - Black Flag|2013
+21|Assassin's Creed - Brotherhood|2010
+22|Assassin's Creed - Mirage|2023
+23|Assassin's Creed - Odyssey|2018
+24|Assassin's Creed - Origins|2017
+25|Assassin's Creed - Revelations|2011
+26|Assassin's Creed - Rogue|2014
+27|Assassin's Creed - Syndicate|2015
+28|Assassin's Creed - Valhalla|2020
+29|Assassin's Creed - Unity|2014
+30|Assetto Corza Competizone|2019
+31|Astroneer|2016
+32|Attack on Titan|2016
+33|Attack on Titan 2|2018
+34|Balatro|2024
+35|Baldur's Gate 3|2023
+36|Batman - Arkham Asylum|2009
+37|Batman - Arkham Knight|2015
+38|Battlefield 1|2016
+39|Battlefield V|2018
+40|Battle Realms - Zen Edition|2019
+41|BeamNG Drive|2015
+42|Bendy and the Ink Machine|2017
+43|Bendy and the Dark Revival|2022
+44|Bioshock|2007
+45|Black Myth: Wukong|2024
+46|Blasphemous|2019
+47|Blasphemous 2|2023
+48|Borderlands|2009
+49|Borderlands 2|2012
+50|Brothers (Remake)|2024
+51|Burnout Paradise|2008
+52|Bully - Scholarship Edition|2008
+53|Call of Duty|2003
+54|Call of Duty 2|2005
+55|Call of Duty - Advanced Warfare|2014
+56|Call of Duty - Black Ops|2010
+57|Call of Duty - Black Ops 2|2012
+58|Call of Duty - Black Ops 3|2015
+59|Call of Duty - Ghosts|2013
+60|Call of Duty - Infinite Warfare|2016
+61|Call of Duty - Modern Warfare|2019
+62|Call of Duty - Modern Warfare 2|2022
+63|Call of Duty - Modern Warfare 3|2023
+64|Call of Duty - World At War|2008
+65|Call of Duty - WWII|2017
+66|Celeste|2018
+67|Chrono Trigger|1995
+68|Cities Skylines|2015
+69|Cities Skylines 2|2023
+70|Civilization V|2010
+71|Clair Obscur: Expedition 33|2025
+72|C&C - Generals Zero Hour|2003
+73|C&C - Red Alert 2|2000
+74|C&C - Red Alert 3|2008
+75|C&C 3 - Tiberium Wars|2007
+76|Company of Heroes|2006
+77|Company of Heroes 2|2013
+78|Company of Heroes 3|2023
+79|Contraband Police|2023
+80|Counter Strike 1.6|2000
+81|Counter Strike - Extreme|2010
+82|Crash Bandicoot 4 - It's About Time|2020
+83|Cronos : The New Dawn|2025
+84|Cult of the Lamb|2022
+85|Cuphead|2017
+86|Cyberpunk 2077|2020
+87|Danganronpa - Trigger Happy Havoc|2010
+88|Dark Souls|2011
+89|Dark Souls 2|2014
+90|Dark Souls 3|2016
+91|Dave the Diver|2023
+92|Days Gone|2019
+93|Deadpool|2013
+94|Dead Cells|2018
+95|Dead Island|2011
+96|Dead Island 2|2023
+97|Dead Rising|2006
+98|Dead Rising 2|2010
+99|Dead Rising 3|2013
+100|Dead Rising 4|2016
+101|Death Stranding|2019
+102|Death Stranding 2 - On The Beach|2025
+103|Deliver At All Costs|2024
+104|Deltarune|2018
+105|Detroit - Become Human|2018
+106|Devil May Cry|2001
+107|Devil May Cry 2|2003
+108|Devil May Cry 3|2005
+109|Devil May Cry 4|2008
+110|Devil May Cry 5|2019
+111|Diablo|1996
+112|Diablo II|2000
+113|Dispatch|2024
+114|Doki Doki Literature Club|2017
+115|Doom Eternal|2020
+116|Dragon Ball - Sparkling Zero|2024
+117|Dragon Ball - XenoVerse|2015
+118|Dragon Ball Z - Kakarot|2020
+119|Dredge|2023
+120|Driver San Fransisco|2011
+121|Dying Light|2015
+122|Dying Light 2|2022
+123|Dying Light - The Beast|2025
+124|Elden Ring - Shadow of the Erdtree|2024
+125|Euro Truck Simulator 2|2012
+126|F1 2020|2020
+127|Fable Anniversary|2014
+128|Factorio|2020
+129|Fallout 4|2015
+130|Far Cry|2004
+131|Far Cry 2|2008
+132|Far Cry 3|2012
+133|Far Cry 4|2014
+134|Far Cry 5|2018
+135|Far Cry 6|2021
+136|Far Cry Primal|2016
+137|Fears to Fathom: Home Alone|2021
+138|Fears to Fathom: Northwood Hitchhike|2021
+139|Fears to Fathom: Carson House|2023
+140|Fears to Fathom: Ironbark Lookout|2023
+141|Fears to Fathom: Woodbury Getaway|2024
+142|FIFA 23|2022
+143|Final Fantasy I to VI Remastered|2023
+144|Final Fantasy VII - Remake Integrade|2021
+145|Final Fantasy VII - Rebirth|2024
+146|Five Nights at Freddy's|2014
+147|Five Nights at Freddy's 2|2014
+148|Five Nights at Freddy's 3|2015
+149|Five Nights at Freddy's 4|2015
+150|Five Nights at Freddy's - Into the Pit|2024
+151|Five Nights at Freddy's - Security Breach|2021
+152|Five Nights at Freddy's - Sister Location|2016
+153|Forager|2019
+154|Forza Horizon 5|2021
+155|Frostpunk|2018
+156|Geometry Dash|2013
+157|Get to Work|2015
+158|Getting It Over with Bennett Foddy|2017
+159|Ghost of Tshushima|2020
+160|God Of War 4|2018
+161|God Of War Ragnarok|2022
+162|GTA III|2001
+163|GTA Vice City|2002
+164|GTA San Andreas|2004
+165|GTA IV|2008
+166|GTA V|2013
+167|Hades|2020
+168|Halo - The Masterchief Collection|2014
+169|Happy Game|2021
+170|Harvest Moon - One World|2021
+171|Harvest Moon - Light of Hope|2017
+172|Harvest Moon - The Winds of Anthos|2023
+173|Heretic + Hexen|1995
+174|High on Life|2022
+175|Hitman 3|2021
+176|Hollow Knight|2017
+177|Hollow Knight - Silksong|2025
+178|Hogwarts Legacy|2023
+179|Horizon - Zero Dawn|2017
+180|Horizon - Forbidden West|2022
+181|Hotline Miami|2012
+182|Hotline Miami 2 - Wrong Number|2015
+183|House Flipper|2018
+184|IDLE BOSS RUSH|2024
+185|InZOI|2024
+186|Jump Force|2019
+187|Kingdoms of Amalur - Re-Reckoning|2020
+188|Kingdom Come: Deliverance II|2025
+189|Legionbound|2024
+190|LEGO City Undercover|2013
+191|LEGO Marvel Super Heroes|2013
+192|LEGO Star Wars The Complete Saga|2007
+193|Lies of P|2023
+194|Limbo|2010
+195|Left 4 Dead|2008
+196|Left 4 Dead 2|2009
+197|Life is Strange|2015
+198|Life is Strange - Before the Storm|2017
+199|Life is Strange - True Colors|2021
+200|Little Nightmares|2017
+201|Little Nightmares II|2021
+202|Little Nightmares III|2025
+203|Madden NFL 20|2019
+204|Mafia|2002
+205|Mafia II|2010
+206|Mafia III|2016
+207|Manhunt|2003
+208|Manhunt 2|2007
+209|Marvel's Gaurdians of the Galaxy|2021
+210|Marvel's Spider-Man Miles Morales|2020
+211|Marvel's Spider-Man Remastered|2020
+212|Marvel's Spider-Man 2|2023
+213|MARVEL vs CAPCOM - Fighting Collection|2024
+214|Max Payne|2001
+215|Max Payne 2|2003
+216|Medal of Honor: Airborne|2007
+217|Medal of Honor (2010)|2010
+218|Metal Gear Rising - Revengeance|2013
+219|Metal Gear Solid - Snake Eater|2004
+220|Metal Gear Solid V - The Phantom Pain|2015
+221|Metaphor: ReFantazio|2024
+222|Microsoft Flight Simulator|2020
+223|Minecraft (Java Edition)|2011
+224|Minecraft Dungeons|2020
+225|Minecraft Story Mode|2015
+226|Minecraft Story Mode Season 2|2017
+227|Mirror's Edge|2008
+228|Misao|2011
+229|Monster Hunter Rise: Sunbreak|2022
+230|Mortal Kombat 11|2019
+231|MotoGP 25|2025
+232|Mount and Blade - Warband|2010
+233|Mount and Blade II -  Bannerlord|2022
+234|Mouse: P.I For Hire|2025
+235|Naruto Shippuden - Ultimate Ninja Storm|2008
+236|Naruto Shippuden - Ultimate Ninja Storm 2|2010
+237|Naruto Shippuden - Ultimate Ninja Storm 3|2013
+238|Naruto Shippuden - Ultimate Ninja Storm 4|2016
+239|NBA 2K14|2013
+240|NBA 2K16|2015
+241|NBA 2K19|2018
+242|NBA 2K23|2022
+243|Need for Speed: Carbon|2006
+244|Need for Spead: Heat|2019
+245|Need for Spead: Hot Pursuit|2010
+246|Need for Speed: Most Wanted (2012)|2012
+247|Need for Speed: Most Wanted (2005)|2005
+248|Need for Speed: ProStreet|2007
+249|Need for Speed: Rivals|2013
+250|Need for Speed: Shift|2009
+251|Need for Speed: Underground|2003
+252|Need for Speed: Underground 2|2004
+253|NieR : Automata|2017
+254|NINJA GAIDEN 2 Black|2008
+255|NINJA GAIDEN 4|2025
+256|NINJA GAIDEN - Ragebound|2024
+257|No, I'm not a Human|2024
+258|Not a Hero|2015
+259|OMORI|2020
+260|One Piece Odyssey|2023
+261|Only Up!|2023
+262|Outlast|2013
+263|Outlast 2|2017
+264|Papers, Please|2013
+265|Pentiment|2022
+266|Portal|2007
+267|Prince of Persia - The Forgotten Sands|2010
+268|Project Zomboid|2013
+269|Prototype|2009
+270|Prototype 2|2012
+271|Ready or Not|2023
+272|Red Dead Redemption|2010
+273|Red Dead Redemption 2|2018
+274|Refuted Wind|2024
+275|Resident Evil 0|2002
+276|Resident Evil HD|2015
+277|Resident Evil 2 (Remake)|2019
+278|Resident Evil 3 (Remake)|2020
+279|Resident Evil 4 (Remake)|2023
+280|Resident Evil 5|2009
+281|Resident Evil 6|2012
+282|Resident Evil 7|2017
+283|Resident Evil Village|2021
+284|Resident Evil Requiem|2025
+285|Resident Evil: Revalations|2012
+286|Resident Evil Revelations 2|2015
+287|Rimworld|2018
+288|Rise of the Tomb Raider|2015
+289|Schedule 1|2024
+290|Sekiro: Shadows Die Twice|2019
+291|SIFU|2022
+292|Silent Hill|1999
+293|Silent Hill 2 (Remake)|2024
+294|Silent Hill f|2025
+295|Sixty Four|2024
+296|Shadow of the Tomb Raider|2018
+297|Sleeping Dogs|2012
+298|Sons of the Forest|2024
+299|SNK vs. Capcom: SVC Chaos|2003
+300|Spec Ops: The Line|2012
+301|Splinter Cell - Chaos Theory|2005
+302|Stardew Valley|2016
+303|State of Decay|2013
+304|State of Decay 2|2018
+305|Steins;Gate|2009
+306|Stray|2022
+307|Street Fighter 30th Anniversary Collection|2018
+308|Street Fighter V|2016
+309|Stronghold Definitive Edition|2023
+310|Stronghold Crusader Definitive Edition|2024
+311|Subnautica|2018
+312|Subnautica - Below Zero|2021
+313|Supermarket Simulator|2024
+314|Suikoden I & II HD Remaster|2025
+315|TEKKEN 8|2024
+316|Terraria|2011
+317|Tetris Forever|2024
+318|The Binding of Isaac|2011
+319|The Crew|2014
+320|The Elder Scrolls IV: Oblivion Remastered|2025
+321|The Elder Scrolls V: Skyrim Legendary Edition|2013
+322|The Escapists|2015
+323|The Evil Within|2014
+324|The Evil Within 2|2017
+325|The Forest|2018
+326|The House of the Dead (Remake)|2022
+327|The King is Watching|2024
+328|The Last of Us Part I|2022
+329|The Last of Us Part II|2020
+330|The Lord of the Rings - The Battle for Middle Earth|2004
+331|The Lord of the Rings - The Battle for Middle Earth II|2006
+332|The NOexistenceN of you AND me|2024
+333|The Precint|2024
+334|The Sims 1 - Legacy Collection|2024
+335|The Sims 2 - Legacy Collection|2024
+336|The Sims 3|2009
+337|The Sims 4|2014
+338|The Walking Dead|2012
+339|The Walking Dead Season 2|2013
+340|The Walking Dead Season 3|2016
+341|The Walking Dead - The Final Season|2018
+342|The Walking Dead - Michonne|2016
+343|The Witcher 3 - Wild Hunt|2015
+344|This War of Mine|2014
+345|To the Moon|2011
+346|Tomb Raider|2013
+347|Totally Accurate Battle Simulator|2021
+348|Transformers - Fall of Cybertron|2012
+349|Transformers - War for Cybertron|2010
+350|Ultimate Marvel VS. Capcom 3|2011
+351|Uncharted - Legacy of Thieves Collection|2022
+352|Undertale|2015
+353|Unleaving|2023
+354|Until Then|2024
+355|Warcraft III|2002
+356|Warhammer 40,000 - Space Marines|2011
+357|Warhammer 40,000 - Space Marines 2|2024
+358|Watch Dogs|2014
+359|Watch Dogs 2|2016
+360|What Remains of Edith Finch|2017
+361|World War Z - Aftermath|2021
+362|WWE 2K25|2025
+363|Zombie Army Trilogy|2015
