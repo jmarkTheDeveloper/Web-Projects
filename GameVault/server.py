@@ -21,6 +21,9 @@ CORS(app)
 # Temp storage folder for downloads before serving to client
 DOWNLOAD_DIR = os.path.join(os.path.expanduser("~"), "Downloads", "GameVaultMusic")
 os.makedirs(DOWNLOAD_DIR, exist_ok=True)
+@app.route('/')
+def home():
+    return jsonify({"status": "online", "message": "GameVault Downloader Server is running!"})
 
 def is_ffmpeg_available():
     try:

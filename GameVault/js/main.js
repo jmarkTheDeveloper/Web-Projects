@@ -415,7 +415,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const downloadStatus = document.getElementById('downloadStatus');
     const statusText = document.getElementById('statusText');
 
-    const BACKEND_URL = 'http://localhost:5000';
+    const BACKEND_URL = 'https://web-projects-oznm.onrender.com';
 
     function formatDuration(seconds) {
         if (!seconds) return '0:00';
