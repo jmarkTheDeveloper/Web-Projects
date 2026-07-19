@@ -1,0 +1,307 @@
+======================================================================
+                     GAMEVAULT LINK ISSUE AUDIT REPORT
+======================================================================
+Total games scanned: 363
+
+This file contains the complete list of games that have broken links,
+malformed links, duplicate download targets, or are using generic placeholder domains.
+
+----------------------------------------------------------------------
+SECTION 1: CONFIRMED DEAD / EXPIRED / BROKEN LINKS (28 Games)
+----------------------------------------------------------------------
+These links will either show a 'File Not Found' screen, redirect to dead files,
+or contain coding errors (like '#' prefixing).
+
+ID: 24
+Game: Assassin's Creed - Origins
+Link: https://bzzhr.to/bsft1whjwsie
+Issue: Bzzhr redirect link expired (HTTP 403 / File deleted on DataNodes)
+--------------------------------------------------
+ID: 27
+Game: Assassin's Creed - Syndicate
+Link: https://bzzhr.to/yxa6txtoozhj
+Issue: Bzzhr redirect link expired (HTTP 403 / File deleted on DataNodes)
+--------------------------------------------------
+ID: 58
+Game: Call of Duty - Black Ops 3
+Link: https://bzzhr.to/rea7jctc7a3u
+Issue: Bzzhr redirect link expired (HTTP 403 / File deleted on DataNodes)
+--------------------------------------------------
+ID: 66
+Game: Celeste
+Link: https://bzzhr.to/fr8u2g2cbyus
+Issue: Bzzhr redirect link expired (HTTP 403 / File deleted on DataNodes)
+--------------------------------------------------
+ID: 71
+Game: Clair Obscur: Expedition 33
+Link: https://bzzhr.to/9iuly7k1m3vz
+Issue: Bzzhr redirect link expired (HTTP 403 / File deleted on DataNodes)
+--------------------------------------------------
+ID: 86
+Game: Cyberpunk 2077
+Link: https://bzzhr.to/u33dxmmaozb6
+Issue: Bzzhr redirect link expired (HTTP 403 / File deleted on DataNodes)
+--------------------------------------------------
+ID: 89
+Game: Dark Souls 2
+Link: https://bzzhr.to/qckuibkza9df
+Issue: Bzzhr redirect link expired (HTTP 403 / File deleted on DataNodes)
+--------------------------------------------------
+ID: 109
+Game: Devil May Cry 4
+Link: https://bzzhr.to/n42ceau5vruh
+Issue: Bzzhr redirect link expired (HTTP 403 / File deleted on DataNodes)
+--------------------------------------------------
+ID: 127
+Game: Fable Anniversary
+Link: https://bzzhr.to/4bcdxzwhap1w
+Issue: Bzzhr redirect link expired (HTTP 403 / File deleted on DataNodes)
+--------------------------------------------------
+ID: 142
+Game: FIFA 23
+Link: https://bzzhr.to/zmasjuexf733
+Issue: Bzzhr redirect link expired (HTTP 403 / File deleted on DataNodes)
+--------------------------------------------------
+ID: 145
+Game: Final Fantasy VII - Rebirth
+Link: https://bzzhr.to/os7f47rg33sa
+Issue: Bzzhr redirect link expired (HTTP 403 / File deleted on DataNodes)
+--------------------------------------------------
+ID: 148
+Game: Five Nights at Freddy's 3
+Link: https://www.mediafire.com/file/du8brelckcksmqa/Five-Nights-at-Freddys-3.rar/file
+Issue: Link malformed in database (starts with #)
+--------------------------------------------------
+ID: 150
+Game: Five Nights at Freddy's - Into the Pit
+Link: #https://www.mediafire.com/file/nr4l7jiiqixmj23/Five-Nights-At-Freddys-Into-The-Pit.rar/file
+Issue: Link malformed in database (starts with #)
+--------------------------------------------------
+ID: 192
+Game: LEGO Star Wars The Complete Saga
+Link: https://www.mediafire.com/file/ao22m1o3asndjp2/LEGO-Star-Wars-The-Complete-Saga.rar/file
+Issue: File deleted on hosting provider (MediaFire 404)
+--------------------------------------------------
+ID: 230
+Game: Mortal Kombat 11
+Link: https://bzzhr.to/kqg860gm6uqh
+Issue: Bzzhr redirect link expired (HTTP 403 / File deleted on DataNodes)
+--------------------------------------------------
+ID: 231
+Game: MotoGP 25
+Link: https://steamrip.com/motogp-25-free-download-build-19022332/
+Issue: Link blocked or broken (HTTP 403)
+--------------------------------------------------
+ID: 265
+Game: Pentiment
+Link: https://bzzhr.to/8yw4g37ibzvy
+Issue: Bzzhr redirect link expired (HTTP 403 / File deleted on DataNodes)
+--------------------------------------------------
+ID: 266
+Game: Portal
+Link: https://bzzhr.to/6klxm5xf3m3l
+Issue: Bzzhr redirect link expired (HTTP 403 / File deleted on DataNodes)
+--------------------------------------------------
+ID: 291
+Game: SIFU
+Link: https://bzzhr.to/fx56v77o7kqx
+Issue: Bzzhr redirect link expired (HTTP 403 / File deleted on DataNodes)
+--------------------------------------------------
+ID: 298
+Game: Sons of the Forest
+Link: https://bzzhr.to/xb7r5vhvz6ir
+Issue: Bzzhr redirect link expired (HTTP 403 / File deleted on DataNodes)
+--------------------------------------------------
+ID: 303
+Game: State of Decay
+Link: https://bzzhr.to/pusidkl87ebk
+Issue: Bzzhr redirect link expired (HTTP 403 / File deleted on DataNodes)
+--------------------------------------------------
+ID: 304
+Game: State of Decay 2
+Link: https://bzzhr.to/gzdcobt07a10
+Issue: Bzzhr redirect link expired (HTTP 403 / File deleted on DataNodes)
+--------------------------------------------------
+ID: 305
+Game: Steins;Gate
+Link: https://bzzhr.to/8k88nfhvij0i
+Issue: Bzzhr redirect link expired (HTTP 403 / File deleted on DataNodes)
+--------------------------------------------------
+ID: 313
+Game: Supermarket Simulator
+Link: https://bzzhr.to/5wsl01m993dk
+Issue: Bzzhr redirect link expired (HTTP 403 / File deleted on DataNodes)
+--------------------------------------------------
+ID: 319
+Game: The Crew
+Link: https://bzzhr.to/r9e266moyveu
+Issue: Bzzhr redirect link expired (HTTP 403 / File deleted on DataNodes)
+--------------------------------------------------
+ID: 336
+Game: The Sims 3
+Link: https://bzzhr.to/vlkr0ltfrkam
+Issue: Bzzhr redirect link expired (HTTP 403 / File deleted on DataNodes)
+--------------------------------------------------
+ID: 340
+Game: The Walking Dead Season 3
+Link: https://bzzhr.to/usghd6058bty
+Issue: Bzzhr redirect link expired & shared duplicate link with ID 341
+--------------------------------------------------
+ID: 341
+Game: The Walking Dead - The Final Season
+Link: https://bzzhr.to/usghd6058bty
+Issue: Bzzhr redirect link expired & shared duplicate link with ID 340
+--------------------------------------------------
+
+----------------------------------------------------------------------
+SECTION 2: GENERIC DOWNLOAD PORTAL PLACEHOLDERS (128 Games)
+----------------------------------------------------------------------
+These games point to placeholder domains (like 'datanodes.to/download' or
+'filekeeper.net/download') rather than actual download paths.
+
+A. DATANODES.TO PLACEHOLDER LINKS (Used by 113 games):
+ - [ID 5] A Plague Tale - Requiem
+ - [ID 6] A Plague Tale - Innocence
+ - [ID 7] Ace Combat 7 - Skies Uknown
+ - [ID 9] Age of Empires II
+ - [ID 10] Age of Empires III
+ - [ID 11] Age of Empires IV
+ - [ID 12] Alan Wake
+ - [ID 13] Alan Wake 2
+ - [ID 16] Armored Core VI - Fires of Rubicon
+ - [ID 23] Assassin's Creed - Odyssey
+ - [ID 28] Assassin's Creed - Valhalla
+ - [ID 29] Assassin's Creed - Unity
+ - [ID 33] Attack on Titan 2
+ - [ID 35] Baldur's Gate 3
+ - [ID 37] Batman - Arkham Knight
+ - [ID 38] Battlefield 1
+ - [ID 39] Battlefield V
+ - [ID 49] Borderlands 2
+ - [ID 55] Call of Duty - Advanced Warfare
+ - [ID 57] Call of Duty - Black Ops 2
+ - [ID 59] Call of Duty - Ghosts
+ - [ID 60] Call of Duty - Infinite Warfare
+ - [ID 65] Call of Duty - WWII
+ - [ID 77] Company of Heroes 2
+ - [ID 78] Company of Heroes 3
+ - [ID 82] Crash Bandicoot 4 - It's About Time
+ - [ID 83] Cronos : The New Dawn
+ - [ID 90] Dark Souls 3
+ - [ID 92] Days Gone
+ - [ID 96] Dead Island 2
+ - [ID 99] Dead Rising 3
+ - [ID 100] Dead Rising 4
+ - [ID 101] Death Stranding
+ - [ID 102] Death Stranding 2 - On The Beach
+ - [ID 105] Detroit - Become Human
+ - [ID 106] Devil May Cry
+ - [ID 107] Devil May Cry 2
+ - [ID 108] Devil May Cry 3
+ - [ID 110] Devil May Cry 5
+ - [ID 115] Doom Eternal
+ - [ID 118] Dragon Ball Z - Kakarot
+ - [ID 121] Dying Light
+ - [ID 122] Dying Light 2
+ - [ID 123] Dying Light - The Beast
+ - [ID 124] Elden Ring - Shadow of the Erdtree
+ - [ID 125] Euro Truck Simulator 2
+ - [ID 126] F1 2020
+ - [ID 129] Fallout 4
+ - [ID 133] Far Cry 4
+ - [ID 134] Far Cry 5
+ - [ID 135] Far Cry 6
+ - [ID 144] Final Fantasy VII - Remake Integrade
+ - [ID 151] Five Nights at Freddy's - Security Breach
+ - [ID 154] Forza Horizon 5
+ - [ID 160] God Of War 4
+ - [ID 161] God Of War Ragnarok
+ - [ID 168] Halo - The Masterchief Collection
+ - [ID 174] High on Life
+ - [ID 175] Hitman 3
+ - [ID 179] Horizon - Zero Dawn
+ - [ID 180] Horizon - Forbidden West
+ - [ID 185] InZOI
+ - [ID 186] Jump Force
+ - [ID 187] Kingdoms of Amalur - Re-Reckoning
+ - [ID 188] Kingdom Come: Deliverance II
+ - [ID 193] Lies of P
+ - [ID 199] Life is Strange - True Colors
+ - [ID 203] Madden NFL 20
+ - [ID 204] Mafia
+ - [ID 205] Mafia II
+ - [ID 206] Mafia III
+ - [ID 209] Marvel's Gaurdians of the Galaxy
+ - [ID 211] Marvel's Spider-Man Remastered
+ - [ID 218] Metal Gear Rising - Revengeance
+ - [ID 219] Metal Gear Solid - Snake Eater
+ - [ID 220] Metal Gear Solid V - The Phantom Pain
+ - [ID 221] Metaphor: ReFantazio
+ - [ID 222] Microsoft Flight Simulator
+ - [ID 229] Monster Hunter Rise: Sunbreak
+ - [ID 233] Mount and Blade II -  Bannerlord
+ - [ID 238] Naruto Shippuden - Ultimate Ninja Storm 4
+ - [ID 240] NBA 2K16
+ - [ID 241] NBA 2K19
+ - [ID 242] NBA 2K23
+ - [ID 244] Need for Spead: Heat
+ - [ID 254] NINJA GAIDEN 2 Black
+ - [ID 255] NINJA GAIDEN 4
+ - [ID 260] One Piece Odyssey
+ - [ID 263] Outlast 2
+ - [ID 273] Red Dead Redemption 2
+ - [ID 277] Resident Evil 2 (Remake)
+ - [ID 278] Resident Evil 3 (Remake)
+ - [ID 282] Resident Evil 7
+ - [ID 283] Resident Evil Village
+ - [ID 284] Resident Evil Requiem
+ - [ID 288] Rise of the Tomb Raider
+ - [ID 293] Silent Hill 2 (Remake)
+ - [ID 294] Silent Hill f
+ - [ID 296] Shadow of the Tomb Raider
+ - [ID 308] Street Fighter V
+ - [ID 314] Suikoden I & II HD Remaster
+ - [ID 320] The Elder Scrolls IV: Oblivion Remastered
+ - [ID 323] The Evil Within
+ - [ID 324] The Evil Within 2
+ - [ID 328] The Last of Us Part I
+ - [ID 329] The Last of Us Part II
+ - [ID 337] The Sims 4
+ - [ID 339] The Walking Dead Season 2
+ - [ID 346] Tomb Raider
+ - [ID 351] Uncharted - Legacy of Thieves Collection
+ - [ID 357] Warhammer 40,000 - Space Marines 2
+ - [ID 359] Watch Dogs 2
+ - [ID 362] WWE 2K25
+
+B. FILEKEEPER.NET PLACEHOLDER LINKS (Used by 15 games):
+ - [ID 2] 007 First Light
+ - [ID 41] BeamNG Drive
+ - [ID 45] Black Myth: Wukong
+ - [ID 69] Cities Skylines 2
+ - [ID 116] Dragon Ball - Sparkling Zero
+ - [ID 159] Ghost of Tshushima
+ - [ID 166] GTA V
+ - [ID 178] Hogwarts Legacy
+ - [ID 210] Marvel's Spider-Man Miles Morales
+ - [ID 212] Marvel's Spider-Man 2
+ - [ID 271] Ready or Not
+ - [ID 279] Resident Evil 4 (Remake)
+ - [ID 315] TEKKEN 8
+ - [ID 343] The Witcher 3 - Wild Hunt
+ - [ID 361] World War Z - Aftermath
+
+----------------------------------------------------------------------
+SECTION 3: UNASSIGNED / EMPTY LINKS (9 Games)
+----------------------------------------------------------------------
+These games have links set to '#' or are left completely empty.
+
+ - [ID 48] Borderlands (Link: "#")
+ - [ID 189] Legionbound (Link: "#")
+ - [ID 228] Misao (Link: "#")
+ - [ID 237] Naruto Shippuden - Ultimate Ninja Storm 3 (Link: "#")
+ - [ID 274] Refuted Wind (Link: "#")
+ - [ID 295] Sixty Four (Link: "#")
+ - [ID 338] The Walking Dead (Link: "#")
+ - [ID 342] The Walking Dead - Michonne (Link: "#")
+ - [ID 22] Assassin's Creed - Mirage (Link: "")
