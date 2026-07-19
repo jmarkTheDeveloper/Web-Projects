@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=29">
+    <link rel="stylesheet" href="style.css?v=30">
     
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
@@ -31,7 +31,7 @@
                 </button>
                 <h1 class="logo navbar-logo" onclick="resetDashboard()" style="cursor: pointer;" title="Return to Dashboard">
                     <img src="img/gv-logo.svg" alt="GameVault Logo" class="navbar-logo-img" style="height: 28px; width: 28px; flex-shrink: 0;">
-                    Game<span class="text-accent">Vault</span>
+                    <span>Game<span class="text-accent">Vault</span></span>
                 </h1>
             </div>
             
@@ -278,12 +278,12 @@
     </div>
     <!-- Info Modal -->
     <div id="infoModalOverlay" class="modal-overlay hidden">
-        <div id="infoModal" class="game-modal" style="display: block; overflow-y: auto; max-width: 700px; height: 80vh;">
+        <div id="infoModal" class="text-modal" style="max-width: 700px; height: 80vh;">
             <button id="closeInfoModal" class="close-modal-btn" aria-label="Close modal">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
             
-            <div style="padding: 3rem 2rem;">
+            <div>
                 <h2 style="font-size: 2.2rem; margin-bottom: 2rem; color: var(--accent-1); text-align: center;">How to Download & Install</h2>
                 
                 <div style="display: flex; flex-direction: column; gap: 1.5rem;">
@@ -325,12 +325,12 @@
 
     <!-- About Us Modal -->
     <div id="aboutModalOverlay" class="modal-overlay hidden">
-        <div id="aboutModal" class="game-modal" style="display: block; overflow-y: auto; max-width: 600px; height: auto; max-height: 80vh;">
+        <div id="aboutModal" class="text-modal" style="max-width: 600px;">
             <button id="closeAboutModal" class="close-modal-btn" aria-label="Close modal">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
             
-            <div style="padding: 3rem 2rem; text-align: center;">
+            <div style="text-align: center;">
                 <div style="font-size: 3rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 1rem;">
                     GAME<span class="text-accent">VAULT</span>
                 </div>
