@@ -36,3 +36,10 @@ const ALLOWED_EMAILS = [
     "trixjgallardo@gmail.com",
     "carloadonsyo@gmail.com"
 ];
+
+// ==========================================
+// DEVELOPER DISCORD WEBHOOK FOR REPORTS
+// ==========================================
+// Paste your Discord Channel Webhook URL here to receive real-time broken link alerts!
+window.DISCORD_WEBHOOK_URL = "YOUR_DISCORD_WEBHOOK_URL_HERE";
+

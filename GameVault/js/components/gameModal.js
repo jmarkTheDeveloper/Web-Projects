@@ -1,4 +1,6 @@
 // Game Modal Logic
+let currentGameId = null;
+let currentGameLink = '';
 
 const modalOverlay = document.getElementById('gameModalOverlay');
 const closeModalBtn = document.getElementById('closeModal');
@@ -10,6 +12,7 @@ const modalDescription = document.getElementById('modalDescription');
 const modalSysReqs = document.getElementById('modalSysReqs');
 const modalPlatforms = document.getElementById('modalPlatforms');
 const modalDownloadBtn = document.getElementById('modalDownloadBtn');
+const modalReportBtn = document.getElementById('modalReportBtn');
 
 // Helper for link verification safety net
 function extractFilenameFromUrl(url) {
@@ -54,8 +57,45 @@ function verifyLinkSafety(gameTitle, url) {
     return hasOverlap;
 }
 
+// Send Discord webhook report
+async function sendDeveloperReport(gameTitle, gameId, downloadUrl, issueType, details = '') {
+    const webhookUrl = window.DISCORD_WEBHOOK_URL || '';
+    if (!webhookUrl || webhookUrl.includes('YOUR_DISCORD_WEBHOOK_URL_HERE')) {
+        console.warn('Developer Alert: Discord Webhook URL is not configured.');
+        return false;
+    }
+
+    try {
+        const payload = {
+            embeds: [{
+                title: "🚨 Broken Game Link Reported!",
+                color: 16711740, // Red color hex #FF003C
+                fields: [
+                    { name: "🎮 Game Title", value: gameTitle, inline: true },
+                    { name: "🆔 Game ID", value: String(gameId), inline: true },
+                    { name: "⚠️ Issue Type", value: issueType, inline: false },
+                    { name: "🔗 Current Link", value: downloadUrl || 'None', inline: false },
+                    { name: "📝 Additional Info", value: details || 'No additional details provided.', inline: false }
+                ],
+                timestamp: new Date().toISOString()
+            }]
+        };
+
+        const response = await fetch(webhookUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+
+        return response.ok;
+    } catch (e) {
+        console.error('Failed to send discord webhook:', e);
+        return false;
+    }
+}
+
 // Download Interceptor Logic
-modalDownloadBtn.addEventListener('click', (e) => {
+modalDownloadBtn.addEventListener('click', async (e) => {
     e.preventDefault();
     const url = modalDownloadBtn.href;
     if (!url || url === '#' || url.endsWith('#')) return;
@@ -66,7 +106,20 @@ modalDownloadBtn.addEventListener('click', (e) => {
     if (!isSafe) {
         const filename = extractFilenameFromUrl(url);
         const proceed = confirm(`⚠️ SECURITY WARNING: Game Title Mismatch!\n\nYou are downloading "${title}", but the link points to a file named "${filename}". This could be the wrong game or an outdated redirect.\n\nDo you still want to proceed?`);
-        if (!proceed) return;
+        if (!proceed) {
+            // Ask to report
+            const report = confirm(`Would you like to send a report to the developer about this mismatched link?`);
+            if (report) {
+                const details = `Mismatched filename: "${filename}". Download was aborted by user.`;
+                const success = await sendDeveloperReport(title, currentGameId, url, 'Mismatched Link / Wrong Game', details);
+                if (success) {
+                    alert('Thank you! The developer has been notified.');
+                } else {
+                    alert('Report logged. Developer: Please configure your DISCORD_WEBHOOK_URL inside firebase-config.js.');
+                }
+            }
+            return;
+        }
     }
 
     // Save original state
@@ -176,6 +229,10 @@ window.openGameModal = function(gameId) {
     // Download link (using the # or external link)
     modalDownloadBtn.href = game.link;
     
+    // Store metadata
+    currentGameId = game.id;
+    currentGameLink = game.link;
+    
     // Store release year for HW checker and reset result
     currentGameYear = game.releaseYear;
     hwResult.classList.add('hidden');
@@ -281,3 +338,52 @@ checkHwBtn.addEventListener('click', () => {
         hwResult.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg> Incompatible: Your PC may struggle to run this game.`;
     }
 });
+
+// Event Listener for Developer Reports Button
+if (modalReportBtn) {
+    modalReportBtn.addEventListener('click', async () => {
+        if (!currentGameId) return;
+        
+        const title = modalTitle.textContent;
+        const link = currentGameLink || '';
+        
+        const isLinkMissing = !link || link === '#' || link.endsWith('#');
+        const defaultReason = isLinkMissing ? 'Link is missing/empty' : 'Link is broken/offline';
+        
+        const userReason = prompt(
+            `Report an issue with "${title}" link:\n\nType of issue:`,
+            defaultReason
+        );
+        
+        if (userReason === null) return;
+        
+        const details = prompt(
+            `Provide any additional details (optional):`,
+            `Checked on: ${new Date().toLocaleDateString()}`
+        );
+        
+        if (details === null) return;
+        
+        modalReportBtn.disabled = true;
+        modalReportBtn.textContent = 'Sending...';
+        
+        const success = await sendDeveloperReport(title, currentGameId, link, userReason, details);
+        
+        modalReportBtn.disabled = false;
+        modalReportBtn.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            Report Link
+        `;
+        
+        if (success) {
+            alert('Thank you! The developer has been notified of this issue.');
+        } else {
+            const webhookUrl = window.DISCORD_WEBHOOK_URL || '';
+            if (!webhookUrl || webhookUrl.includes('YOUR_DISCORD_WEBHOOK_URL_HERE')) {
+                alert(`Report logged locally!\n\nDeveloper Action required: Please configure DISCORD_WEBHOOK_URL inside 'js/firebase-config.js' to receive real-time notifications on Discord!`);
+            } else {
+                alert('Failed to send report. Please check your internet connection and try again.');
+            }
+        }
+    });
+}
