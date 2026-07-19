@@ -2398,7 +2398,7 @@ const games = [
     {
         "id": 148,
         "title": "Five Nights at Freddy's 3",
-        "link": "#https://www.mediafire.com/file/du8brelckcksmqa/Five-Nights-at-Freddys-3.rar/file",
+        "link": "https://www.mediafire.com/file/du8brelckcksmqa/Five-Nights-at-Freddys-3.rar/file",
         "releaseYear": 2015,
         "image": "https://media.rawg.io/media/screenshots/7e2/7e24e18e7584154d44c11db44b5c6b0a.jpeg",
         "platforms": [
