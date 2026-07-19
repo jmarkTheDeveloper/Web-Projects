@@ -11,11 +11,63 @@ const modalSysReqs = document.getElementById('modalSysReqs');
 const modalPlatforms = document.getElementById('modalPlatforms');
 const modalDownloadBtn = document.getElementById('modalDownloadBtn');
 
+// Helper for link verification safety net
+function extractFilenameFromUrl(url) {
+    try {
+        const decodedUrl = decodeURIComponent(url);
+        const cleanUrl = decodedUrl.replace(/\/+$/, '');
+        const parts = cleanUrl.split('/');
+        
+        if (parts[parts.length - 1] === 'file') {
+            return parts[parts.length - 2] || '';
+        }
+        return parts[parts.length - 1] || '';
+    } catch (e) {
+        return '';
+    }
+}
+
+function verifyLinkSafety(gameTitle, url) {
+    const filename = extractFilenameFromUrl(url).toLowerCase();
+    if (!filename) return true;
+    
+    const generics = ['download', 'get', 'file', 'index', 'show'];
+    if (generics.includes(filename) || filename.length < 3) return true;
+    
+    const cleanTitle = gameTitle.toLowerCase().replace(/[^\w\s]/g, ' ');
+    const cleanFile = filename.replace(/[^\w\s]/g, ' ');
+    
+    const titleWords = cleanTitle.split(/\s+/).filter(w => w.length > 2);
+    const fileWords = cleanFile.split(/\s+/).filter(w => w.length > 2);
+    
+    const stopwords = ['the', 'and', 'for', 'game', 'season', 'edition', 'definitive', 'part', 'setup', 'pc', 'repack', 'download', 'free', 'zip', 'rar', 'iso', 'exe'];
+    
+    const significantTitleWords = titleWords.filter(w => !stopwords.includes(w));
+    const significantFileWords = fileWords.filter(w => !stopwords.includes(w));
+    
+    if (significantTitleWords.length === 0) return true;
+    
+    const hasOverlap = significantTitleWords.some(word => 
+        significantFileWords.some(fileWord => fileWord.includes(word) || word.includes(fileWord))
+    );
+    
+    return hasOverlap;
+}
+
 // Download Interceptor Logic
 modalDownloadBtn.addEventListener('click', (e) => {
     e.preventDefault();
     const url = modalDownloadBtn.href;
     if (!url || url === '#' || url.endsWith('#')) return;
+
+    // Safety net check
+    const title = modalTitle.textContent;
+    const isSafe = verifyLinkSafety(title, url);
+    if (!isSafe) {
+        const filename = extractFilenameFromUrl(url);
+        const proceed = confirm(`⚠️ SECURITY WARNING: Game Title Mismatch!\n\nYou are downloading "${title}", but the link points to a file named "${filename}". This could be the wrong game or an outdated redirect.\n\nDo you still want to proceed?`);
+        if (!proceed) return;
+    }
 
     // Save original state
     const originalContent = modalDownloadBtn.innerHTML;
