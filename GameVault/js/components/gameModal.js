@@ -14,6 +14,44 @@ const modalPlatforms = document.getElementById('modalPlatforms');
 const modalDownloadBtn = document.getElementById('modalDownloadBtn');
 const modalReportBtn = document.getElementById('modalReportBtn');
 
+// Report Modal DOM elements
+const reportModalOverlay = document.getElementById('reportModalOverlay');
+const closeReportModalBtn = document.getElementById('closeReportModal');
+const reportGameTitle = document.getElementById('reportGameTitle');
+const reportIssueType = document.getElementById('reportIssueType');
+const reportDetails = document.getElementById('reportDetails');
+const submitReportBtn = document.getElementById('submitReportBtn');
+
+function openReportModal(gameTitle, defaultIssue = 'Link is broken/offline', prefilledDetails = '') {
+    if (!reportModalOverlay) return;
+    
+    reportGameTitle.textContent = `Game: ${gameTitle}`;
+    reportIssueType.value = defaultIssue;
+    reportDetails.value = prefilledDetails;
+    
+    submitReportBtn.disabled = false;
+    submitReportBtn.textContent = 'Send Report';
+    
+    reportModalOverlay.classList.remove('hidden');
+}
+
+function closeReportModal() {
+    if (reportModalOverlay) {
+        reportModalOverlay.classList.add('hidden');
+    }
+}
+
+if (closeReportModalBtn) {
+    closeReportModalBtn.addEventListener('click', closeReportModal);
+}
+if (reportModalOverlay) {
+    reportModalOverlay.addEventListener('click', (e) => {
+        if (e.target === reportModalOverlay) {
+            closeReportModal();
+        }
+    });
+}
+
 // Helper for link verification safety net
 function extractFilenameFromUrl(url) {
     try {
@@ -107,17 +145,12 @@ modalDownloadBtn.addEventListener('click', async (e) => {
         const filename = extractFilenameFromUrl(url);
         const proceed = confirm(`⚠️ SECURITY WARNING: Game Title Mismatch!\n\nYou are downloading "${title}", but the link points to a file named "${filename}". This could be the wrong game or an outdated redirect.\n\nDo you still want to proceed?`);
         if (!proceed) {
-            // Ask to report
-            const report = confirm(`Would you like to send a report to the developer about this mismatched link?`);
-            if (report) {
-                const details = `Mismatched filename: "${filename}". Download was aborted by user.`;
-                const success = await sendDeveloperReport(title, currentGameId, url, 'Mismatched Link / Wrong Game', details);
-                if (success) {
-                    alert('Thank you! The developer has been notified.');
-                } else {
-                    alert('Report logged. Developer: Please configure your DISCORD_WEBHOOK_URL inside firebase-config.js.');
-                }
-            }
+            // Automatically trigger the custom report card modal!
+            openReportModal(
+                title, 
+                'Mismatched game (Wrong game)', 
+                `Automated Flag: Mismatched filename detected ("${filename}"). Download was aborted by user.`
+            );
             return;
         }
     }
@@ -339,41 +372,41 @@ checkHwBtn.addEventListener('click', () => {
     }
 });
 
-// Event Listener for Developer Reports Button
+// Event Listener for Custom Report Modal Popup Trigger
 if (modalReportBtn) {
-    modalReportBtn.addEventListener('click', async () => {
+    modalReportBtn.addEventListener('click', () => {
         if (!currentGameId) return;
         
         const title = modalTitle.textContent;
         const link = currentGameLink || '';
         
         const isLinkMissing = !link || link === '#' || link.endsWith('#');
-        const defaultReason = isLinkMissing ? 'Link is missing/empty' : 'Link is broken/offline';
+        const defaultIssue = isLinkMissing ? 'Link is broken/offline' : 'Link is broken/offline';
+        const prefilledDetails = `Checked on: ${new Date().toLocaleDateString()}${isLinkMissing ? ' (Link is empty in database)' : ''}`;
         
-        const userReason = prompt(
-            `Report an issue with "${title}" link:\n\nType of issue:`,
-            defaultReason
-        );
+        openReportModal(title, defaultIssue, prefilledDetails);
+    });
+}
+
+// Event Listener for Sending Custom Report Modal Details
+if (submitReportBtn) {
+    submitReportBtn.addEventListener('click', async () => {
+        if (!currentGameId) return;
         
-        if (userReason === null) return;
+        const title = modalTitle.textContent;
+        const link = currentGameLink || '';
+        const issue = reportIssueType.value;
+        const details = reportDetails.value;
         
-        const details = prompt(
-            `Provide any additional details (optional):`,
-            `Checked on: ${new Date().toLocaleDateString()}`
-        );
+        submitReportBtn.disabled = true;
+        submitReportBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="animation: spin 1s linear infinite; margin-right: 6px;"><line x1="12" y1="2" x2="12" y2="6"></line><line x1="12" y1="18" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="6" y2="12"></line><line x1="18" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line></svg> Sending...`;
         
-        if (details === null) return;
+        const success = await sendDeveloperReport(title, currentGameId, link, issue, details);
         
-        modalReportBtn.disabled = true;
-        modalReportBtn.textContent = 'Sending...';
+        submitReportBtn.disabled = false;
+        submitReportBtn.textContent = 'Send Report';
         
-        const success = await sendDeveloperReport(title, currentGameId, link, userReason, details);
-        
-        modalReportBtn.disabled = false;
-        modalReportBtn.innerHTML = `
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-            Report Link
-        `;
+        closeReportModal();
         
         if (success) {
             alert('Thank you! The developer has been notified of this issue.');

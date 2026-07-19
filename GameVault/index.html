@@ -355,11 +355,44 @@
         </div>
     </div>
 
+    <!-- Report Modal -->
+    <div id="reportModalOverlay" class="modal-overlay hidden">
+        <div id="reportModal" class="text-modal" style="max-width: 500px;">
+            <button id="closeReportModal" class="close-modal-btn" aria-label="Close modal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            
+            <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: #ff4d6d; text-align: center; font-family: 'Outfit', sans-serif;">Report Issue</h2>
+            <p id="reportGameTitle" style="color: var(--text-secondary); text-align: center; margin-bottom: 1.8rem; font-size: 0.95rem; line-height: 1.4;">Game: </p>
+            
+            <div style="display: flex; flex-direction: column; gap: 1.2rem;">
+                <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                    <label style="color: var(--text-secondary); font-size: 0.9rem; font-weight: 600;">Issue Type</label>
+                    <select id="reportIssueType" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--glass-border); border-radius: 10px; padding: 0.8rem; color: white; font-family: inherit; font-size: 0.95rem; cursor: pointer; outline: none; transition: border-color 0.2s; width: 100%;">
+                        <option value="Link is broken/offline" style="background: #110c18;">Link is broken/offline</option>
+                        <option value="Mismatched game (Wrong game)" style="background: #110c18;">Mismatched game (Wrong game)</option>
+                        <option value="Link expired / expired file hosting" style="background: #110c18;">Link expired / file deleted</option>
+                        <option value="Other Issue" style="background: #110c18;">Other Issue</option>
+                    </select>
+                </div>
+                
+                <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                    <label style="color: var(--text-secondary); font-size: 0.9rem; font-weight: 600;">Additional Details</label>
+                    <textarea id="reportDetails" placeholder="Tell the developer what is wrong..." style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--glass-border); border-radius: 10px; padding: 0.8rem; color: white; font-family: inherit; font-size: 0.95rem; min-height: 100px; resize: vertical; outline: none; transition: border-color 0.2s; width: 100%; box-sizing: border-box;"></textarea>
+                </div>
+                
+                <button id="submitReportBtn" class="report-btn modern-btn" style="background: #ff4d6d; color: white; border: none; padding: 0.9rem; border-radius: 12px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: all 0.2s; width: 100%; display: flex; justify-content: center; align-items: center; gap: 0.5rem; box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);">
+                    Send Report
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script src="js/security.js?v=5"></script>
     <script src="js/firebase-config.js?v=10"></script>
     <script src="js/data/games.js?v=10"></script>
     <script src="js/components/gameCard.js?v=5"></script>
-    <script src="js/components/gameModal.js?v=8"></script>
+    <script src="js/components/gameModal.js?v=9"></script>
     <script src="js/main.js?v=24"></script>
 </body>
 </html>
